@@ -31,7 +31,7 @@ CPU-bound: примерно число cores. IO-bound: может быть бо
 ## thenApply vs thenCompose
 
 `thenApply`: T → R.  
-`thenCompose`: T → CompletionStage<R>, затем flatten.
+`thenCompose`: `T → CompletionStage<R>`, затем flatten.
 
 ## thenCombine
 

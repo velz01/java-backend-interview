@@ -9,7 +9,7 @@
 ### Короткий ответ
 Они дают type-safety на этапе компиляции и позволяют писать переиспользуемый код без постоянных casts.
 
-## Почему List<Integer> не является List<Number>?
+## Почему `List<Integer>` не является `List<Number>`?
 
 Generics в Java invariant. Иначе через `List<Number>` можно было бы положить `Double` в реальный `List<Integer>`.
 
