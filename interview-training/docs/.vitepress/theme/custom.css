@@ -1,0 +1,14 @@
+
+:root {
+  --vp-c-brand-1: #3b82f6;
+  --vp-c-brand-2: #2563eb;
+  --vp-c-brand-3: #1d4ed8;
+  --vp-home-hero-name-color: transparent;
+  --vp-home-hero-name-background: linear-gradient(120deg, #2563eb 30%, #7c3aed);
+}
+.VPDoc .content-container { max-width: 900px !important; }
+.vp-doc h2 { border-top: 1px solid var(--vp-c-divider); padding-top: 24px; margin-top: 44px; }
+.vp-doc h3 { margin-top: 26px; }
+.vp-doc table { width: 100%; display: table; }
+.vp-doc code { font-size: .92em; }
+.VPHomeHero .tagline { max-width: 760px; }
