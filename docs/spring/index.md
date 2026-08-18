@@ -555,10 +555,10 @@ Listener - это класс, имплементирующий интерфей�
 
 Да, можно принять все значения, используя массив в методе контроллера:
 
-http://localhost:8080/login?name=Ranga&name=Ravi&name=Sathish
+`http://localhost:8080/login?name=Ranga&name=Ravi&name=Sathish`
 public String method(@RequestParam(value="name") String[] names){...}
 
-http://localhost:8080/api/foos?id=1,2,3
+`http://localhost:8080/api/foos?id=1,2,3`
 public String getFoos(@RequestParam List&lt;String&gt; id){...}
 
 ---

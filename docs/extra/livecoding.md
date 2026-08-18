@@ -161,5 +161,3 @@ public static void fibonachi(int beforePreviousValue, int previousValue, int max
 ---
 
 ## Дополнительные материалы
-
-[Статьи, видео и другие материалы по разделу →](/materials/extra-livecoding)

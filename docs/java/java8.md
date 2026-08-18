@@ -96,5 +96,3 @@ java.time.ZonedDateTime — аналог java.util.Calendar, класс с са�
 ---
 
 ## Дополнительные материалы
-
-[Статьи, видео и другие материалы по разделу →](/materials/java-java8)

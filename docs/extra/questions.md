@@ -37,9 +37,6 @@ Keep It Simple, Stupid – не усложняй!
 5. Бритва Оккама
 Не создавайте ненужных сущностей без необходимости.
 
-https://habr.com/ru/company/itelma/blog/546372/
-https://javarush.ru/groups/posts/osnovnye-principy-dizajna-klassov-solid-v-java
-
 ---
 
 ## 3. Жизненный цикл проекта в Maven
@@ -406,8 +403,6 @@ Repository ориентирован на модель предметной об�
 ## 36. Чем SCRUM отличается от Kanban?
 
 В Scrum наша цель — закончить спринт, в Kanban — задачу. Scrum — это автобус, который идет по маршруту с остановками в конце спринта. А Kanban — это маршрутка: захотел выйти, попросил и вышел там, где нужно.
-
-https://www.atlassian.com/ru/agile/kanban/kanban-vs-scrum
 
 ---
 

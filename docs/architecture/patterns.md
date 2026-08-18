@@ -228,5 +228,3 @@ Low Coupling и High Cohesion представляют из себя два св
 ---
 
 ## Дополнительные материалы
-
-[Статьи, видео и другие материалы по разделу →](/materials/architecture-patterns)

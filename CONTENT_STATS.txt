@@ -1,7 +1,6 @@
-Всего вопросов (по заголовкам): 791
+Question counts by page
 
 algorithms/index.md: 11
-architecture/microservices.md: 27
 architecture/patterns.md: 18
 concurrency/index.md: 29
 database/fundamentals.md: 19
@@ -13,7 +12,6 @@ extra/livecoding.md: 11
 extra/questions.md: 37
 infrastructure/deployment.md: 8
 java/collections.md: 79
-java/core.md: 81
 java/exceptions.md: 16
 java/functional.md: 5
 java/generics.md: 5
@@ -28,11 +26,9 @@ jvm/index.md: 13
 legacy/servlets.md: 54
 messaging/kafka.md: 36
 observability/elk.md: 7
-other/css.md: 14
-other/html.md: 15
 other/logging.md: 7
-other/uml.md: 4
-other/xml.md: 11
 spring/index.md: 53
 testing/index.md: 10
 web/index.md: 28
+
+TOTAL: 639

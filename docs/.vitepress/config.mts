@@ -62,11 +62,7 @@ export default defineConfig({
       { text: 'Дополнительно', items: [
         { text: 'Алгоритмы', link: '/algorithms/' },
         { text: 'Дополнительные вопросы', link: '/extra/questions' },
-        { text: 'Лайвкодинг', link: '/extra/livecoding' },
-        { text: 'UML', link: '/other/uml' },
-        { text: 'XML', link: '/other/xml' },
-        { text: 'HTML', link: '/other/html' },
-        { text: 'CSS', link: '/other/css' }
+        { text: 'Лайвкодинг', link: '/extra/livecoding' }
       ]}
     ],
     outline: { level: [2, 3], label: 'На странице' },

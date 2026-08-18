@@ -136,5 +136,3 @@ DeepCloneable clone = cloner.deepClone(this);
 ---
 
 ## Дополнительные материалы
-
-[Статьи, видео и другие материалы по разделу →](/materials/java-serialization)
