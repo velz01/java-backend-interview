@@ -1,4 +1,38 @@
-Content pages: 68
-Materials pages: 42
-Approx words: 20940
-Question/section headings: 875
+Всего вопросов (по заголовкам): 791
+
+algorithms/index.md: 11
+architecture/microservices.md: 27
+architecture/patterns.md: 18
+concurrency/index.md: 29
+database/fundamentals.md: 19
+database/jdbc.md: 15
+database/migrations.md: 3
+database/nosql.md: 4
+database/sql.md: 36
+extra/livecoding.md: 11
+extra/questions.md: 37
+infrastructure/deployment.md: 8
+java/collections.md: 79
+java/core.md: 81
+java/exceptions.md: 16
+java/functional.md: 5
+java/generics.md: 5
+java/io.md: 28
+java/java8.md: 11
+java/oop.md: 12
+java/reactive.md: 9
+java/serialization.md: 14
+java/streams.md: 20
+jpa/hibernate.md: 41
+jvm/index.md: 13
+legacy/servlets.md: 54
+messaging/kafka.md: 36
+observability/elk.md: 7
+other/css.md: 14
+other/html.md: 15
+other/logging.md: 7
+other/uml.md: 4
+other/xml.md: 11
+spring/index.md: 53
+testing/index.md: 10
+web/index.md: 28

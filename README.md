@@ -1,6 +1,6 @@
-# Java Backend Interview Prep
+# Java Backend Interview
 
-VitePress-сайт с базой подготовки к Java Backend собеседованиям.
+VitePress-сайт с большой базой вопросов и ответов для подготовки к Java Backend собеседованиям.
 
 ## Локальный запуск
 
@@ -9,22 +9,14 @@ npm install
 npm run docs:dev
 ```
 
-## Проверка production build
+## Сборка
 
 ```bash
 npm run docs:build
-npm run docs:preview
 ```
 
 ## GitHub Pages
 
-В репозитории уже есть `.github/workflows/deploy.yml`. После push в `main`:
+Workflow `.github/workflows/deploy.yml` автоматически собирает VitePress и публикует сайт через GitHub Pages после push в `main`. В настройках репозитория нужно выбрать **Settings → Pages → Source → GitHub Actions**.
 
-1. GitHub → Settings → Pages.
-2. Build and deployment → Source: **GitHub Actions**.
-3. Открыть Actions и дождаться workflow `Deploy VitePress to GitHub Pages`.
-4. Ссылка появится в Settings → Pages.
-
-Workflow передаёт `BASE_PATH=/<repository-name>/`, поэтому project Pages работает по адресу `https://USERNAME.github.io/REPOSITORY/`.
-
-Для custom domain добавьте домен в Settings → Pages → Custom domain и настройте DNS у регистратора.
+Контент находится в `docs/`. Для редактирования существующего раздела достаточно изменить соответствующий `.md` файл и сделать commit/push.

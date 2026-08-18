@@ -1,7 +1,36 @@
 # Дополнительные материалы
 
-В этих `.md`-страницах лежат **только внешние материалы**: статьи, видео и место под схемы. Основная теория и ответы остаются на страницах тем.
+Здесь собраны **конкретные статьи и русскоязычные видео**, а не ссылки на поисковую выдачу.
 
-::: tip
-Мы не используем Oracle-статьи как основной дополнительный материал. Приоритет — понятные разборы на Habr/JavaRush и видео; официальную документацию можно добавлять точечно позже, когда она реально нужна для проверки детали.
-:::
+- [Материалы: алгоритмы и live coding](/materials/algorithms-index)
+- [Материалы: Паттерны микросервисов](/materials/architecture-microservices)
+- [Материалы: Паттерны проектирования](/materials/architecture-patterns)
+- [Материалы: многопоточность](/materials/concurrency-index)
+- [Материалы: миграции БД](/materials/database-migrations)
+- [Материалы: NoSQL / Redis / кэш](/materials/database-nosql)
+- [Материалы: SQL и базы данных](/materials/database-sql)
+- [Материалы: основы баз данных](/materials/database)
+- [Материалы: Docker и CI/CD](/materials/deployment)
+- [Материалы: Лайвкодинг](/materials/extra-livecoding)
+- [Материалы: Дополнительные вопросы](/materials/extra-questions)
+- [Материалы: Java IO/NIO](/materials/io)
+- [Материалы: Collections](/materials/java-collections)
+- [Материалы: Java Core](/materials/java-core)
+- [Материалы: Исключения](/materials/java-exceptions)
+- [Материалы: Функциональные интерфейсы](/materials/java-functional)
+- [Материалы: Generics](/materials/java-generics)
+- [Материалы: Java 8+](/materials/java-java8)
+- [Материалы: ООП](/materials/java-oop)
+- [Материалы: Сериализация и копирование](/materials/java-serialization)
+- [Материалы: Stream API](/materials/java-streams)
+- [Материалы: JDBC](/materials/jdbc)
+- [Материалы: Hibernate / JPA](/materials/jpa-hibernate)
+- [Материалы: JVM и GC](/materials/jvm)
+- [Материалы: журналирование](/materials/logging)
+- [Материалы: Kafka](/materials/messaging-kafka)
+- [Материалы: ELK / Spring Cloud](/materials/observability-elk)
+- [Материалы: реактивное программирование](/materials/reactive)
+- [Материалы: Servlet API / JSP / JSTL](/materials/servlets)
+- [Материалы: Spring](/materials/spring-index)
+- [Материалы: тестирование](/materials/testing)
+- [Материалы: HTTP / WEB](/materials/web)

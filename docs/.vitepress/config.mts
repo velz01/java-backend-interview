@@ -1,102 +1,79 @@
 import { defineConfig } from 'vitepress'
 
+const base = process.env.BASE_PATH || '/'
+
 export default defineConfig({
-  title: 'Java Backend Interview',
-  description: 'Полная база подготовки к Java Backend собеседованиям',
   lang: 'ru-RU',
-  base: process.env.BASE_PATH || '/',
+  title: 'Java Backend Interview',
+  description: 'Полная база вопросов и ответов для подготовки к Java Backend собеседованиям',
+  base,
   cleanUrls: true,
   lastUpdated: true,
-
   themeConfig: {
     search: { provider: 'local' },
-    outline: { level: [2, 3], label: 'На странице' },
     nav: [
-      { text: 'План', link: '/learning-path' },
-      { text: 'Java', link: '/java-core/' },
-      { text: 'Spring', link: '/spring/' },
-      { text: 'SQL', link: '/sql/' },
-      { text: 'Kafka', link: '/kafka/' },
-      { text: 'Моки', link: '/interviews/' }
+      { text: 'Главная', link: '/' },
+      { text: 'Материалы', link: '/materials/' }
     ],
     sidebar: [
-      { text: 'Старт', collapsed: false, items: [
-        { text: 'Главная', link: '/' },
-        { text: 'План подготовки', link: '/learning-path' },
-        { text: 'Чек-лист перед интервью', link: '/interview-checklist' }
-      ]},
       { text: 'Java', collapsed: false, items: [
-        { text: 'Java Core', link: '/java-core/' },
-        { text: 'ООП', link: '/java-core/oop' },
-        { text: 'equals / hashCode', link: '/java-core/equals-hashcode' },
-        { text: 'String / String Pool', link: '/java-core/strings' },
-        { text: 'Примитивы / Wrappers', link: '/java-core/primitives-wrappers' },
-        { text: 'Annotations / Reflection', link: '/java-core/annotations-reflection' },
-        { text: 'IO / NIO', link: '/java-core/io-nio' },
-        { text: 'Collections', link: '/collections/' },
-        { text: 'Выбор коллекции', link: '/collections/overview' },
-        { text: 'HashMap', link: '/collections/hashmap' },
-        { text: 'Ordering / TreeMap', link: '/collections/ordering' },
-        { text: 'Generics', link: '/generics-streams/generics' },
-        { text: 'Exceptions', link: '/generics-streams/exceptions' },
-        { text: 'Streams', link: '/generics-streams/streams' }
+        { text: 'ООП', link: '/java/oop' },
+        { text: 'Java Core', link: '/java/core' },
+        { text: 'JVM и GC', link: '/jvm/' },
+        { text: 'Исключения', link: '/java/exceptions' },
+        { text: 'Сериализация', link: '/java/serialization' },
+        { text: 'Generics', link: '/java/generics' },
+        { text: 'Collections', link: '/java/collections' },
+        { text: 'Функциональные интерфейсы', link: '/java/functional' },
+        { text: 'Stream API', link: '/java/streams' },
+        { text: 'Java 8+', link: '/java/java8' },
+        { text: 'IO / NIO', link: '/java/io' },
+        { text: 'Reactive', link: '/java/reactive' }
       ]},
-      { text: 'JVM / Concurrency', collapsed: true, items: [
-        { text: 'JVM Memory / GC', link: '/jvm/memory-gc' },
-        { text: 'ClassLoader / JIT', link: '/jvm/classloader-jit' },
-        { text: 'synchronized / volatile / JMM', link: '/multithreading/basics' },
-        { text: 'Atomic / CAS / ConcurrentHashMap', link: '/multithreading/concurrent' },
-        { text: 'Executors / CompletableFuture', link: '/multithreading/executors' }
+      { text: 'Многопоточность', items: [
+        { text: 'Concurrency', link: '/concurrency/' }
       ]},
-      { text: 'Database', collapsed: true, items: [
-        { text: 'SQL basics', link: '/sql/basics' },
-        { text: 'Transactions / MVCC', link: '/sql/transactions' },
-        { text: 'Indexes / EXPLAIN', link: '/sql/indexes' },
-        { text: 'Scaling / Replication / Sharding', link: '/database/scaling' },
-        { text: 'Liquibase / migrations', link: '/database/migrations' },
-        { text: 'Redis / Cache', link: '/redis/cache' }
+      { text: 'Базы данных', items: [
+        { text: 'Основы БД', link: '/database/fundamentals' },
+        { text: 'SQL', link: '/database/sql' },
+        { text: 'JDBC', link: '/database/jdbc' },
+        { text: 'NoSQL / Redis / кэш', link: '/database/nosql' },
+        { text: 'Миграции / Liquibase', link: '/database/migrations' },
+        { text: 'Hibernate / JPA', link: '/jpa/hibernate' }
       ]},
-      { text: 'Hibernate / JPA', collapsed: true, items: [
-        { text: 'Persistence Context', link: '/jpa/persistence' },
-        { text: 'N+1 / LAZY / EAGER', link: '/jpa/fetching' },
-        { text: 'Mapping / locking', link: '/jpa/mapping-locking' }
+      { text: 'Spring', items: [
+        { text: 'Spring Framework / Boot / Security', link: '/spring/' }
       ]},
-      { text: 'Spring', collapsed: true, items: [
-        { text: 'Spring Core / Bean lifecycle', link: '/spring/core' },
-        { text: '@Transactional / Proxy / AOP', link: '/spring/transactional' },
-        { text: 'Spring Boot / MVC', link: '/spring/boot-web' },
-        { text: 'Spring Security', link: '/spring/security' }
+      { text: 'WEB', items: [
+        { text: 'HTTP / REST / Web', link: '/web/' },
+        { text: 'Servlets / JSP / JSTL', link: '/legacy/servlets' }
       ]},
-      { text: 'WEB / Messaging', collapsed: true, items: [
-        { text: 'HTTP / REST', link: '/web/http-rest' },
-        { text: 'Auth / JWT / CORS', link: '/web/auth' },
-        { text: 'Kafka fundamentals', link: '/kafka/fundamentals' },
-        { text: 'Kafka delivery', link: '/kafka/delivery' },
-        { text: 'Kafka rebalancing / lag', link: '/kafka/rebalancing' }
+      { text: 'Архитектура и messaging', items: [
+        { text: 'Паттерны проектирования', link: '/architecture/patterns' },
+        { text: 'Микросервисы', link: '/architecture/microservices' },
+        { text: 'Kafka', link: '/messaging/kafka' }
       ]},
-      { text: 'Architecture', collapsed: true, items: [
-        { text: 'Microservice boundaries', link: '/microservices/boundaries' },
-        { text: 'Saga / Outbox / consistency', link: '/microservices/consistency' },
-        { text: 'Resilience', link: '/microservices/resilience' },
-        { text: 'SOLID', link: '/design/solid' },
-        { text: 'Patterns', link: '/design/patterns' }
+      { text: 'Тестирование и инфраструктура', items: [
+        { text: 'Testing', link: '/testing/' },
+        { text: 'Docker / CI/CD / Deploy', link: '/infrastructure/deployment' },
+        { text: 'ELK / Spring Cloud', link: '/observability/elk' },
+        { text: 'Logging', link: '/other/logging' }
       ]},
-      { text: 'Testing / Infra', collapsed: true, items: [
-        { text: 'Unit tests', link: '/testing/unit' },
-        { text: 'Integration / Testcontainers', link: '/testing/integration' },
-        { text: 'Docker', link: '/infrastructure/docker' },
-        { text: 'CI/CD', link: '/infrastructure/cicd' }
-      ]},
-      { text: 'Дополнительно', collapsed: true, items: [
-        { text: 'Big O', link: '/other/algorithms' },
-        { text: 'Performance / диагностика', link: '/other/performance' },
-        { text: 'Реальные собеседования', link: '/interviews/' },
-        { text: 'Материалы', link: '/materials/' }
+      { text: 'Дополнительно', items: [
+        { text: 'Алгоритмы', link: '/algorithms/' },
+        { text: 'Дополнительные вопросы', link: '/extra/questions' },
+        { text: 'Лайвкодинг', link: '/extra/livecoding' },
+        { text: 'UML', link: '/other/uml' },
+        { text: 'XML', link: '/other/xml' },
+        { text: 'HTML', link: '/other/html' },
+        { text: 'CSS', link: '/other/css' }
       ]}
     ],
-    socialLinks: [
-      { icon: 'github', link: 'https://github.com/' }
-    ],
-    footer: { message: 'Учись понимать механизмы, а не заучивать определения.', copyright: 'Java Backend Interview Prep' }
+    outline: { level: [2, 3], label: 'На странице' },
+    docFooter: { prev: 'Назад', next: 'Далее' },
+    lastUpdated: { text: 'Обновлено' },
+    returnToTopLabel: 'Наверх',
+    sidebarMenuLabel: 'Меню',
+    darkModeSwitchLabel: 'Тема'
   }
 })
