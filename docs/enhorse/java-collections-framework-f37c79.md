@@ -6,11 +6,11 @@ outline: [2, 3]
 # Java Collections Framework
 
 **Источник:** enhorse/java-interview  
-**Вопросов:** 85
+**Вопросов/пунктов:** 85
 
 ## 1. Что такое _«коллекция»_?
 
-<span class="source-badge">Источник: enhorse/java-interview</span>
+**Источник:** enhorse/java-interview
 
 _«Коллекция»_ - это структура данных, набор каких-либо объектов. Данными (объектами в наборе) могут быть числа, строки, объекты пользовательских классов и т.п.
 
@@ -20,7 +20,7 @@ _«Коллекция»_ - это структура данных, набор к
 
 ## 2. Назовите основные интерфейсы JCF и их реализации.
 
-<span class="source-badge">Источник: enhorse/java-interview</span>
+**Источник:** enhorse/java-interview
 
 На вершине иерархии в Java Collection Framework располагаются 2 интерфейса: `Collection` и `Map`. Эти интерфейсы разделяют все коллекции, входящие во фреймворк на две части по типу хранения данных: простые последовательные наборы элементов и наборы пар «ключ — значение» соответственно.
 
@@ -53,7 +53,7 @@ _«Коллекция»_ - это структура данных, набор к
 
 ## 3. Расположите в виде иерархии следующие интерфейсы: `List`, `Set`, `Map`, `SortedSet`, `SortedMap`, `Collection`, `Iterable`, `Iterator`, `NavigableSet`, `NavigableMap`.
 
-<span class="source-badge">Источник: enhorse/java-interview</span>
+**Источник:** enhorse/java-interview
 
 + `Iterable`
     + `Collection`
@@ -72,7 +72,7 @@ _«Коллекция»_ - это структура данных, набор к
 
 ## 4. Почему `Map` — это не `Collection`, в то время как `List` и `Set` являются `Collection`?
 
-<span class="source-badge">Источник: enhorse/java-interview</span>
+**Источник:** enhorse/java-interview
 
 `Collection` представляет собой совокупность некоторых элементов. `Map` - это совокупность пар «ключ-значение».
 
@@ -82,7 +82,7 @@ _«Коллекция»_ - это структура данных, набор к
 
 ## 5. В чем разница между классами `java.util.Collection` и `java.util.Collections`?
 
-<span class="source-badge">Источник: enhorse/java-interview</span>
+**Источник:** enhorse/java-interview
 
 `java.util.Collections` - набор статических методов для работы с коллекциями.
 
@@ -94,7 +94,7 @@ _«Коллекция»_ - это структура данных, набор к
 
 ## 6. Что такое «fail-fast поведение»?
 
-<span class="source-badge">Источник: enhorse/java-interview</span>
+**Источник:** enhorse/java-interview
 
 __fail-fast поведение__ означает, что при возникновении ошибки или состояния, которое может привести к ошибке, система немедленно прекращает дальнейшую работу и уведомляет об этом. Использование fail-fast подхода позволяет избежать недетерминированного поведения программы в течение времени.
 
@@ -112,7 +112,7 @@ __fail-fast поведение__ означает, что при возникн�
 
 ## 7. Какая разница между fail-fast и fail-safe?
 
-<span class="source-badge">Источник: enhorse/java-interview</span>
+**Источник:** enhorse/java-interview
 
 В противоположность fail-fast, итераторы fail-safe не вызывают никаких исключений при изменении структуры, потому что они работают с клоном коллекции вместо оригинала.
 
@@ -122,7 +122,7 @@ __fail-fast поведение__ означает, что при возникн�
 
 ## 8. Приведите примеры итераторов, реализующих поведение fail-safe
 
-<span class="source-badge">Источник: enhorse/java-interview</span>
+**Источник:** enhorse/java-interview
 
 Итератор коллекции `CopyOnWriteArrayList` и итератор представления `keySet` коллекции `ConcurrentHashMap` являются примерами итераторов fail-safe.
 
@@ -132,7 +132,7 @@ __fail-fast поведение__ означает, что при возникн�
 
 ## 9. Чем различаются `Enumeration` и `Iterator`.
 
-<span class="source-badge">Источник: enhorse/java-interview</span>
+**Источник:** enhorse/java-interview
 
 Хотя оба интерфейса и предназначены для обхода коллекций между ними имеются существенные различия:
 
@@ -146,7 +146,7 @@ __fail-fast поведение__ означает, что при возникн�
 
 ## 10. Как между собой связаны `Iterable` и `Iterator`?
 
-<span class="source-badge">Источник: enhorse/java-interview</span>
+**Источник:** enhorse/java-interview
 
 Интерфейс `Iterable` имеет только один метод - `iterator()`, который возвращает `Iterator`.
 
@@ -156,7 +156,7 @@ __fail-fast поведение__ означает, что при возникн�
 
 ## 11. Как между собой связаны `Iterable`, `Iterator` и «for-each»?
 
-<span class="source-badge">Источник: enhorse/java-interview</span>
+**Источник:** enhorse/java-interview
 
 Классы, реализующие интерфейс `Iterable`, могут применяться в конструкции `for-each`, которая использует `Iterator`.
 
@@ -166,7 +166,7 @@ __fail-fast поведение__ означает, что при возникн�
 
 ## 12. Сравните `Iterator` и `ListIterator`.
 
-<span class="source-badge">Источник: enhorse/java-interview</span>
+**Источник:** enhorse/java-interview
 
 + `ListIterator` расширяет интерфейс `Iterator`
 + `ListIterator` может быть использован только для перебора элементов коллекции `List`;
@@ -180,7 +180,7 @@ __fail-fast поведение__ означает, что при возникн�
 
 ## 13. Что произойдет при вызове `Iterator.next()` без предварительного вызова `Iterator.hasNext()`?
 
-<span class="source-badge">Источник: enhorse/java-interview</span>
+**Источник:** enhorse/java-interview
 
 Если итератор указывает на последний элемент коллекции, то возникнет исключение `NoSuchElementException`, иначе будет возвращен следующий элемент.
 
@@ -190,7 +190,7 @@ __fail-fast поведение__ означает, что при возникн�
 
 ## 14. Сколько элементов будет пропущено, если `Iterator.next()` будет вызван после 10-ти вызовов `Iterator.hasNext()`?
 
-<span class="source-badge">Источник: enhorse/java-interview</span>
+**Источник:** enhorse/java-interview
 
 Нисколько - `hasNext()` осуществляет только проверку наличия следующего элемента.
 
@@ -200,7 +200,7 @@ __fail-fast поведение__ означает, что при возникн�
 
 ## 15. Как поведёт себя коллекция, если вызвать `iterator.remove()`?
 
-<span class="source-badge">Источник: enhorse/java-interview</span>
+**Источник:** enhorse/java-interview
 
 Если вызову `iterator.remove()` предшествовал вызов `iterator.next()`, то `iterator.remove()` удалит элемент коллекции, на который указывает итератор, в противном случае будет выброшено `IllegalStateException()`.
 
@@ -210,7 +210,7 @@ __fail-fast поведение__ означает, что при возникн�
 
 ## 16. Как поведёт себя уже инстанциированный итератор для `collection`, если вызвать `collection.remove()`?
 
-<span class="source-badge">Источник: enhorse/java-interview</span>
+**Источник:** enhorse/java-interview
 
 При следующем вызове методов итератора будет выброшено `ConcurrentModificationException`.
 
@@ -220,7 +220,7 @@ __fail-fast поведение__ означает, что при возникн�
 
 ## 17. Как избежать `ConcurrentModificationException` во время перебора коллекции?
 
-<span class="source-badge">Источник: enhorse/java-interview</span>
+**Источник:** enhorse/java-interview
 
 + Попробовать подобрать или реализовать самостоятельно другой итератор, работающий по принципу fail-safe.
 + Использовать `ConcurrentHashMap` и `CopyOnWriteArrayList`.
@@ -235,7 +235,7 @@ __fail-fast поведение__ означает, что при возникн�
 
 ## 18. Какая коллекция реализует дисциплину обслуживания FIFO?
 
-<span class="source-badge">Источник: enhorse/java-interview</span>
+**Источник:** enhorse/java-interview
 
 FIFO, First-In-First-Out («первым пришел-первым ушел») - по этому принципу построена коллекция `Queue`.
 
@@ -245,7 +245,7 @@ FIFO, First-In-First-Out («первым пришел-первым ушел») -
 
 ## 19. Какая коллекция реализует дисциплину обслуживания FILO?
 
-<span class="source-badge">Источник: enhorse/java-interview</span>
+**Источник:** enhorse/java-interview
 
 FILO, First-In-Last-Out («первым пришел, последним ушел») - по этому принципу построена коллекция `Stack`.
 
@@ -255,7 +255,7 @@ FILO, First-In-Last-Out («первым пришел, последним уше�
 
 ## 20. Зачем добавили `ArrayList`, если уже был `Vector`?
 
-<span class="source-badge">Источник: enhorse/java-interview</span>
+**Источник:** enhorse/java-interview
 
 + Методы класса `Vector` синхронизированы, а `ArrayList` - нет;
 + По умолчанию, `Vector` удваивает свой размер, когда заканчивается выделенная под элементы память. `ArrayList` же увеличивает свой размер только на половину.
@@ -268,7 +268,7 @@ FILO, First-In-Last-Out («первым пришел, последним уше�
 
 ## 21. Чем отличается `ArrayList` от `LinkedList`? В каких случаях лучше использовать первый, а в каких второй?
 
-<span class="source-badge">Источник: enhorse/java-interview</span>
+**Источник:** enhorse/java-interview
 
 `ArrayList` это список, реализованный на основе массива, а `LinkedList` — это классический двусвязный список, основанный на объектах с ссылками между ними.
 
@@ -298,7 +298,7 @@ FILO, First-In-Last-Out («первым пришел, последним уше�
 
 ## 22. Что работает быстрее `ArrayList` или `LinkedList`?
 
-<span class="source-badge">Источник: enhorse/java-interview</span>
+**Источник:** enhorse/java-interview
 
 Смотря какие действия будут выполняться над структурой. 
 
@@ -310,7 +310,7 @@ FILO, First-In-Last-Out («первым пришел, последним уше�
 
 ## 23. Какое худшее время работы метода `contains()` для элемента, который есть в `LinkedList`?
 
-<span class="source-badge">Источник: enhorse/java-interview</span>
+**Источник:** enhorse/java-interview
 
 _O(N)_. Время поиска элемента линейно пропорционально количеству элементов в списке.
 
@@ -320,7 +320,7 @@ _O(N)_. Время поиска элемента линейно пропорци
 
 ## 24. Какое худшее время работы метода `contains()` для элемента, который есть в `ArrayList`?
 
-<span class="source-badge">Источник: enhorse/java-interview</span>
+**Источник:** enhorse/java-interview
 
 _O(N)_. Время поиска элемента линейно пропорционально количеству элементов с списке.
 
@@ -330,7 +330,7 @@ _O(N)_. Время поиска элемента линейно пропорци
 
 ## 25. Какое худшее время работы метода `add()` для `LinkedList`?
 
-<span class="source-badge">Источник: enhorse/java-interview</span>
+**Источник:** enhorse/java-interview
 
 _O(N)_. Добавление в начало/конец списка осуществляется за время _O(1)_.
 
@@ -340,7 +340,7 @@ _O(N)_. Добавление в начало/конец списка осуще�
 
 ## 26. Какое худшее время работы метода `add()` для `ArrayList`?
 
-<span class="source-badge">Источник: enhorse/java-interview</span>
+**Источник:** enhorse/java-interview
 
 _O(N)_. Вставка элемента в конец списка осуществляется за время _O(1)_, но если вместимость массива недостаточна, то происходит создание нового массива с увеличенным размером и копирование всех элементов из старого массива в новый.
 
@@ -350,7 +350,7 @@ _O(N)_. Вставка элемента в конец списка осущес�
 
 ## 27. Необходимо добавить 1 млн. элементов, какую структуру вы используете?
 
-<span class="source-badge">Источник: enhorse/java-interview</span>
+**Источник:** enhorse/java-interview
 
 Однозначный ответ можно дать только исходя из информации о том в какую часть списка происходит добавление элементов, что потом будет происходить с элементами списка, существуют ли какие-то ограничения по памяти или скорости выполнения.
 
@@ -362,7 +362,7 @@ _O(N)_. Вставка элемента в конец списка осущес�
 
 ## 28. Как происходит удаление элементов из `ArrayList`? Как меняется в этом случае размер `ArrayList`?
 
-<span class="source-badge">Источник: enhorse/java-interview</span>
+**Источник:** enhorse/java-interview
 
 При удалении произвольного элемента из списка, все элементы, находящиеся «правее» смещаются на одну ячейку влево и реальный размер массива (его емкость, capacity) не изменяется никак. Механизм автоматического «расширения» массива существует, а вот автоматического «сжатия» нет, можно только явно выполнить «сжатие» командой `trimToSize()`.
 
@@ -372,7 +372,7 @@ _O(N)_. Вставка элемента в конец списка осущес�
 
 ## 29. Предложите эффективный алгоритм удаления нескольких рядом стоящих элементов из середины списка, реализуемого `ArrayList`.
 
-<span class="source-badge">Источник: enhorse/java-interview</span>
+**Источник:** enhorse/java-interview
 
 Допустим нужно удалить `n` элементов с позиции `m` в списке. Вместо выполнения удаления одного элемента `n` раз (каждый раз смещая на 1 позицию элементы, стоящие «правее» в списке), нужно выполнить смещение всех элементов, стоящих «правее» `n + m` позиции на `n` элементов «левее» к началу списка. Таким образом, вместо выполнения `n` итераций перемещения элементов списка, все выполняется за 1 проход. Но если говорить об общей эффективности - то самый быстрый способ будет с использованием `System.arraycopy()`, и получить к нему доступ можно через метод - `subList(int fromIndex, int toIndex)`
 
@@ -505,7 +505,7 @@ run:
 
 ## 30. Сколько необходимо дополнительной памяти при вызове `ArrayList.add()`?
 
-<span class="source-badge">Источник: enhorse/java-interview</span>
+**Источник:** enhorse/java-interview
 
 Если в массиве достаточно места для размещения нового элемента, то дополнительной памяти не требуется. Иначе происходит создание нового массива размером в 1,5 раза превышающим существующий (это верно для JDK выше 1.7, в более ранних версиях размер увеличения иной).
 
@@ -515,7 +515,7 @@ run:
 
 ## 31. Сколько выделяется дополнительно памяти при вызове `LinkedList.add()`?
 
-<span class="source-badge">Источник: enhorse/java-interview</span>
+**Источник:** enhorse/java-interview
 
 Создается один новый экземпляр вложенного класса `Node`.
 
@@ -525,7 +525,7 @@ run:
 
 ## 32. Оцените количество памяти на хранение одного примитива типа `byte` в `LinkedList`?
 
-<span class="source-badge">Источник: enhorse/java-interview</span>
+**Источник:** enhorse/java-interview
 
 Каждый элемент `LinkedList` хранит ссылку на предыдущий элемент, следующий элемент и ссылку на данные.
 
@@ -548,7 +548,7 @@ private static class Node<E> {
 
 ## 33. Оцените количество памяти на хранение одного примитива типа `byte` в `ArrayList`?
 
-<span class="source-badge">Источник: enhorse/java-interview</span>
+**Источник:** enhorse/java-interview
 
 `ArrayList` основан на массиве, для примитивных типов данных осуществляется автоматическая упаковка значения, поэтому 16 байт тратится на хранение упакованного объекта и 4 байта (8 для x64) - на хранение ссылки на этот объект в самой структуре данных. Таким образом, в x32 JVM 4 байта используются на хранение одного элемента и 16 байт - на хранение упакованного объекта типа `Byte`. Для x64 - 8 байт и 24 байта соответственно.
 
@@ -558,7 +558,7 @@ private static class Node<E> {
 
 ## 34. Для `ArrayList` или для `LinkedList` операция добавления элемента в середину (`list.add(list.size()/2, newElement)`) медленнее?
 
-<span class="source-badge">Источник: enhorse/java-interview</span>
+**Источник:** enhorse/java-interview
 
 Для `ArrayList`:
 
@@ -579,7 +579,7 @@ private static class Node<E> {
 
 ## 35. В реализации класса `ArrayList` есть следующие поля: `Object[] elementData`, `int size`. Объясните, зачем хранить отдельно `size`, если всегда можно взять `elementData.length`?
 
-<span class="source-badge">Источник: enhorse/java-interview</span>
+**Источник:** enhorse/java-interview
 
 Размер массива `elementData` представляет собой вместимость (capacity) `ArrayList`, которая всегда больше переменной `size` - реального количества хранимых элементов. При необходимости вместимость автоматически возрастает.
 
@@ -589,7 +589,7 @@ private static class Node<E> {
 
 ## 36. Кто кого расширяет: `Queue` расширяет `Deque`, или `Deque` расширяет `Queue`?
 
-<span class="source-badge">Источник: enhorse/java-interview</span>
+**Источник:** enhorse/java-interview
 
 `Queue` - это очередь, которая обычно (но необязательно) строится по принципу FIFO (First-In-First-Out) - соответственно извлечение элемента осуществляется с начала очереди, вставка элемента - в конец очереди. Хотя этот принцип нарушает, к примеру, `PriorityQueue`, использующая «natural ordering» или переданный `Comparator` при вставке нового элемента.
 
@@ -603,7 +603,7 @@ private static class Node<E> {
 
 ## 37. Почему `LinkedList` реализует и `List`, и `Deque`?
 
-<span class="source-badge">Источник: enhorse/java-interview</span>
+**Источник:** enhorse/java-interview
 
 `LinkedList` позволяет добавлять элементы в начало и конец списка за константное время, что хорошо согласуется с поведением интерфейса `Deque`.
 
@@ -613,7 +613,7 @@ private static class Node<E> {
 
 ## 38. `LinkedList` — это односвязный, двусвязный или четырехсвязный список?
 
-<span class="source-badge">Источник: enhorse/java-interview</span>
+**Источник:** enhorse/java-interview
 
 `Двусвязный`: каждый элемент `LinkedList` хранит ссылку на предыдущий и следующий элементы.
 
@@ -623,7 +623,7 @@ private static class Node<E> {
 
 ## 39. Как перебрать элементы `LinkedList` в обратном порядке, не используя медленный `get(index)`?
 
-<span class="source-badge">Источник: enhorse/java-interview</span>
+**Источник:** enhorse/java-interview
 
 Для этого в `LinkedList` есть обратный итератор, который можно получить вызва метод `descendingIterator()`.
 
@@ -633,7 +633,7 @@ private static class Node<E> {
 
 ## 40. Что позволяет сделать `PriorityQueue`?
 
-<span class="source-badge">Источник: enhorse/java-interview</span>
+**Источник:** enhorse/java-interview
 
 Особенностью `PriorityQueue` является возможность управления порядком элементов. По-умолчанию, элементы сортируются с использованием «natural ordering», но это поведение может быть переопределено при помощи объекта `Comparator`, который задаётся при создании очереди. Данная коллекция не поддерживает null в качестве элементов.
 
@@ -645,7 +645,7 @@ private static class Node<E> {
 
 ## 41. `Stack` считается «устаревшим». Чем его рекомендуют заменять? Почему?
 
-<span class="source-badge">Источник: enhorse/java-interview</span>
+**Источник:** enhorse/java-interview
 
 `Stack` был добавлен в Java 1.0 как реализация стека LIFO (last-in-first-out) и является расширением коллекции `Vector`, хотя это несколько нарушает понятие стека (например, класс `Vector` предоставляет возможность обращаться к любому элементу по индексу). Является частично синхронизированной коллекцией (кроме метода добавления `push()`) с вытекающими отсюда последствиями в виде негативного воздействия на производительность. После добавления в Java 1.6 интерфейса `Deque`, рекомендуется использовать реализации именно этого интерфейса, например, `ArrayDeque`.
 
@@ -655,7 +655,7 @@ private static class Node<E> {
 
 ## 42. Зачем нужен `HashMap`, если есть `Hashtable`?
 
-<span class="source-badge">Источник: enhorse/java-interview</span>
+**Источник:** enhorse/java-interview
 
 + Методы класса `Hashtable` синхронизированы, что приводит к снижению производительности, а `HashMap` - нет;
 + `HashTable` не может содержать элементы `null`, тогда как `HashMap` может содержать один ключ `null` и любое количество значений `null`;
@@ -669,7 +669,7 @@ private static class Node<E> {
 
 ## 43. В чем разница между `HashMap` и `IdentityHashMap`? Для чего нужна `IdentityHashMap`?
 
-<span class="source-badge">Источник: enhorse/java-interview</span>
+**Источник:** enhorse/java-interview
 
 `IdentityHashMap` - это структура данных, так же реализующая интерфейс `Map` и использующая при сравнении ключей (значений) сравнение ссылок, а не вызов метода `equals()`. Другими словами, в `IdentityHashMap` два ключа `k1` и `k2` будут считаться равными, если они указывают на один объект, т.е. выполняется условие `k1` == `k2`.
 
@@ -814,7 +814,7 @@ true
 
 ## 44. В чем разница между `HashMap` и `WeakHashMap`? Для чего используется `WeakHashMap`?
 
-<span class="source-badge">Источник: enhorse/java-interview</span>
+**Источник:** enhorse/java-interview
 
 В Java существует 4 типа ссылок: _сильные (strong reference)_, _мягкие (SoftReference)_, _слабые (WeakReference)_ и _фантомные (PhantomReference)_. Особенности каждого типа ссылок связаны с работой Garbage Collector. Если объект можно достичь только с помощью цепочки WeakReference (то есть на него отсутствуют сильные и мягкие ссылки), то данный объект будет помечен на удаление.
 
@@ -828,7 +828,7 @@ true
 
 ## 45. В `WeakHashMap` используются WeakReferences. А почему бы не создать `SoftHashMap` на SoftReferences?
 
-<span class="source-badge">Источник: enhorse/java-interview</span>
+**Источник:** enhorse/java-interview
 
 `SoftHashMap` представлена в сторонних библиотеках, например, в `Apache Commons`.
 
@@ -838,7 +838,7 @@ true
 
 ## 46. В `WeakHashMap` используются WeakReferences. А почему бы не создать `PhantomHashMap` на PhantomReferences?
 
-<span class="source-badge">Источник: enhorse/java-interview</span>
+**Источник:** enhorse/java-interview
 
 PhantomReference при вызове метода `get()` возвращает всегда `null`, поэтому тяжело представить назначение такой структуры данных.
 
@@ -848,7 +848,7 @@ PhantomReference при вызове метода `get()` возвращает �
 
 ## 47. `LinkedHashMap` - что в нем от `LinkedList`, а что от `HashMap`?
 
-<span class="source-badge">Источник: enhorse/java-interview</span>
+**Источник:** enhorse/java-interview
 
 Реализация `LinkedHashMap` отличается от `HashMap` поддержкой двухсвязанного списка, определяющего порядок итерации по элементам структуры данных. По умолчанию элементы списка упорядочены согласно их порядку добавления в `LinkedHashMap` (insertion-order). Однако порядок итерации можно изменить, установив параметр конструктора `accessOrder` в значение `true`. В этом случае доступ осуществляется по порядку последнего обращения к элементу (access-order). Это означает, что при вызове методов `get()` или `put()` элемент, к которому обращаемся, перемещается в конец списка.
 
@@ -860,7 +860,7 @@ PhantomReference при вызове метода `get()` возвращает �
 
 ## 48. В чем проявляется «сортированность» `SortedMap`, кроме того, что `toString()` выводит все элементы по порядку?
 
-<span class="source-badge">Источник: enhorse/java-interview</span>
+**Источник:** enhorse/java-interview
 
 Так же оно проявляется при итерации по коллекции.
 
@@ -870,7 +870,7 @@ PhantomReference при вызове метода `get()` возвращает �
 
 ## 49. Как устроен `HashMap`?
 
-<span class="source-badge">Источник: enhorse/java-interview</span>
+**Источник:** enhorse/java-interview
 
 `HashMap` состоит из «корзин» (bucket). С технической точки зрения «корзины» — это элементы массива, которые хранят ссылки на списки элементов. При добавлении новой пары «ключ-значение», вычисляет хэш-код ключа, на основании которого вычисляется номер корзины (номер ячейки массива), в которую попадет новый элемент. Если корзина пустая, то в нее сохраняется ссылка на вновь добавляемый элемент, если же там уже есть элемент, то происходит последовательный переход по ссылкам между элементами в цепочке, в поисках последнего элемента, от которого и ставится ссылка на вновь добавленный элемент. Если в списке был найден элемент с таким же ключом, то он заменяется.
 
@@ -880,7 +880,7 @@ PhantomReference при вызове метода `get()` возвращает �
 
 ## 50. Согласно Кнуту и Кормену существует две основных реализации хэш-таблицы: на основе открытой адресации и на основе метода цепочек. Как реализована `HashMap`? Почему, по вашему мнению, была выбрана именно эта реализация? В чем плюсы и минусы каждого подхода?
 
-<span class="source-badge">Источник: enhorse/java-interview</span>
+**Источник:** enhorse/java-interview
 
 `HashMap` реализован с использованием метода цепочек, т.е. каждой ячейке массива (корзине) соответствует свой связный список и при возникновении коллизии осуществляется добавление нового элемента в этот список.
 
@@ -909,7 +909,7 @@ PhantomReference при вызове метода `get()` возвращает �
 
 ## 51. Как работает `HashMap` при попытке сохранить в него два элемента по ключам с одинаковым `hashCode()`, но для которых `equals() == false`?
 
-<span class="source-badge">Источник: enhorse/java-interview</span>
+**Источник:** enhorse/java-interview
 
 По значению `hashCode()` вычисляется индекс ячейки массива, в список которой этот элемент будет добавлен. Перед добавлением осуществляется проверка на наличие элементов в этой ячейке. Если элементы с таким `hashCode()` уже присутствует, но их `equals()` методы не равны, то элемент будет добавлен в конец списка.
 
@@ -919,7 +919,7 @@ PhantomReference при вызове метода `get()` возвращает �
 
 ## 52. Какое начальное количество корзин в `HashMap`?
 
-<span class="source-badge">Источник: enhorse/java-interview</span>
+**Источник:** enhorse/java-interview
 
 В конструкторе по умолчанию - 16, используя конструкторы с параметрами можно задавать произвольное начальное количество корзин.
 
@@ -929,7 +929,7 @@ PhantomReference при вызове метода `get()` возвращает �
 
 ## 53. Какова оценка временной сложности операций над элементами из `HashMap`? Гарантирует ли `HashMap` указанную сложность выборки элемента?
 
-<span class="source-badge">Источник: enhorse/java-interview</span>
+**Источник:** enhorse/java-interview
 
 В общем случае операции добавления, поиска и удаления элементов занимают константное время. 
 
@@ -982,7 +982,7 @@ public class Q {
 
 ## 54. Возможна ли ситуация, когда `HashMap` выродится в список даже с ключами имеющими разные `hashCode()`?
 
-<span class="source-badge">Источник: enhorse/java-interview</span>
+**Источник:** enhorse/java-interview
 
 Это возможно в случае, если метод, определяющий номер корзины будет возвращать одинаковые значения.
 
@@ -992,7 +992,7 @@ public class Q {
 
 ## 55. В каком случае может быть потерян элемент в `HashMap`?
 
-<span class="source-badge">Источник: enhorse/java-interview</span>
+**Источник:** enhorse/java-interview
 
 Допустим, в качестве ключа используется не примитив, а объект с несколькими полями. После добавления элемента в `HashMap` у объекта, который выступает в качестве ключа, изменяют одно поле, которое участвует в вычислении хэш-кода. В результате при попытке найти данный элемент по исходному ключу, будет происходить обращение к правильной корзине, а вот `equals` уже не найдет указанный ключ в списке элементов. Тем не менее, даже если `equals` реализован таким образом, что изменение данного поля объекта не влияет на результат, то после увеличения размера корзин и пересчета хэш-кодов элементов, указанный элемент, с измененным значением поля, с большой долей вероятности попадет в совершенно другую корзину и тогда уже потеряется совсем.
 
@@ -1002,7 +1002,7 @@ public class Q {
 
 ## 56. Почему нельзя использовать `byte[]` в качестве ключа в `HashMap`?
 
-<span class="source-badge">Источник: enhorse/java-interview</span>
+**Источник:** enhorse/java-interview
 
 Хэш-код массива не зависит от хранимых в нем элементов, а присваивается при создании массива (метод вычисления хэш-кода массива не переопределен и вычисляется по стандартному `Object.hashCode()` на основе алгоритма генерации простых чисел). Так же у массивов не переопределен `equals` и выполняется сравнение указателей. Это приводит к тому, что обратиться к сохраненному с ключом-массивом элементу не получится при использовании другого массива такого же размера и с такими же элементами, доступ можно осуществить лишь в одном случае — при использовании той же самой ссылки на массив, что использовалась для сохранения элемента.
 
@@ -1012,7 +1012,7 @@ public class Q {
 
 ## 57. Какова роль `equals()` и `hashCode()` в `HashMap`?
 
-<span class="source-badge">Источник: enhorse/java-interview</span>
+**Источник:** enhorse/java-interview
 
 `hashCode` позволяет определить корзину для поиска элемента, а `equals` используется для сравнения ключей элементов в списке корзины и искомого ключа.
 
@@ -1022,7 +1022,7 @@ public class Q {
 
 ## 58. Каково максимальное число значений `hashCode()`?
 
-<span class="source-badge">Источник: enhorse/java-interview</span>
+**Источник:** enhorse/java-interview
 
 Число значений следует из сигнатуры `int hashCode()` и равно диапазону типа `int` — __2&lt;sup&gt;32&lt;/sup&gt;__.
 
@@ -1032,7 +1032,7 @@ public class Q {
 
 ## 59. Какое худшее время работы метода get(key) для ключа, который есть в `HashMap`?
 
-<span class="source-badge">Источник: enhorse/java-interview</span>
+**Источник:** enhorse/java-interview
 
 ___O(N)___. Худший случай - это поиск ключа в `HashMap`, вырожденного в список по причине совпадения ключей по `hashCode()` и для выяснения хранится ли элемент с определённым ключом может потребоваться перебор всего списка.
 
@@ -1044,7 +1044,7 @@ ___O(N)___. Худший случай - это поиск ключа в `HashMap
 
 ## 60. Почему несмотря на то, что ключ в `HashMap` не обязан реализовывать интерфейс `Comparable`, двусвязный список всегда удается преобразовать в красно-черное дерево?
 
-<span class="source-badge">Источник: enhorse/java-interview</span>
+**Источник:** enhorse/java-interview
 
 Красно-черное дерево - это самобалансирующееся бинарное дерево поиска. Это означает, что для его построения нужно уметь сравнивать элементы между собой. 
 
@@ -1063,7 +1063,7 @@ ___O(N)___. Худший случай - это поиск ключа в `HashMap
 
 ## 61. Сколько переходов происходит в момент вызова `HashMap.get(key)` по ключу, который есть в таблице?
 
-<span class="source-badge">Источник: enhorse/java-interview</span>
+**Источник:** enhorse/java-interview
 
 + ключ равен `null`: __1__ - выполняется единственный метод `getForNullKey()`.
 + любой ключ отличный от `null`: __4__ - вычисление хэш-кода ключа; определение номера корзины; поиск значения; возврат значения.
@@ -1074,7 +1074,7 @@ ___O(N)___. Худший случай - это поиск ключа в `HashMap
 
 ## 62. Сколько создается новых объектов, когда вы добавляете новый элемент в `HashMap`?
 
-<span class="source-badge">Источник: enhorse/java-interview</span>
+**Источник:** enhorse/java-interview
 
 __Один__ новый объект статического вложенного класса `Entry<K,V>`.
 
@@ -1084,7 +1084,7 @@ __Один__ новый объект статического вложенног
 
 ## 63. Как и когда происходит увеличение количества корзин в `HashMap`?
 
-<span class="source-badge">Источник: enhorse/java-interview</span>
+**Источник:** enhorse/java-interview
 
 Помимо `capacity` у `HashMap` есть еще поле `loadFactor`, на основании которого, вычисляется предельное количество занятых корзин `capacity * loadFactor`. По умолчанию `loadFactor = 0.75`. По достижению предельного значения, число корзин увеличивается в 2 раза и для всех хранимых элементов вычисляется новое «местоположение» с учетом нового числа корзин.
 
@@ -1094,7 +1094,7 @@ __Один__ новый объект статического вложенног
 
 ## 64. Объясните смысл параметров в конструкторе `HashMap(int initialCapacity, float loadFactor)`.
 
-<span class="source-badge">Источник: enhorse/java-interview</span>
+**Источник:** enhorse/java-interview
 
 + `initialCapacity` - исходный размер `HashMap`, количество корзин в хэш-таблице в момент её создания.
 + `loadFactor` - коэффициент заполнения `HashMap`, при превышении которого происходит увеличение количества корзин и автоматическое перехэширование. Равен отношению числа уже хранимых элементов в таблице к её размеру. 
@@ -1105,7 +1105,7 @@ __Один__ новый объект статического вложенног
 
 ## 65. Будет ли работать `HashMap`, если все добавляемые ключи будут иметь одинаковый `hashCode()`?
 
-<span class="source-badge">Источник: enhorse/java-interview</span>
+**Источник:** enhorse/java-interview
 
 Да, будет, но в этом случае `HashMap` вырождается в связный список и теряет свои преимущества.
 
@@ -1113,7 +1113,7 @@ __Один__ новый объект статического вложенног
 
 ## 66. Как перебрать все ключи `Map`?
 
-<span class="source-badge">Источник: enhorse/java-interview</span>
+**Источник:** enhorse/java-interview
 
 Использовать метод `keySet()`, который возвращает множество `Set<K>` ключей.
 
@@ -1123,7 +1123,7 @@ __Один__ новый объект статического вложенног
 
 ## 67. Как перебрать все значения `Map`?
 
-<span class="source-badge">Источник: enhorse/java-interview</span>
+**Источник:** enhorse/java-interview
 
 Использовать метод `values()`, который возвращает коллекцию `Collection<V>` значений.
 
@@ -1133,7 +1133,7 @@ __Один__ новый объект статического вложенног
 
 ## 68. Как перебрать все пары «ключ-значение» в `Map`?
 
-<span class="source-badge">Источник: enhorse/java-interview</span>
+**Источник:** enhorse/java-interview
 
 Использовать метод `entrySet()`, который возвращает множество `Set<Map.Entry<K, V>>` пар «ключ-значение».
 
@@ -1143,7 +1143,7 @@ __Один__ новый объект статического вложенног
 
 ## 69. В чем отличия `TreeSet` и `HashSet`?
 
-<span class="source-badge">Источник: enhorse/java-interview</span>
+**Источник:** enhorse/java-interview
 
 `TreeSet` обеспечивает упорядоченно хранение элементов в виде красно-черного дерева. Сложность выполнения основных операций не хуже _O(log(N))_ (_Логарифмическое время_). 
 
@@ -1155,7 +1155,7 @@ __Один__ новый объект статического вложенног
 
 ## 70. Что будет, если добавлять элементы в `TreeSet` по возрастанию?
 
-<span class="source-badge">Источник: enhorse/java-interview</span>
+**Источник:** enhorse/java-interview
 
 В основе `TreeSet` лежит красно-черное дерево, которое умеет само себя балансировать. В итоге, `TreeSet` все равно в каком порядке вы добавляете в него элементы, преимущества этой структуры данных будут сохраняться.
 
@@ -1165,7 +1165,7 @@ __Один__ новый объект статического вложенног
 
 ## 71. Чем `LinkedHashSet` отличается от `HashSet`?
 
-<span class="source-badge">Источник: enhorse/java-interview</span>
+**Источник:** enhorse/java-interview
 
 `LinkedHashSet` отличается от `HashSet` только тем, что в его основе лежит `LinkedHashMap` вместо `HashMap`. Благодаря этому порядок элементов при обходе коллекции является идентичным порядку добавления элементов (insertion-order). При добавлении элемента, который уже присутствует в `LinkedHashSet` (т.е. с одинаковым ключом), порядок обхода элементов не изменяется.
 
@@ -1175,7 +1175,7 @@ __Один__ новый объект статического вложенног
 
 ## 72. Для `Enum` есть специальный класс `java.util.EnumSet`. Зачем? Чем авторов не устраивал `HashSet` или `TreeSet`?
 
-<span class="source-badge">Источник: enhorse/java-interview</span>
+**Источник:** enhorse/java-interview
 
 `EnumSet` - это реализация интерфейса `Set` для использования с перечислениями (`Enum`). В структуре данных хранятся объекты только одного типа `Enum`, указываемого при создании. Для хранения значений `EnumSet` использует массив битов (_bit vector_), - это позволяет получить высокую компактность и эффективность. Проход по `EnumSet` осуществляется согласно порядку объявления элементов перечисления. 
 
@@ -1189,7 +1189,7 @@ __Один__ новый объект статического вложенног
 
 ## 73. Какие существуют способы перебирать элементы списка?
 
-<span class="source-badge">Источник: enhorse/java-interview</span>
+**Источник:** enhorse/java-interview
 
 + Цикл с итератором
 
@@ -1232,7 +1232,7 @@ for (String element : list) {
 
 ## 74. Каким образом можно получить синхронизированные объекты стандартных коллекций?
 
-<span class="source-badge">Источник: enhorse/java-interview</span>
+**Источник:** enhorse/java-interview
 
 С помощью статических методов `synchronizedMap()` и `synchronizedList()` класса `Collections`. Данные методы возвращают синхронизированный декоратор переданной коллекции. При этом все равно в случае обхода по коллекции требуется ручная синхронизация. 
 
@@ -1249,7 +1249,7 @@ for (String element : list) {
 
 ## 75. Как получить коллекцию только для чтения?
 
-<span class="source-badge">Источник: enhorse/java-interview</span>
+**Источник:** enhorse/java-interview
 
 При помощи:
 
@@ -1265,7 +1265,7 @@ for (String element : list) {
 
 ## 76. Напишите однопоточную программу, которая заставляет коллекцию выбросить `ConcurrentModificationException`.
 
-<span class="source-badge">Источник: enhorse/java-interview</span>
+**Источник:** enhorse/java-interview
 
 ```java
 public static void main(String[] args) {
@@ -1286,7 +1286,7 @@ public static void main(String[] args) {
 
 ## 77. Приведите пример, когда какая-либо коллекция выбрасывает `UnsupportedOperationException`.
 
-<span class="source-badge">Источник: enhorse/java-interview</span>
+**Источник:** enhorse/java-interview
 
 ```java
 public static void main(String[] args) {
@@ -1301,7 +1301,7 @@ public static void main(String[] args) {
 
 ## 78. Реализуйте симметрическую разность двух коллекций используя методы `Collection` (`addAll(...)`, `removeAll(...)`, `retainAll(...)`).
 
-<span class="source-badge">Источник: enhorse/java-interview</span>
+**Источник:** enhorse/java-interview
 
 Симметрическая разность двух коллекций - это множество элементов, одновременно не принадлежащих обоим исходным коллекциям.
 
@@ -1327,7 +1327,7 @@ public static void main(String[] args) {
 
 ## 79. Как, используя LinkedHashMap, сделать кэш c «invalidation policy»?
 
-<span class="source-badge">Источник: enhorse/java-interview</span>
+**Источник:** enhorse/java-interview
 
 Необходимо использовать _LRU-алгоритм (Least Recently Used algorithm)_ и `LinkedHashMap` с access-order. В этом случае при обращении к элементу он будет перемещаться в конец списка, а наименее используемые элементы будут постепенно группироваться в начале списка. Так же в стандартной реализации `LinkedHashMap` есть метод `removeEldestEntries()`, который возвращает `true`, если текущий объект `LinkedHashMap` должен удалить наименее используемый элемент из коллекции при использовании методов `put()` и `putAll()`.
 
@@ -1354,7 +1354,7 @@ public class LRUCache<K, V> extends LinkedHashMap<K, V> {
 
 ## 80. Как одной строчкой скопировать элементы любой `collection` в массив?
 
-<span class="source-badge">Источник: enhorse/java-interview</span>
+**Источник:** enhorse/java-interview
 
 ```java
 Object[] array = collection.toArray();
@@ -1366,7 +1366,7 @@ Object[] array = collection.toArray();
 
 ## 81. Как одним вызовом из `List` получить `List` со всеми элементами, кроме первых и последних 3-х?
 
-<span class="source-badge">Источник: enhorse/java-interview</span>
+**Источник:** enhorse/java-interview
 
 ```java
 List<Integer> subList = list.subList(3, list.size() - 3);
@@ -1378,7 +1378,7 @@ List<Integer> subList = list.subList(3, list.size() - 3);
 
 ## 82. Как одной строчкой преобразовать `HashSet` в `ArrayList`?
 
-<span class="source-badge">Источник: enhorse/java-interview</span>
+**Источник:** enhorse/java-interview
 
 ```java
 ArrayList<Integer> list = new ArrayList<>(new HashSet<>());
@@ -1390,7 +1390,7 @@ ArrayList<Integer> list = new ArrayList<>(new HashSet<>());
 
 ## 83. Как одной строчкой преобразовать `ArrayList` в `HashSet`?
 
-<span class="source-badge">Источник: enhorse/java-interview</span>
+**Источник:** enhorse/java-interview
 
 ```java
 HashSet<Integer> set = new HashSet<>(new ArrayList<>());
@@ -1402,7 +1402,7 @@ HashSet<Integer> set = new HashSet<>(new ArrayList<>());
 
 ## 84. Сделайте `HashSet` из ключей `HashMap`.
 
-<span class="source-badge">Источник: enhorse/java-interview</span>
+**Источник:** enhorse/java-interview
 
 ```java
 HashSet<Object> set = new HashSet<>(map.keySet());
@@ -1414,7 +1414,7 @@ HashSet<Object> set = new HashSet<>(map.keySet());
 
 ## 85. Сделайте `HashMap` из `HashSet<Map.Entry<K, V>>`.
 
-<span class="source-badge">Источник: enhorse/java-interview</span>
+**Источник:** enhorse/java-interview
 
 ```java
 HashMap<K, V> map = new HashMap<>(set.size());

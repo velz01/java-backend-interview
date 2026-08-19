@@ -6,11 +6,11 @@ outline: [2, 3]
 # Сериализация
 
 **Источник:** enhorse/java-interview  
-**Вопросов:** 12
+**Вопросов/пунктов:** 12
 
 ## 1. Что такое _«сериализация»_?
 
-<span class="source-badge">Источник: enhorse/java-interview</span>
+**Источник:** enhorse/java-interview
 
 __Сериализация (Serialization)__ - процесс преобразования структуры данных в линейную последовательность байтов для дальнейшей передачи или сохранения. Сериализованные объекты можно затем восстановить (десериализовать).
 
@@ -30,7 +30,7 @@ __Сериализация (Serialization)__ - процесс преобразо
 
 ## 2. Опишите процесс сериализации/десериализации с использованием `Serializable`.
 
-<span class="source-badge">Источник: enhorse/java-interview</span>
+**Источник:** enhorse/java-interview
 
 При использовании Serializable применяется алгоритм сериализации, который с помощью рефлексии (Reflection API) выполняет:
 
@@ -49,7 +49,7 @@ __Сериализация (Serialization)__ - процесс преобразо
 
 ## 3. Как изменить стандартное поведение сериализации/десериализации?
 
-<span class="source-badge">Источник: enhorse/java-interview</span>
+**Источник:** enhorse/java-interview
 
 + Реализовать интерфейс `java.io.Externalizable`, который позволяет применение пользовательской логики сериализации. Способ сериализации и десериализации описывается в методах `writeExternal()` и `readExternal()`. Во время десериализации вызывается конструктор без параметров, а потом уже на созданном объекте вызывается метод `readExternal`.
 + Если у сериализуемого объекта реализован один из следующих методов, то механизм сериализации будет использовать его, а не метод по умолчанию :
@@ -64,7 +64,7 @@ __Сериализация (Serialization)__ - процесс преобразо
 
 ## 4. Как исключить поля из сериализации?
 
-<span class="source-badge">Источник: enhorse/java-interview</span>
+**Источник:** enhorse/java-interview
 
 Для управления сериализацией при определении полей можно использовать ключевое слово `transient`, таким образом исключив поля из общего процесса сериализации.
 
@@ -74,7 +74,7 @@ __Сериализация (Serialization)__ - процесс преобразо
 
 ## 5. Что обозначает ключевое слово `transient`?
 
-<span class="source-badge">Источник: enhorse/java-interview</span>
+**Источник:** enhorse/java-interview
 
 Поля класса, помеченные модификатором `transient`, не сериализуются.
 
@@ -86,7 +86,7 @@ __Сериализация (Serialization)__ - процесс преобразо
 
 ## 6. Какое влияние оказывают на сериализуемость модификаторы полей `static` и `final`
 
-<span class="source-badge">Источник: enhorse/java-interview</span>
+**Источник:** enhorse/java-interview
 
 При стандартной сериализации поля, имеющие модификатор static, не сериализуются. Соответственно, после десериализации это поле значения не меняет. При использовании реализации `Externalizable` сериализовать и десериализовать статическое поле можно, но не рекомендуется этого делать, т.к. это может сопровождаться трудноуловимыми ошибками.
 
@@ -98,7 +98,7 @@ __Сериализация (Serialization)__ - процесс преобразо
 
 ## 7. Как не допустить сериализацию?
 
-<span class="source-badge">Источник: enhorse/java-interview</span>
+**Источник:** enhorse/java-interview
 
 Чтобы не допустить автоматическую сериализацию можно переопределить `private` методы для создания исключительной ситуации `NotSerializableException`.
 
@@ -120,7 +120,7 @@ private void readObject(ObjectInputStream in) throws IOException {
 
 ## 8. Как создать собственный протокол сериализации?
 
-<span class="source-badge">Источник: enhorse/java-interview</span>
+**Источник:** enhorse/java-interview
 
 Для создания собственного протокола сериализации достаточно реализовать интерфейс `Externalizable`, который содержит два метода:
 
@@ -135,7 +135,7 @@ public void readExternal(ObjectInput in) throws IOException, ClassNotFoundExcept
 
 ## 9. Какая роль поля `serialVersionUID` в сериализации?
 
-<span class="source-badge">Источник: enhorse/java-interview</span>
+**Источник:** enhorse/java-interview
 
 `serialVersionUID` используется для указания версии сериализованных данных. 
 
@@ -152,7 +152,7 @@ private static final long serialVersionUID = 20161013L;
 
 ## 10. Когда стоит изменять значение поля `serialVersionUID`?
 
-<span class="source-badge">Источник: enhorse/java-interview</span>
+**Источник:** enhorse/java-interview
 
 `serialVersionUID` нужно изменять при внесении в класс несовместимых изменений, например при удалении какого-либо его атрибута.
 
@@ -162,7 +162,7 @@ private static final long serialVersionUID = 20161013L;
 
 ## 11. В чем проблема сериализации Singleton?
 
-<span class="source-badge">Источник: enhorse/java-interview</span>
+**Источник:** enhorse/java-interview
 
 Проблема в том что после десериализации мы получим другой объект. Таким образом, сериализация дает возможность создать Singleton еще раз, что недопустимо. Существует два способа избежать этого:
 
@@ -175,7 +175,7 @@ private static final long serialVersionUID = 20161013L;
 
 ## 12. Какие существуют способы контроля за значениями десериализованного объекта
 
-<span class="source-badge">Источник: enhorse/java-interview</span>
+**Источник:** enhorse/java-interview
 
 Если есть необходимость выполнения контроля за значениями десериализованного объекта, то можно использовать интерфейс `ObjectInputValidation` с переопределением метода `validateObject()`.
 

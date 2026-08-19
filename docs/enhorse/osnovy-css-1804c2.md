@@ -6,11 +6,11 @@ outline: [2, 3]
 # Основы CSS
 
 **Источник:** enhorse/java-interview  
-**Вопросов:** 14
+**Вопросов/пунктов:** 14
 
 ## 1. Что такое _«CSS»_?
 
-<span class="source-badge">Источник: enhorse/java-interview</span>
+**Источник:** enhorse/java-interview
 
 __CSS, Cascading Style Sheets (каскадные таблицы стилей)__ - формальный язык описания внешнего вида документа, написанного с использованием языка разметки, который применяется к элементам web-страницы для управления их видом и положением.
 
@@ -22,7 +22,7 @@ __CSS, Cascading Style Sheets (каскадные таблицы стилей)__
 
 ## 2. Как в CSS обозначаются комментарии?
 
-<span class="source-badge">Источник: enhorse/java-interview</span>
+**Источник:** enhorse/java-interview
 
 Чтобы пометить, что текст является комментарием, применяют конструкцию `/* ... */`
 
@@ -32,7 +32,7 @@ __CSS, Cascading Style Sheets (каскадные таблицы стилей)__
 
 ## 3. Что такое _«селектор»_?
 
-<span class="source-badge">Источник: enhorse/java-interview</span>
+**Источник:** enhorse/java-interview
 
 __Селектор__ – это правило, на основании которого осуществляется выбор элементов в HTML документе для того, чтобы применить к ним определённые стили.
 
@@ -50,7 +50,7 @@ font-size: 20px;
 
 ## 4. Перечислите основные виды селекторов.
 
-<span class="source-badge">Источник: enhorse/java-interview</span>
+**Источник:** enhorse/java-interview
 
 + __селектор `*`__ - выбор всех элементов;
 + __селектор элемента__ - выбор всех элементов в HTML документе, имеющих указанный тег (например: `div`);
@@ -65,7 +65,7 @@ font-size: 20px;
 
 ## 5. Что такое псевдокласс?
 
-<span class="source-badge">Источник: enhorse/java-interview</span>
+**Источник:** enhorse/java-interview
 
 Псевдокласс определяет динамическое состояние элементов, которое изменяется из-за действий пользователя, или же соответствует текущему положению в дереве документа. В отличие от настоящего класса, в явном виде псеводкласс в HTML не указывается, а в CSS указывается через `:` непосредственно после селектора.
 
@@ -101,7 +101,7 @@ a.snowman:hover {
 
 ## 6. Какие существуют селекторы аттрибутов?
 
-<span class="source-badge">Источник: enhorse/java-interview</span>
+**Источник:** enhorse/java-interview
 
 + __`[атрибут]`__ - все элементы, имеющие указанный `атрибут`;
 + __`[атрибут=значение]`__ - все элементы, имеющие `атрибут`, значение которого равно `"значение"`;
@@ -117,7 +117,7 @@ a.snowman:hover {
 
 ## 7. В чем разница между `#my` и `.my`?
 
-<span class="source-badge">Источник: enhorse/java-interview</span>
+**Источник:** enhorse/java-interview
 
 `#my` — селектор идентификатора, а `.my` — селектор класса.
 
@@ -127,7 +127,7 @@ a.snowman:hover {
 
 ## 8. В чем разница между `margin` и `padding`?
 
-<span class="source-badge">Источник: enhorse/java-interview</span>
+**Источник:** enhorse/java-interview
 
 `margin` — внешний отступ, а `padding` — внутренний отступ.
 
@@ -137,7 +137,7 @@ a.snowman:hover {
 
 ## 9. В чем заключается разница между значениями `0` и `auto` в свойстве `margin`?
 
-<span class="source-badge">Источник: enhorse/java-interview</span>
+**Источник:** enhorse/java-interview
 
 В вертикальных полях — `auto` всегда означает `0`. В горизонтальных полях — `auto` означает `0` только тогда, когда свойство `width` также `auto`.
 
@@ -147,7 +147,7 @@ a.snowman:hover {
 
 ## 10. Какое свойство задает цвет фона?
 
-<span class="source-badge">Источник: enhorse/java-interview</span>
+**Источник:** enhorse/java-interview
 
 Цвет фона задает свойство `background-color`.
 
@@ -157,7 +157,7 @@ a.snowman:hover {
 
 ## 11. Как убрать подчеркивание для всех ссылок на странице?
 
-<span class="source-badge">Источник: enhorse/java-interview</span>
+**Источник:** enhorse/java-interview
 
 ```css
 a {
@@ -171,7 +171,7 @@ a {
 
 ## 12. Для чего используется свойство `clear`?
 
-<span class="source-badge">Источник: enhorse/java-interview</span>
+**Источник:** enhorse/java-interview
 
 `clear` устанавливает, с какой стороны элемента запрещено его обтекание другими элементами.
 
@@ -181,7 +181,7 @@ a {
 
 ## 13. Как сделать жирным текст во всех элементах `<p>`?
 
-<span class="source-badge">Источник: enhorse/java-interview</span>
+**Источник:** enhorse/java-interview
 
 ```css
 p {
@@ -195,7 +195,7 @@ p {
 
 ## 14. Как задать красный цвет для всех элементов, имеющих класс `red`?
 
-<span class="source-badge">Источник: enhorse/java-interview</span>
+**Источник:** enhorse/java-interview
 
 ```css
 .red {

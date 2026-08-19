@@ -6,11 +6,11 @@ outline: [2, 3]
 # jvm
 
 **Источник:** enhorse/java-interview  
-**Вопросов:** 7
+**Вопросов/пунктов:** 7
 
 ## 1. JVM
 
-<span class="source-badge">Источник: enhorse/java-interview</span>
+**Источник:** enhorse/java-interview
 
 + [За что отвечает JVM](#За-что-отвечает-JVM)
 + [Classloader](#Classloader)
@@ -23,7 +23,7 @@ outline: [2, 3]
 
 ## 2. За что отвечает _JVM_:
 
-<span class="source-badge">Источник: enhorse/java-interview</span>
+**Источник:** enhorse/java-interview
 
 + Загрузка, проверка и исполнение байт кода;
 + Предоставление среды выполнения для выполнения байт-кода;
@@ -56,7 +56,7 @@ JVM работает с примитивными значениями (целы�
 
 ## 3. Classloader
 
-<span class="source-badge">Источник: enhorse/java-interview</span>
+**Источник:** enhorse/java-interview
 
 Загрузчик классов является частью JRE, которая динамически загружает Java классы в JVM. 
 Обычно классы загружаются только по запросу. Система исполнения в Java не должна знать о файлах и файловых системах
@@ -109,7 +109,7 @@ JVM работает с примитивными значениями (целы�
 
 ## 4. Области данных времени выполнения
 
-<span class="source-badge">Источник: enhorse/java-interview</span>
+**Источник:** enhorse/java-interview
 
 Run-Time Data Areas. JVM выделяет множество областей данных во время выполнения, которые используются во время выполнения программы. Некоторые участки данных
 созданы JVM во время старта и уничтожаются во время её выключения. Другие создаются для каждого потока и уничтожаются, когда поток уничтожается.
@@ -163,7 +163,7 @@ JVM имеет область методов, которая является о
 
 ## 5. Frames
 
-<span class="source-badge">Источник: enhorse/java-interview</span>
+**Источник:** enhorse/java-interview
 
 Frame используется для хранения данных и частичных результатов, а также для выполнения динамического связывания, возврата значений для методов и отправки исключений.
 Новый frame создается каждый раз, когда вызывается метод. Frame уничтожается, когда завершается вызов метода, 
@@ -240,7 +240,7 @@ JVM использует локальные переменные для пере
 
 ## 6. Execution Engine
 
-<span class="source-badge">Источник: enhorse/java-interview</span>
+**Источник:** enhorse/java-interview
 
 Байт-код, назначенный **run-time data areas**, будет выполнен **execution engine**. Механизм выполнения считывает байт-код и выполняет его по частям.
 
@@ -267,7 +267,7 @@ JIT-компилятор устраняет недостатки интерпр�
 
 ## 7. Полезные ссылки:
 
-<span class="source-badge">Источник: enhorse/java-interview</span>
+**Источник:** enhorse/java-interview
 
 - https://docs.oracle.com/javase/specs/jvms/se7/html/jvms-2.html
 - https://www.developer.com/java/data/understanding-the-jvm-architecture.html

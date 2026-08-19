@@ -1,19 +1,10 @@
 from pathlib import Path
-
-root = Path('docs')
-manifest = Path('site_manifest.txt')
-allowed = {line.strip() for line in manifest.read_text(encoding='utf-8').splitlines() if line.strip()}
-removed = []
-for path in sorted((p for p in root.rglob('*') if p.is_file()), reverse=True):
-    rel = path.as_posix()
-    if rel not in allowed:
-        path.unlink()
-        removed.append(rel)
-for directory in sorted((p for p in root.rglob('*') if p.is_dir()), key=lambda p: len(p.parts), reverse=True):
-    try:
-        directory.rmdir()
-    except OSError:
-        pass
-print(f'Removed legacy files: {len(removed)}')
-for item in removed[:50]:
-    print(f'- {item}')
+root=Path('docs'); allowed={x.strip() for x in Path('site_manifest.txt').read_text(encoding='utf-8').splitlines() if x.strip()}
+removed=[]
+for p in sorted((x for x in root.rglob('*') if x.is_file()),reverse=True):
+    if p.as_posix() not in allowed:
+        p.unlink(); removed.append(p.as_posix())
+for d in sorted((x for x in root.rglob('*') if x.is_dir()),key=lambda x:len(x.parts),reverse=True):
+    try:d.rmdir()
+    except OSError:pass
+print('Removed legacy files:',len(removed))

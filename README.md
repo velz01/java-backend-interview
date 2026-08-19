@@ -1,23 +1,8 @@
 # Java Backend Interview
 
-Generated strictly from the three user-provided sources.
+Учебный контент собран только из трёх предоставленных источников.
 
-- Zhukov: 383
-- enhorse/java-interview: 681
-- Table: 443
-- Total: 1507
-
-## Run
-
-```bash
-npm install
-npm run docs:dev
-```
-
-## Production build
-
-```bash
-npm run docs:build
-```
-
-See `SOURCE_AUDIT.csv` for the exact source of every question.
+Жуков: 383
+enhorse: 681
+Таблица: 453
+Всего: 1517

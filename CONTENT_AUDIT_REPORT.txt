@@ -1,0 +1,27 @@
+STRICT CONTENT AUDIT
+====================
+
+Sources used:
+1. java-backend-interview-prep-master(1).zip (Zhukov)
+2. java-interview-master (1)(1).zip (enhorse/java-interview)
+3. Improved table Java(1).xlsx
+
+Generated source records:
+- Zhukov: 383
+- enhorse/java-interview: 681
+- Excel table: 453
+- Total: 1517
+
+Verification performed:
+- Original XLSX -> lossless extraction: 1572 populated exported cells checked, 0 mismatches.
+- Source records reconstructed independently from the three sources: 1517.
+- SOURCE_AUDIT.csv records: 1517.
+- Source-vs-audit multiset differences: 0 in both directions.
+- Generated question/point sections checked against source-derived rendered SHA-256 hashes: 1517.
+- Generated content hash mismatches: 0.
+- Missing local images: 0.
+- Missing generated local links/routes: 0.
+- Unclosed Markdown fences: 0.
+- Localhost example URLs: 2; intentionally ignored by VitePress dead-link checker because they are code/API examples from the source, not site navigation.
+
+Result: STRICT_CONTENT_AUDIT=PASS

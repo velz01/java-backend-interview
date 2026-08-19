@@ -6,11 +6,11 @@ outline: [2, 3]
 # Java 8
 
 **Источник:** enhorse/java-interview  
-**Вопросов:** 62
+**Вопросов/пунктов:** 62
 
 ## 1. Какие нововведения, появились в Java 8 и JDK 8?
 
-<span class="source-badge">Источник: enhorse/java-interview</span>
+**Источник:** enhorse/java-interview
 
 + Методы интерфейсов по умолчанию;
 + Лямбда-выражения;
@@ -48,7 +48,7 @@ outline: [2, 3]
 
 ## 2. Что такое _«лямбда»_? Какова структура и особенности использования лямбда-выражения?
 
-<span class="source-badge">Источник: enhorse/java-interview</span>
+**Источник:** enhorse/java-interview
 
 __Лямбда__ представляет собой набор инструкций, которые можно выделить в отдельную переменную и затем многократно вызвать в различных местах программы.
 
@@ -138,7 +138,7 @@ public static void main(String[] args) {
 
 ## 3. К каким переменным есть доступ у лямбда-выражений?
 
-<span class="source-badge">Источник: enhorse/java-interview</span>
+**Источник:** enhorse/java-interview
 
 Доступ к переменным внешней области действия из лямбда-выражения очень схож к доступу из анонимных объектов. Можно ссылаться на:
 
@@ -154,7 +154,7 @@ public static void main(String[] args) {
 
 ## 4. Как отсортировать список строк с помощью лямбда-выражения?
 
-<span class="source-badge">Источник: enhorse/java-interview</span>
+**Источник:** enhorse/java-interview
 
 ```java
 public static List<String> sort(List<String> list){
@@ -169,7 +169,7 @@ public static List<String> sort(List<String> list){
 
 ## 5. Что такое «ссылка на метод»?
 
-<span class="source-badge">Источник: enhorse/java-interview</span>
+**Источник:** enhorse/java-interview
 
 Если существующий в классе метод уже делает все, что необходимо, то можно воспользоваться механизмом __method reference (ссылка на метод)__ для непосредственной передачи этого метода. Такая ссылка передается в виде:
 
@@ -198,7 +198,7 @@ public static void main(String[] args) {
 
 ## 6. Какие виды ссылок на методы вы знаете?
 
-<span class="source-badge">Источник: enhorse/java-interview</span>
+**Источник:** enhorse/java-interview
 
 + на статический метод;
 + на метод экземпляра;
@@ -210,7 +210,7 @@ public static void main(String[] args) {
 
 ## 7. Объясните выражение `System.out::println`.
 
-<span class="source-badge">Источник: enhorse/java-interview</span>
+**Источник:** enhorse/java-interview
 
 Данное выражение иллюстрирует механизм _instance method reference_: передачи ссылки на метод `println()` статического поля `out` класса `System`.
 
@@ -220,7 +220,7 @@ public static void main(String[] args) {
 
 ## 8. Что такое «функциональные интерфейсы»?
 
-<span class="source-badge">Источник: enhorse/java-interview</span>
+**Источник:** enhorse/java-interview
 
 __Функциональный интерфейс__ - это интерфейс, который определяет только один абстрактный метод. 
 
@@ -234,7 +234,7 @@ __Функциональный интерфейс__ - это интерфейс,
 
 ## 9. Для чего нужны функциональные интерфейсы `Function<T,R>`, `DoubleFunction<R>`, `IntFunction<R>` и `LongFunction<R>`?
 
-<span class="source-badge">Источник: enhorse/java-interview</span>
+**Источник:** enhorse/java-interview
 
 __`Function<T, R>`__ - интерфейс, с помощью которого реализуется функция, получающая на вход экземпляр класса `T` и возвращающая на выходе экземпляр класса `R`.
 
@@ -256,7 +256,7 @@ backToString.apply("123");     // "123"
 
 ## 10. Для чего нужны функциональные интерфейсы `UnaryOperator<T>`, `DoubleUnaryOperator`, `IntUnaryOperator` и `LongUnaryOperator`?
 
-<span class="source-badge">Источник: enhorse/java-interview</span>
+**Источник:** enhorse/java-interview
 
 __`UnaryOperator<T>` (унарный оператор)__ принимает в качестве параметра объект типа `T`, выполняет над ними операции и возвращает результат операций в виде объекта типа `T`:
 
@@ -275,7 +275,7 @@ System.out.println(operator.apply(5)); // 25
 
 ## 11. Для чего нужны функциональные интерфейсы `BinaryOperator<T>`, `DoubleBinaryOperator`, `IntBinaryOperator` и `LongBinaryOperator`?
 
-<span class="source-badge">Источник: enhorse/java-interview</span>
+**Источник:** enhorse/java-interview
 
 __`BinaryOperator<T>` (бинарный оператор)__ - интерфейс, с помощью которого реализуется функция, получающая на вход два экземпляра класса `T` и возвращающая на выходе экземпляр класса `T`.
 ```java
@@ -293,7 +293,7 @@ System.out.println(operator.apply(1, 2)); // 3
 
 ## 12. Для чего нужны функциональные интерфейсы `Predicate<T>`, `DoublePredicate`, `IntPredicate` и `LongPredicate`?
 
-<span class="source-badge">Источник: enhorse/java-interview</span>
+**Источник:** enhorse/java-interview
 
 __`Predicate<T>` (предикат)__ - интерфейс, с помощью которого реализуется функция, получающая на вход экземпляр класса `T` и возвращающая на выходе значение типа `boolean`. 
 
@@ -315,7 +315,7 @@ predicate.negate().test("foo"); // false
 
 ## 13. Для чего нужны функциональные интерфейсы `Consumer<T>`, `DoubleConsumer`, `IntConsumer` и `LongConsumer`?
 
-<span class="source-badge">Источник: enhorse/java-interview</span>
+**Источник:** enhorse/java-interview
 
 __`Consumer<T>` (потребитель)__ - интерфейс, с помощью которого реализуется функция, которая получает на вход экземпляр класса `T`, производит с ним некоторое действие и ничего не возвращает.
 
@@ -334,7 +334,7 @@ hello.accept("world");
 
 ## 14. Для чего нужны функциональные интерфейсы `Supplier<T>`, `BooleanSupplier`, `DoubleSupplier`, `IntSupplier` и `LongSupplier`?
 
-<span class="source-badge">Источник: enhorse/java-interview</span>
+**Источник:** enhorse/java-interview
 
 __`Supplier<T>` (поставщик)__ - интерфейс, с помощью которого реализуется функция, ничего не принимающая на вход, но возвращающая на выход результат класса `T`;
 
@@ -353,7 +353,7 @@ now.get();
 
 ## 15. Для чего нужен функциональный интерфейс `BiConsumer<T,U>`?
 
-<span class="source-badge">Источник: enhorse/java-interview</span>
+**Источник:** enhorse/java-interview
 
 __`BiConsumer<T,U>`__ представляет собой операцию, которая принимает два аргумента классов `T` и `U` производит с ними некоторое действие и ничего не возвращает.
 
@@ -363,7 +363,7 @@ __`BiConsumer<T,U>`__ представляет собой операцию, ко
 
 ## 16. Для чего нужен функциональный интерфейс `BiFunction<T,U,R>`?
 
-<span class="source-badge">Источник: enhorse/java-interview</span>
+**Источник:** enhorse/java-interview
 
 __`BiFunction<T,U,R>`__ представляет собой операцию, которая принимает два аргумента классов `T` и `U` и возвращающая результат класса `R`.
 
@@ -373,7 +373,7 @@ __`BiFunction<T,U,R>`__ представляет собой операцию, к
 
 ## 17. Для чего нужен функциональный интерфейс `BiPredicate<T,U>`?
 
-<span class="source-badge">Источник: enhorse/java-interview</span>
+**Источник:** enhorse/java-interview
 
 __`BiPredicate<T,U>`__ представляет собой операцию, которая принимает два аргумента классов `T` и `U` и возвращающая результат типа `boolean`. 
 
@@ -383,7 +383,7 @@ __`BiPredicate<T,U>`__ представляет собой операцию, к�
 
 ## 18. Для чего нужны функциональные интерфейсы вида `_To_Function`?
 
-<span class="source-badge">Источник: enhorse/java-interview</span>
+**Источник:** enhorse/java-interview
 
 + `DoubleToIntFunction` - операция, принимающая аргумент класса `Double` и возвращающая результат типа `Integer`;
 + `DoubleToLongFunction` - операция, принимающая аргумент класса `Double` и возвращающая результат типа `Long`;
@@ -398,7 +398,7 @@ __`BiPredicate<T,U>`__ представляет собой операцию, к�
 
 ## 19. Для чего нужны функциональные интерфейсы `ToDoubleBiFunction<T,U>`, `ToIntBiFunction<T,U>` и `ToLongBiFunction<T,U>`?
 
-<span class="source-badge">Источник: enhorse/java-interview</span>
+**Источник:** enhorse/java-interview
 
 + `ToDoubleBiFunction<T,U>` - операция принимающая два аргумента классов `T` и `U` и возвращающая результат типа `Double`;
 + `ToLongBiFunction<T,U>` - операция принимающая два аргумента классов `T` и `U` и возвращающая результат типа `Long`;
@@ -410,7 +410,7 @@ __`BiPredicate<T,U>`__ представляет собой операцию, к�
 
 ## 20. Для чего нужны функциональные интерфейсы `ToDoubleFunction<T>`, `ToIntFunction<T>` и `ToLongFunction<T>`?
 
-<span class="source-badge">Источник: enhorse/java-interview</span>
+**Источник:** enhorse/java-interview
 
 + `ToDoubleFunction<T>` - операция, принимающая аргумент класса `T` и возвращающая результат типа `Double`;
 + `ToLongFunction<T>` - операция, принимающая аргумент класса `T` и возвращающая результат типа `Long`;
@@ -422,7 +422,7 @@ __`BiPredicate<T,U>`__ представляет собой операцию, к�
 
 ## 21. Для чего нужны функциональные интерфейсы `ObjDoubleConsumer<T>`, `ObjIntConsumer<T>` и `ObjLongConsumer<T>`?
 
-<span class="source-badge">Источник: enhorse/java-interview</span>
+**Источник:** enhorse/java-interview
 
 + `ObjDoubleConsumer<T>` - операция, которая принимает два аргумента классов `T` и `Double`, производит с ними некоторое действие и ничего не возвращает;
 + `ObjLongConsumer<T>` - операция, которая принимает два аргумента классов `T` и `Long`, производит с ними некоторое действие и ничего не возвращает;
@@ -434,7 +434,7 @@ __`BiPredicate<T,U>`__ представляет собой операцию, к�
 
 ## 22. Что такое `StringJoiner`?
 
-<span class="source-badge">Источник: enhorse/java-interview</span>
+**Источник:** enhorse/java-interview
 
 Класс `StringJoiner` используется, чтобы создать последовательность строк, разделенных разделителем с возможностью присоединить к полученной строке префикс и суффикс:
 
@@ -452,7 +452,7 @@ System.out.println(joiner); //prefix-Hello.the.brave.world-suffix
 
 ## 23. Что такое `default` методы интрефейса?
 
-<span class="source-badge">Источник: enhorse/java-interview</span>
+**Источник:** enhorse/java-interview
 
 Java 8 позволяет добавлять неабстрактные реализации методов в интерфейс, используя ключевое слово `default`:
 
@@ -479,7 +479,7 @@ interface Example {
 
 ## 24. Как вызывать `default` метод интерфейса в реализующем этот интерфейс классе?
 
-<span class="source-badge">Источник: enhorse/java-interview</span>
+**Источник:** enhorse/java-interview
 
 Используя ключевое слово `super` вместе с именем интерфейса:
 
@@ -503,7 +503,7 @@ class Licence implements Paper {
 
 ## 25. Что такое `static` метод интерфейса?
 
-<span class="source-badge">Источник: enhorse/java-interview</span>
+**Источник:** enhorse/java-interview
 
 Статические методы интерфейса похожи на методы по умолчанию, за исключением того, что для них отсутствует возможность переопределения в классах, реализующих интерфейс.
 
@@ -517,7 +517,7 @@ class Licence implements Paper {
 
 ## 26. Как вызывать `static` метод интерфейса?
 
-<span class="source-badge">Источник: enhorse/java-interview</span>
+**Источник:** enhorse/java-interview
 
 Используя имя интерфейса:
 
@@ -541,7 +541,7 @@ class Licence {
 
 ## 27. Что такое `Optional`?
 
-<span class="source-badge">Источник: enhorse/java-interview</span>
+**Источник:** enhorse/java-interview
 
 Опциональное значение `Optional` — это контейнер для объекта, который может содержать или не содержать значение `null`. Такая обёртка является удобным средством предотвращения `NullPointerException`, т.к.
 имеет некоторые функции высшего порядка, избавляющие от добавления повторяющихся `if null/notNull` проверок:
@@ -561,7 +561,7 @@ optional.orElse("ops..."); // "hello"
 
 ## 28. Что такое `Stream`?
 
-<span class="source-badge">Источник: enhorse/java-interview</span>
+**Источник:** enhorse/java-interview
 
 Интерфейс `java.util.Stream` представляет собой последовательность элементов, над которой можно производить различные операции.
 
@@ -588,7 +588,7 @@ optional.orElse("ops..."); // "hello"
 
 ## 29. Какие существуют способы создания стрима?
 
-<span class="source-badge">Источник: enhorse/java-interview</span>
+**Источник:** enhorse/java-interview
 
 1. Из коллекции:
 ```java 
@@ -629,7 +629,7 @@ Stream<String> fromGenerate = Stream.generate(() -> "0");
 
 ## 30. В чем разница между `Collection` и `Stream`?
 
-<span class="source-badge">Источник: enhorse/java-interview</span>
+**Источник:** enhorse/java-interview
 
 Коллекции позволяют работать с элементами по-отдельности, тогда как стримы так делать не позволяют, но вместо этого предоставляют возможность выполнять функции над данными как над одним целым.
 
@@ -642,7 +642,7 @@ Stream<String> fromGenerate = Stream.generate(() -> "0");
 
 ## 31. Для чего нужен метод `collect()` в стримах?
 
-<span class="source-badge">Источник: enhorse/java-interview</span>
+**Источник:** enhorse/java-interview
 
 Метод `collect()` является конечной операцией, которая используется для представления результата в виде коллекции или какой-либо другой структуры данных.
 
@@ -673,7 +673,7 @@ Collector<String, List<String>, List<String>> toList = Collector.of(
 
 ## 32. Для чего в стримах применяются методы `forEach()` и `forEachOrdered()`?
 
-<span class="source-badge">Источник: enhorse/java-interview</span>
+**Источник:** enhorse/java-interview
 
 + `forEach()` применяет функцию к каждому объекту стрима, порядок при параллельном выполнении не гарантируется;
 + `forEachOrdered()` применяет функцию к каждому объекту стрима с сохранением порядка элементов.
@@ -684,7 +684,7 @@ Collector<String, List<String>, List<String>> toList = Collector.of(
 
 ## 33. Для чего в стримах предназначены методы `map()` и `mapToInt()`, `mapToDouble()`, `mapToLong()`?
 
-<span class="source-badge">Источник: enhorse/java-interview</span>
+**Источник:** enhorse/java-interview
 
 Метод `map()` является промежуточной операцией, которая заданным образом преобразует каждый элемент стрима.
 
@@ -702,7 +702,7 @@ Stream
 
 ## 34. Какова цель метода `filter()` в стримах?
 
-<span class="source-badge">Источник: enhorse/java-interview</span>
+**Источник:** enhorse/java-interview
 
 Метод `filter()` является промежуточной операцией принимающей предикат, который фильтрует все элементы, возвращая только те, что соответствуют условию.
 
@@ -712,7 +712,7 @@ Stream
 
 ## 35. Для чего в стримах предназначен метод `limit()`?
 
-<span class="source-badge">Источник: enhorse/java-interview</span>
+**Источник:** enhorse/java-interview
 
 Метод `limit()` является промежуточной операцией, которая позволяет ограничить выборку определенным количеством первых элементов.
 
@@ -722,7 +722,7 @@ Stream
 
 ## 36. Для чего в стримах предназначен метод `sorted()`?
 
-<span class="source-badge">Источник: enhorse/java-interview</span>
+**Источник:** enhorse/java-interview
 
 Метод `sorted()` является промежуточной операцией, которая позволяет сортировать значения либо в натуральном порядке, либо задавая `Comparator`.
 
@@ -734,7 +734,7 @@ Stream
 
 ## 37. Для чего в стримах предназначены методы `flatMap()`, `flatMapToInt()`, `flatMapToDouble()`, `flatMapToLong()`?
 
-<span class="source-badge">Источник: enhorse/java-interview</span>
+**Источник:** enhorse/java-interview
 
 Метод `flatMap()` похож на map, но может создавать из одного элемента несколько. Таким образом, каждый объект будет преобразован в ноль, один или несколько других объектов, поддерживаемых потоком.  Наиболее очевидный способ применения этой операции — преобразование элементов контейнера при помощи функций, которые возвращают контейнеры.
 
@@ -753,7 +753,7 @@ Stream
 
 ## 38. Расскажите о параллельной обработке в Java 8.
 
-<span class="source-badge">Источник: enhorse/java-interview</span>
+**Источник:** enhorse/java-interview
 
 Стримы могут быть последовательными и параллельными. Операции над последовательными стримами выполняются в одном потоке процессора, над параллельными — используя несколько потоков процессора. Параллельные стримы используют общий `ForkJoinPool` доступный через статический `ForkJoinPool.commonPool()` метод. При этом, если окружение не является многоядерным, то поток будет выполняться как последовательный. Фактически применение параллельных стримов сводится к тому, что данные в стримах будут разделены на части, каждая часть обрабатывается на отдельном ядре процессора, и в конце эти части соединяются, и над ними выполняются конечные операции.
 
@@ -797,7 +797,7 @@ collection.parallelStream()
 
 ## 39. Какие конечные методы работы со стримами вы знаете?
 
-<span class="source-badge">Источник: enhorse/java-interview</span>
+**Источник:** enhorse/java-interview
 
 + `findFirst()` возвращает первый элемент;
 + `findAny()` возвращает любой подходящий элемент;
@@ -824,7 +824,7 @@ collection.parallelStream()
 
 ## 40. Какие промежуточные методы работы со стримами вы знаете?
 
-<span class="source-badge">Источник: enhorse/java-interview</span>
+**Источник:** enhorse/java-interview
 
 + `filter()` отфильтровывает записи, возвращая только записи, соответствующие условию;
 + `skip()` позволяет пропустить определённое количество элементов в начале;
@@ -844,7 +844,7 @@ collection.parallelStream()
 
 ## 41. Как вывести на экран 10 случайных чисел, используя `forEach()`?
 
-<span class="source-badge">Источник: enhorse/java-interview</span>
+**Источник:** enhorse/java-interview
 
 ```java
 (new Random())
@@ -859,7 +859,7 @@ collection.parallelStream()
 
 ## 42. Как можно вывести на экран уникальные квадраты чисел используя метод `map()`?
 
-<span class="source-badge">Источник: enhorse/java-interview</span>
+**Источник:** enhorse/java-interview
 
 ```java
 Stream
@@ -875,7 +875,7 @@ Stream
 
 ## 43. Как вывести на экран количество пустых строк с помощью метода `filter()`?
 
-<span class="source-badge">Источник: enhorse/java-interview</span>
+**Источник:** enhorse/java-interview
 
 ```java
 System.out.println(
@@ -891,7 +891,7 @@ System.out.println(
 
 ## 44. Как вывести на экран 10 случайных чисел в порядке возрастания?
 
-<span class="source-badge">Источник: enhorse/java-interview</span>
+**Источник:** enhorse/java-interview
 
 ```java
 (new Random())
@@ -907,7 +907,7 @@ System.out.println(
 
 ## 45. Как найти максимальное число в наборе?
 
-<span class="source-badge">Источник: enhorse/java-interview</span>
+**Источник:** enhorse/java-interview
 
 ```java
 Stream
@@ -923,7 +923,7 @@ Stream
 
 ## 46. Как найти минимальное число в наборе?
 
-<span class="source-badge">Источник: enhorse/java-interview</span>
+**Источник:** enhorse/java-interview
 
 ```java
 Stream
@@ -938,7 +938,7 @@ Stream
 
 ## 47. Как получить сумму всех чисел в наборе?
 
-<span class="source-badge">Источник: enhorse/java-interview</span>
+**Источник:** enhorse/java-interview
 
 ```java
 Stream
@@ -952,7 +952,7 @@ Stream
 
 ## 48. Как получить среднее значение всех чисел?
 
-<span class="source-badge">Источник: enhorse/java-interview</span>
+**Источник:** enhorse/java-interview
 
 ```java
 Stream
@@ -967,7 +967,7 @@ Stream
 
 ## 49. Какие дополнительные методы для работы с ассоциативными массивами (maps) появились в Java 8?
 
-<span class="source-badge">Источник: enhorse/java-interview</span>
+**Источник:** enhorse/java-interview
 
 + `putIfAbsent()` добавляет пару «ключ-значение», только если ключ отсутствовал:
 
@@ -1003,7 +1003,7 @@ Stream
 
 ## 50. Что такое `LocalDateTime`?
 
-<span class="source-badge">Источник: enhorse/java-interview</span>
+**Источник:** enhorse/java-interview
 
 `LocalDateTime` объединяет вместе `LocaleDate` и `LocalTime`, содержит дату и время в календарной системе ISO-8601 без привязки к часовому поясу. Время хранится с точностью до наносекунды. Содержит множество удобных методов, таких как plusMinutes, plusHours, isAfter, toSecondOfDay и т.д.
 
@@ -1013,7 +1013,7 @@ Stream
 
 ## 51. Что такое `ZonedDateTime`?
 
-<span class="source-badge">Источник: enhorse/java-interview</span>
+**Источник:** enhorse/java-interview
 
 `java.time.ZonedDateTime` — аналог `java.util.Calendar`, класс с самым полным объемом информации о временном контексте в календарной системе ISO-8601. Включает временную зону, поэтому все операции с временными сдвигами этот класс проводит с её учётом.
 
@@ -1023,7 +1023,7 @@ Stream
 
 ## 52. Как получить текущую дату с использованием Date Time API из Java 8?
 
-<span class="source-badge">Источник: enhorse/java-interview</span>
+**Источник:** enhorse/java-interview
 
 ```java
 LocalDate.now();
@@ -1035,7 +1035,7 @@ LocalDate.now();
 
 ## 53. Как добавить 1 неделю, 1 месяц, 1 год, 10 лет к текущей дате с использованием Date Time API?
 
-<span class="source-badge">Источник: enhorse/java-interview</span>
+**Источник:** enhorse/java-interview
 
 ```java
 LocalDate.now().plusWeeks(1);
@@ -1050,7 +1050,7 @@ LocalDate.now().plus(1, ChronoUnit.DECADES);
 
 ## 54. Как получить следующий вторник используя Date Time API?
 
-<span class="source-badge">Источник: enhorse/java-interview</span>
+**Источник:** enhorse/java-interview
 
 ```java
 LocalDate.now().with(TemporalAdjusters.next(DayOfWeek.TUESDAY));
@@ -1062,7 +1062,7 @@ LocalDate.now().with(TemporalAdjusters.next(DayOfWeek.TUESDAY));
 
 ## 55. Как получить вторую субботу текущего месяца используя Date Time API?
 
-<span class="source-badge">Источник: enhorse/java-interview</span>
+**Источник:** enhorse/java-interview
 
 ```java
 LocalDate
@@ -1077,7 +1077,7 @@ LocalDate
 
 ## 56. Как получить текущее время с точностью до миллисекунд используя Date Time API?
 
-<span class="source-badge">Источник: enhorse/java-interview</span>
+**Источник:** enhorse/java-interview
 
 ```java
 new Date().toInstant();
@@ -1089,7 +1089,7 @@ new Date().toInstant();
 
 ## 57. Как получить текущее время по местному времени с точностью до миллисекунд используя Date Time API?
 
-<span class="source-badge">Источник: enhorse/java-interview</span>
+**Источник:** enhorse/java-interview
 
 ```java
 LocalDateTime.ofInstant(new Date().toInstant(), ZoneId.systemDefault());
@@ -1101,7 +1101,7 @@ LocalDateTime.ofInstant(new Date().toInstant(), ZoneId.systemDefault());
 
 ## 58. Как определить повторяемую аннотацию?
 
-<span class="source-badge">Источник: enhorse/java-interview</span>
+**Источник:** enhorse/java-interview
 
 Чтобы определить повторяемую аннотацию, необходимо создать аннотацию-контейнер для списка повторяемых аннотаций и обозначить повторяемую мета-аннотацией `@Repeatable`:
 
@@ -1124,7 +1124,7 @@ LocalDateTime.ofInstant(new Date().toInstant(), ZoneId.systemDefault());
 
 ## 59. Что такое `Nashorn`?
 
-<span class="source-badge">Источник: enhorse/java-interview</span>
+**Источник:** enhorse/java-interview
 
 __Nashorn__ - это движок JavaScript, разрабатываемый на Java компанией Oracle. Призван дать возможность встраивать код JavaScript в приложения Java. В сравнении с _Rhino_, который поддерживается Mozilla Foundation, Nashorn обеспечивает от 2 до 10 раз более высокую производительность, так как он компилирует код и передает байт-код виртуальной машине Java непосредственно в памяти. Nashorn умеет компилировать код JavaScript и генерировать классы Java, которые загружаются специальным загрузчиком. Так же возможен вызов кода Java прямо из JavaScript.
 
@@ -1134,7 +1134,7 @@ __Nashorn__ - это движок JavaScript, разрабатываемый н�
 
 ## 60. Что такое `jjs`?
 
-<span class="source-badge">Источник: enhorse/java-interview</span>
+**Источник:** enhorse/java-interview
 
 `jjs` это утилита командной строки, которая позволяет исполнять программы на языке JavaScript прямо в консоли.
 
@@ -1144,7 +1144,7 @@ __Nashorn__ - это движок JavaScript, разрабатываемый н�
 
 ## 61. Какой класс появился в Java 8 для кодирования/декодирования данных?
 
-<span class="source-badge">Источник: enhorse/java-interview</span>
+**Источник:** enhorse/java-interview
 
 `Base64` - потокобезопасный класс, который реализует кодировщик и декодировщик данных, используя схему кодирования base64 согласно _RFC 4648_ и _RFC 2045_.
 
@@ -1160,7 +1160,7 @@ Base64 содержит 6 основных методов:
 
 ## 62. Как создать Base64 кодировщик и декодировщик?
 
-<span class="source-badge">Источник: enhorse/java-interview</span>
+**Источник:** enhorse/java-interview
 
 ```java
 // Encode

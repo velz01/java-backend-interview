@@ -1,8 +1,8 @@
 # Source audit
 
-Every generated question is mapped to its source in `SOURCE_AUDIT.csv`.
+Каждый учебный пункт сопоставлен с исходным файлом/листом; SHA-256 ответа хранится в `SOURCE_AUDIT.csv`.
 
 - **zhukov**: 383
 - **enhorse**: 681
-- **table**: 443
-- **total**: 1507
+- **table**: 453
+- **total**: 1517
