@@ -29,6 +29,18 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      - name: Remove legacy pages from previous site versions
+        shell: bash
+        run: |
+          find docs -mindepth 1 -maxdepth 1 \
+            ! -name '.vitepress' \
+            ! -name 'public' \
+            ! -name 'zhukov' \
+            ! -name 'enhorse' \
+            ! -name 'table' \
+            ! -name 'index.md' \
+            -exec rm -rf {} +
+
       - name: Build VitePress
         run: npm run docs:build
         env:

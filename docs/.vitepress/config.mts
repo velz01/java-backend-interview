@@ -6,7 +6,14 @@ export default defineConfig({
   title: 'Java Backend Interview',
   description: 'Вопросы и ответы из предоставленных источников',
   cleanUrls: true,
-  markdown: { lineNumbers: false },
+  markdown: {
+    lineNumbers: false,
+    // Source materials contain many XML/JSP/HTML examples. Treat raw HTML as text
+    // so Vue does not try to compile source snippets as Vue templates.
+    config(md) {
+      md.set({ html: false })
+    }
+  },
   themeConfig: {
     search: { provider: 'local' },
     nav: [

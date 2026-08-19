@@ -12,12 +12,12 @@ outline: [2, 3]
 
 <span class="source-badge">Источник: enhorse/java-interview</span>
 
-+ [За что отвечает JVM](jvm.md#За-что-отвечает-JVM)
-+ [Classloader](jvm.md#Classloader)
-+ [Области данных времени выполнения](jvm.md#Области-данных-времени-выполнения)
-+ [Frames](jvm.md#Frames)
-+ [Execution Engine](jvm.md#Execution-Engine)
-+ [Полезные ссылки](jvm.md#Полезные-ссылки)
++ [За что отвечает JVM](#За-что-отвечает-JVM)
++ [Classloader](#Classloader)
++ [Области данных времени выполнения](#Области-данных-времени-выполнения)
++ [Frames](#Frames)
++ [Execution Engine](#Execution-Engine)
++ [Полезные ссылки](#Полезные-ссылки)
 
 ---
 
