@@ -2,27 +2,25 @@
 layout: home
 
 hero:
-  name: Java Backend Interview
-  text: База вопросов и ответов для подготовки к собеседованию
-  tagline: Java Core, JVM, Collections, многопоточность, SQL, Hibernate/JPA, Spring, Kafka, WEB, тестирование, инфраструктура и смежные темы.
+  name: "Java Backend Interview"
+  text: "Вопросы и ответы из трёх предоставленных источников"
+  tagline: "Жуков · enhorse/java-interview · Improved table Java"
   actions:
     - theme: brand
-      text: Начать с Java Core
-      link: /java/core
+      text: Жуков
+      link: /zhukov/
     - theme: alt
-      text: Открыть все материалы
-      link: /materials/
+      text: enhorse
+      link: /enhorse/
+    - theme: alt
+      text: Таблица
+      link: /table/
 
 features:
-  - title: Большая база вопросов
-    details: Вопросы объединены из предоставленной таблицы и двух публичных Java interview-баз; одинаковые вопросы не дублируются.
-  - title: Приоритет вопросов
-    details: Сначала идут самые важные темы для собеседования, затем часто встречающиеся и дополнительные вопросы.
-  - title: Дополнительные материалы
-    details: Конкретные статьи и русскоязычные YouTube-видео по ключевым темам.
+  - title: "Жуков"
+    details: "383 пар вопрос–ответ из data/tech-questions/*.toml"
+  - title: "enhorse/java-interview"
+    details: "681 пар вопрос–ответ из Markdown-файлов репозитория"
+  - title: "Таблица"
+    details: "443 пар вопрос–ответ из переданной таблицы"
 ---
-
-## Как пользоваться базой
-
-Выбирайте раздел в боковом меню, последовательно отвечайте на вопрос самостоятельно и только затем сверяйтесь с ответом. Сложные темы лучше проговаривать вслух и дополнять примерами из собственных проектов.
-

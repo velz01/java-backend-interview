@@ -1,22 +1,23 @@
 # Java Backend Interview
 
-VitePress-сайт с большой базой вопросов и ответов для подготовки к Java Backend собеседованиям.
+Generated strictly from the three user-provided sources.
 
-## Локальный запуск
+- Zhukov: 383
+- enhorse/java-interview: 681
+- Table: 443
+- Total: 1507
+
+## Run
 
 ```bash
 npm install
 npm run docs:dev
 ```
 
-## Сборка
+## Production build
 
 ```bash
 npm run docs:build
 ```
 
-## GitHub Pages
-
-Workflow `.github/workflows/deploy.yml` автоматически собирает VitePress и публикует сайт через GitHub Pages после push в `main`. В настройках репозитория нужно выбрать **Settings → Pages → Source → GitHub Actions**.
-
-Контент находится в `docs/`. Для редактирования существующего раздела достаточно изменить соответствующий `.md` файл и сделать commit/push.
+See `SOURCE_AUDIT.csv` for the exact source of every question.
