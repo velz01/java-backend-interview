@@ -2,25 +2,31 @@
 
 В разделе: **11 вопросов**.
 
-Ответы приведены сразу в полном виде: без отдельного «короткого ответа».
-
 ## 1. Алгоритм для высчитывания логарифма заданного числа по заданному основанию
+
+> ⚪ **Дополнительно**
 
 static int isBitCount(double target, double osnovanie) {
         return (int) (Math.log(target) / Math.log(osnovanie))
+
 }
 
 ---
 
 ## 2. Рекурсивное вычисление факториала
 
+> ⚪ **Дополнительно**
+
 public static int factorial(int n) {
         return (n == 0) ? 1 : n * factorial(n - 1);
+
 }
 
 ---
 
 ## 3. Реверс числа без использования строк
+
+> ⚪ **Дополнительно**
 
 public static int reverse(int numb) {
          int local = 0;
@@ -37,20 +43,25 @@ public static int reverse(int numb) {
 
 ## 4. Проверка симметричности бинарного дерева
 
+> ⚪ **Дополнительно**
+
 Сложность О(n)
 
 ---
 
 ## 5. Дан массив с числами, одно число удалили и перемешали массив. Найти удаленное число.
 
-int before = Arrays.stream(arrayBefore).sum();
-int after = Arrays.stream(arrayAfter).sum();
+> ⚪ **Дополнительно**
+
+int before = Arrays.stream(arrayBefore).sum(); int after = Arrays.stream(arrayAfter).sum();
 
 System.out.println(before - after);
 
 ---
 
 ## 6. Найти общее число в трёх коллекциях, не используя дополнительные структуры
+
+> ⚪ **Дополнительно**
 
 public static int findCommon(List&lt;Integer&gt; first, List&lt;Integer&gt; second, List&lt;Integer&gt; third) {
         int wallSecond = 0;
@@ -88,6 +99,8 @@ public static int findCommon(List&lt;Integer&gt; first, List&lt;Integer&gt; seco
 
 ## 7. Является ли число простым
 
+> ⚪ **Дополнительно**
+
 public static boolean checkNumberIsPrime(int number) {
          int factors = 0;
          int counter = 1;
@@ -105,6 +118,8 @@ public static boolean checkNumberIsPrime(int number) {
 
 ## 8. Найти нужное число в последовательности Фибоначчи
 
+> ⚪ **Дополнительно**
+
 //через формулу Бине
      public static long fibonacci(int index) {
          double fi = (1 + Math.sqrt(5)) / 2;
@@ -115,17 +130,22 @@ public static boolean checkNumberIsPrime(int number) {
 
 ## 9. Вычислить квадратный корень числа, возвращая только целую часть корня.
 
+> ⚪ **Дополнительно**
+
 public static int sqrt(int numb) {
           for (int i = 1; i &lt; numb; i++) {
               if (i*i == numb) return i;
               if (i*i &gt; numb) return i-1;
            }
           return 0;
+
 }
 
 ---
 
 ## 10. Последовательность Фибоначчи
+
+> ⚪ **Дополнительно**
 
 public static void fibonachi(int beforePreviousValue, int previousValue, int maxValue) {
     if (previousValue &lt;= maxValue) {
@@ -133,18 +153,21 @@ public static void fibonachi(int beforePreviousValue, int previousValue, int max
       int currentValue = beforePreviousValue + previousValue;
       fibonachi(previousValue, currentValue, maxValue);
     }
+
 }
 
 ---
 
 ## 11. пузырьковая сортировка
 
+> ⚪ **Дополнительно**
+
 // метод пузырьковой сортировки
     public static void bubbleSort(int[] num) {
         int j;
         boolean flag = true;   // устанавливаем наш флаг в true для первого прохода по массиву
         int temp;   // вспомогательная переменная
- 
+
         while (flag) {
             flag = false;    // устанавливаем флаг в false в ожидании возможного свопа (замены местами)
             for (j = 0; j &lt; num.length - 1; j++) {
