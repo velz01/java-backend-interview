@@ -26,20 +26,14 @@ jobs:
         with:
           node-version: 24
 
+      - name: Remove legacy site files
+        run: python3 scripts/clean_legacy.py
+
+      - name: Validate site files
+        run: python3 scripts/validate_site.py
+
       - name: Install dependencies
         run: npm install
-
-      - name: Remove legacy pages from previous site versions
-        shell: bash
-        run: |
-          find docs -mindepth 1 -maxdepth 1 \
-            ! -name '.vitepress' \
-            ! -name 'public' \
-            ! -name 'zhukov' \
-            ! -name 'enhorse' \
-            ! -name 'table' \
-            ! -name 'index.md' \
-            -exec rm -rf {} +
 
       - name: Build VitePress
         run: npm run docs:build
