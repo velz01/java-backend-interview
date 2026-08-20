@@ -35,6 +35,7 @@ for p in md:
         clean=re.sub(r'`[^`]*`','',line)
         clean=re.sub(r'</?(?:span|div)(?:\s+[^>]*)?>','',clean)
         if re.search(r'<\/?[A-Za-z][^>\n]*>',clean): errors.append(f'{p}:{i}: HTML-like tag outside code block')
+        if '<?' in clean: errors.append(f'{p}:{i}: XML processing-instruction-like token outside code block')
         for tag in re.findall(r'<(?:div|span)\b[^>]*>',line):
             attrs=re.findall(r'\s([:\w-]+)\s*=',tag)
             if len(attrs)!=len(set(attrs)): errors.append(f'{p}:{i}: duplicate HTML attribute')
