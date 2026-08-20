@@ -7,13 +7,24 @@ outline: [2, 3]
 
 Всего вопросов: **85**
 
-<span class="priority-badge priority-high">🔥 Высокий приоритет</span>
+### Материалы для углубления
 
-## 1. @Transactional. Как работает?
+Эти материалы полезны для крупных тем раздела; их не обязательно открывать для каждого короткого вопроса.
+
+- **Статья:** [Введение в Spring: IoC, DI, @Autowired и @Component](https://habr.com/ru/articles/455794/)
+- **Статья:** [Управление транзакциями в Spring: @Transactional в деталях](https://habr.com/ru/articles/682362/)
+- **Статья:** [@Transactional в Spring под капотом](https://habr.com/ru/articles/532000/)
+- **Видео:** [Собеседование Middle Java: ApplicationContext и @Transactional](https://www.youtube.com/watch?v=EQG9bzlMUrE)
+
+---
+
+<span class="priority-badge priority-high">• Высокий приоритет</span>
+
+## 1. Поясните: @Transactional. Как работает?
 
 <div class="answer-block">
 
-`@Transactional` — это аннотация, которая позволяет автоматически управлять транзакциями. Когда метод аннотирован `@Transactional`, Spring берет на себя начало, коммит или откат транзакции
+`@Transactional` — это аннотация, которая даёт возможность автоматически управлять транзакциями. Когда метод аннотирован `@Transactional`, Spring берет на себя начало, коммит или откат транзакции
 
 ---
 ***Что можно пометить аннотацией @Transactional?***
@@ -25,7 +36,6 @@ outline: [2, 3]
 ***Дефолтный propagation***
 
 Propagation.REQUIRED
-
 
 ---
 ***Какие способы управления транзакциями в Spring вы знаете?***
@@ -52,12 +62,13 @@ Propagation.REQUIRED
 
 ---
 
-<span class="priority-badge priority-high">🔥 Высокий приоритет</span>
+<span class="priority-badge priority-high">• Высокий приоритет</span>
 
-## 2. Скоуп бинов. Web скоуп
+## 2. Поясните: Скоуп бинов. Web скоуп
 
 <div class="answer-block">
 
+Кратко по сути:
 - Singleton
     - Для каждого бина создается только один экземпляр на весь контекст приложения и переиспользуется везде, где он требуется
     - Используется по-умолчанию
@@ -71,7 +82,6 @@ Propagation.REQUIRED
 	- session - cоздаётся один экземпляр бина на каждую HTTP-сессию
 	- application - cоздаётся один экземпляр бина на весь `ServletContext` (аналогично синглтону, но для веб-приложения)
 	- websocket - cоздаётся один экземпляр бина на каждую WebSocket-сессию
-
 
 **Как создать свой Скоуп**
 1. Реализовать интерфейс Scope
@@ -106,9 +116,9 @@ public static CustomScopeConfigurer customScopeConfigurer() {
 
 ---
 
-<span class="priority-badge priority-high">🔥 Высокий приоритет</span>
+<span class="priority-badge priority-high">• Высокий приоритет</span>
 
-## 3. Жизненный цикл Bean. Вопросы связанные с классами, входящими в жизненный цикл бина
+## 3. Поясните: Жизненный цикл Bean. Вопросы связанные с классами, входящими в жизненный цикл бина
 
 <div class="answer-block">
 
@@ -130,7 +140,7 @@ Spring управляет созданием, инициализацией и у
 
 4. **Внедрение зависимостей (через поля и сеттеры)**
 5. **Настройка созданных бинов** 
-   Бины уже созданы, их можно донастроить. Интерфейс `BeanPostProcessor` позволяет вклиниться в процесс настройки бинов до того, как они попадут в контейнер. Контекст автоматически обнаруживает бины реализующие этот интерфейс и помечает их. Есть два метода
+   Бины уже созданы, их можно донастроить. Интерфейс `BeanPostProcessor` даёт возможность вклиниться в процесс настройки бинов до того, как они попадут в контейнер. Контекст автоматически обнаруживает бины реализующие этот интерфейс и помечает их. Есть два метода
     - `postProcessBeforeInitialization` вызывается до init метода
     - `postProcessAfterInitialization` - после
         
@@ -149,9 +159,9 @@ Spring управляет созданием, инициализацией и у
 
 ---
 
-<span class="priority-badge priority-high">🔥 Высокий приоритет</span>
+<span class="priority-badge priority-high">• Высокий приоритет</span>
 
-## 4. @Transaction Что будет если вызвать метод из метода в одном классе при различных сценариях
+## 4. Поясните: @Transaction Что будет если вызвать метод из метода в одном классе при различных сценариях
 
 <div class="answer-block">
 
@@ -215,7 +225,7 @@ public class MyService {
     }
 }
 ```
-_Примечание: с версии 2.6 Spring Boot запрещает создавать циклические зависимости. Чтобы приведённый выше код отработал, необходимо установить свойство_ `spring.main.allow-circular-references=true`
+_Примечание: с версии 2.6 Spring Boot запрещает создавать циклические зависимости. Чтобы приведённый выше код отработал, нужно установить свойство_ `spring.main.allow-circular-references=true`
 _В случае же с внедрением через конструктор, даже это не поможет. Существует несколько альтернативных вариантов self-injection, один из них - получение бина через ApplicationContext_
 ```java
 @Service
@@ -243,9 +253,9 @@ public class MyService implements ApplicationContextAware {
 
 ---
 
-<span class="priority-badge priority-high">🔥 Высокий приоритет</span>
+<span class="priority-badge priority-high">• Высокий приоритет</span>
 
-## 5. @Service, @Repository, @Component
+## 5. Поясните: @Service, @Repository, @Component
 
 <div class="answer-block">
 
@@ -255,6 +265,7 @@ public class MyService implements ApplicationContextAware {
 | **`@Service`**    | Специализация `@Component`, указывающая, что бин представляет собой сервисный слой              | Для сервисов                      | Используется для классов, реализующих бизнес-логику. По сути, это более семантическое обозначение, чем `@Component`                                                                  |
 | **`@Repository`** | Специализация `@Component`, указывающая, что бин представляет собой слой доступа к данным (DAO) | Для классов, работающих с данными | Используется для классов, которые инкапсулируют логику доступа к данным (например, через JDBC или JPA). Аннотация также может активировать обработку исключений, специфичных для DAO |
 
+Кратко по сути:
 **Singleton-антипаттерн. Если мы на класс поставим @Service, это будет Singleton?**
 Да. Однако это не является антипаттерном, поскольку Spring управляет жизненным циклом и внедрением зависимостей, что решает многие проблемы, присущие обычному Singleton
 
@@ -269,12 +280,13 @@ public class MyService implements ApplicationContextAware {
 
 ---
 
-<span class="priority-badge priority-high">🔥 Высокий приоритет</span>
+<span class="priority-badge priority-high">• Высокий приоритет</span>
 
-## 6. Какие способы внедрения зависимостей знаешь?
+## 6. Какие именно способы внедрения зависимостей знаешь?
 
 <div class="answer-block">
 
+Кратко по сути:
 - Через конструктор
 - Через сеттер
 - Через поле
@@ -289,24 +301,25 @@ public class MyService implements ApplicationContextAware {
 
 ---
 
-<span class="priority-badge priority-high">🔥 Высокий приоритет</span>
+<span class="priority-badge priority-high">• Высокий приоритет</span>
 
-## 7. Зачем мы используем Spring? Почему его так любят?
+## 7. Для чего мы используем Spring? Почему его так любят?
 
 <div class="answer-block">
 
-Spring - это один из самых популярных фреймворков для разработки приложений на Java. Его используют благодаря широкому набору возможностей, гибкости и модульности
+Кратко: Spring - это один из самых популярных фреймворков для разработки приложений на Java. Его используют благодаря широкому набору возможностей, гибкости и модульности
 
 </div>
 
 ---
 
-<span class="priority-badge priority-high">🔥 Высокий приоритет</span>
+<span class="priority-badge priority-high">• Высокий приоритет</span>
 
-## 8. Почему лучше использовать конструктор?
+## 8. По какой причине лучше использовать конструктор?
 
 <div class="answer-block">
 
+Кратко по сути:
 - Неизменяемость - зависимости устанавливаются один раз при создании объекта, и их невозможно изменить (через final поля)
 - Обязательность зависимостей - устанавливает чёткое требование, что объект не может существовать без переданных зависимостей
 - Тестируемость - проще создавать mock-объекты для тестов
@@ -316,13 +329,13 @@ Spring - это один из самых популярных фреймвор�
 
 ---
 
-<span class="priority-badge priority-high">🔥 Высокий приоритет</span>
+<span class="priority-badge priority-high">• Высокий приоритет</span>
 
-## 9. @Qualifier vs @Primary
+## 9. Поясните: @Qualifier vs @Primary
 
 <div class="answer-block">
 
-Если есть два одинаковых по типу бина, Spring не знает какой именно использовать и выбрасывает исключение. Установка над одним из бинов аннотации `@Primary`
+Кратко: Если есть два одинаковых по типу бина, Spring не знает какой именно использовать и выбрасывает исключение. Установка над одним из бинов аннотации `@Primary`
 делает его использование предпочтительным (дефолтным). Если нам нужно использовать в работе оба бина, можно поставить `@Qualifier(имя бина)` для каждого бина в месте внедрения (работает только с `@Autowired`)
 
 | **Аннотация** | **Описание**                                            | **Когда использовать**                                              | **Место указания**                                                                                   |
@@ -334,9 +347,9 @@ Spring - это один из самых популярных фреймвор�
 
 ---
 
-<span class="priority-badge priority-high">🔥 Высокий приоритет</span>
+<span class="priority-badge priority-high">• Высокий приоритет</span>
 
-## 10. Dependency Injection
+## 10. Поясните: Dependency Injection
 
 <div class="answer-block">
 
@@ -351,7 +364,7 @@ Dependency Injection (внедрение зависимостей) - механ�
 | **Уровень контроля**      | Контейнер управляет зависимостями, объект их не создаёт          | Объект сам решает, как получить зависимости               |
 | **Пример**                | Spring внедряет зависимость через аннотации или XML-конфигурацию | Вручную вызов метода&lt;br&gt;`ApplicationContext.getBean(...)` |
 
-Аннотация @Lookup над методом позволяет использовать Dependency Lookup
+Аннотация @Lookup над методом даёт возможность использовать Dependency Lookup
 ```java
 @Lookup
 public WeatherService getWeatherServiceBean() {
@@ -376,12 +389,13 @@ public WeatherService getWeatherServiceBean(){
 
 ---
 
-<span class="priority-badge priority-high">🔥 Высокий приоритет</span>
+<span class="priority-badge priority-high">• Высокий приоритет</span>
 
-## 11. Spring Boot vs Spring
+## 11. Поясните: Spring Boot vs Spring
 
 <div class="answer-block">
 
+Кратко по сути:
 - **Spring** — это основной фреймворк с полной конфигурацией и гибкостью.
 - **Spring Boot** — это расширение Spring, которое делает процесс разработки проще, автоматизируя конфигурацию и позволяя быстро запускать приложение с минимальной настройкой.
 
@@ -399,9 +413,9 @@ public WeatherService getWeatherServiceBean(){
 
 ---
 
-<span class="priority-badge priority-high">🔥 Высокий приоритет</span>
+<span class="priority-badge priority-high">• Высокий приоритет</span>
 
-## 12. Что такое Bean?
+## 12. Поясните, что такое Bean?
 
 <div class="answer-block">
 
@@ -411,7 +425,7 @@ Bean в Spring - это объект, управляемый контейнер�
 
 **Аннотация @Bean**
 
-Аннотация `@Bean` используется для указания метода, который возвращает объект (бин) и эти бины в дальнейшем можно внедрять в другие компоненты. Используется для явного объявления бина в Java-конфигурации (в классе, помеченном как `@Configuration`)
+Аннотация `@Bean` применяется для указания метода, который возвращает объект (бин) и эти бины в дальнейшем можно внедрять в другие компоненты. Используется для явного объявления бина в Java-конфигурации (в классе, помеченном как `@Configuration`)
 
 Также для определения бинов можно использовать методы по умолчанию. Это позволяет создавать конфигурации бинов путем реализации интерфейсов с определениями бинов
 ```java
@@ -474,25 +488,25 @@ BeanDefinition - это метаданные (описание бина), ука
 
 ---
 
-<span class="priority-badge priority-high">🔥 Высокий приоритет</span>
+<span class="priority-badge priority-high">• Высокий приоритет</span>
 
-## 13. Inversion of Control
+## 13. Поясните: Inversion of Control
 
 <div class="answer-block">
 
-Inversion of control (инверсия контроля) - принцип, при котором мы передаём управление созданием и настройкой объектов специальному контейнеру Spring
+Кратко: Inversion of control (инверсия контроля) - принцип, при котором мы передаём управление созданием и настройкой объектов специальному контейнеру Spring
 
 </div>
 
 ---
 
-<span class="priority-badge priority-medium">⭐ Средний приоритет</span>
+<span class="priority-badge priority-medium">• Средний приоритет</span>
 
-## 14. Атрибут propagation у @Transactional
+## 14. Поясните: Атрибут propagation у @Transactional
 
 <div class="answer-block">
 
-Атрибут `propagation` определяет необходимость создания транзакции (создавать новую или использовать уже открытую). Возможные значения:
+Атрибут `propagation` определяет нужность создания транзакции (создавать новую или использовать уже открытую). Возможные значения:
 - **REQUIRED** - применяется по умолчанию. При входе в `@Transactional` метод будет использована уже существующая транзакция или создана новая, в случае отсутствия 
 - **SUPPORTS** - метод будет выполняться в рамках транзакции, если она существует. Если ее нет, метод выполнится без транзакции
 - **MANDATORY** - требует внешнюю транзакцию, иначе выбрасывает исключение
@@ -505,9 +519,9 @@ Inversion of control (инверсия контроля) - принцип, пр�
 
 ---
 
-<span class="priority-badge priority-medium">⭐ Средний приоритет</span>
+<span class="priority-badge priority-medium">• Средний приоритет</span>
 
-## 15. Циклическая зависимость
+## 15. Поясните: Циклическая зависимость
 
 <div class="answer-block">
 
@@ -518,7 +532,7 @@ Inversion of control (инверсия контроля) - принцип, пр�
 	`spring.main.allow-circular-references=true`
 - рефакторинг
 
-Например, есть 2 сервиса
+К примеру, есть 2 сервиса
 ```java
 @Service
 @RequiredArgsConstructor
@@ -576,38 +590,38 @@ public class PaymentService {
 
 ---
 
-<span class="priority-badge priority-medium">⭐ Средний приоритет</span>
+<span class="priority-badge priority-medium">• Средний приоритет</span>
 
-## 16. @Controller и @RestController
+## 16. Поясните: @Controller и @RestController
 
 <div class="answer-block">
 
-`@Controller` - базовая версия аннотации для контроллера из Spring Web MVC, в основном используется для Server-Side Rendering. Если нужно вернуть данные (например, JSON), нужно добавить @ResponseBody к методу 
+`@Controller` - базовая версия аннотации для контроллера из Spring Web MVC, в основном применяется для Server-Side Rendering. Если нужно вернуть данные (например, JSON), нужно добавить @ResponseBody к методу 
 `@RestController` - комбинация `@Controller` и `@ResponseBody`. Используется в REST. Всегда возвращает данные (например, JSON или XML) в теле HTTP-ответа. Нет необходимости добавлять `@ResponseBody` к каждому методу
 
 </div>
 
 ---
 
-<span class="priority-badge priority-medium">⭐ Средний приоритет</span>
+<span class="priority-badge priority-medium">• Средний приоритет</span>
 
-## 17. Парадигма AOP
+## 17. Поясните: Парадигма AOP
 
 <div class="answer-block">
 
-AOP (Aspect Oriented Programming) - парадигма программирования, основанная на идее разделения основного и служебного функционала. Служебный функционал описывается в классах-аспектах и позволяет вызывать его по определённым условиям (до, после метода), не вмешиваясь в основной код
+AOP (Aspect Oriented Programming) - парадигма программирования, основанная на идее разделения основного и служебного функционала. Служебный функционал описывается в классах-аспектах и даёт возможность вызывать его по определённым условиям (до, после метода), не вмешиваясь в основной код
 
 </div>
 
 ---
 
-<span class="priority-badge priority-medium">⭐ Средний приоритет</span>
+<span class="priority-badge priority-medium">• Средний приоритет</span>
 
-## 18. Spring Boot
+## 18. Поясните: Spring Boot
 
 <div class="answer-block">
 
-*Spring Boot* — это фреймворк на основе Spring, который позволяет быстрее и проще создавать готовые к работе приложения. Ключевые преимущества:
+*Spring Boot* — это фреймворк на основе Spring, который даёт возможность быстрее и проще создавать готовые к работе приложения. Ключевые преимущества:
 
 - Стартеры — это готовые наборы библиотек (модулей), которые включают все необходимые зависимости для работы с конкретными технологиями
 - Встроенный сервер - В Spring Boot сервер **встроен прямо в приложение**. Например, когда вы добавляете стартер `spring-boot-starter-web`, Spring Boot автоматически включает Tomcat или Jetty
@@ -672,13 +686,13 @@ public class MyApplication {
 
 ---
 
-<span class="priority-badge priority-medium">⭐ Средний приоритет</span>
+<span class="priority-badge priority-medium">• Средний приоритет</span>
 
-## 19. Starter в Spring. Плюсы и минусы
+## 19. Поясните: Starter в Spring. Плюсы и минусы
 
 <div class="answer-block">
 
-Стартеры в Spring - это готовые наборы библиотек (модулей), которые включают все необходимые зависимости для работы с конкретными технологиями
+Кратко: Стартеры в Spring - это готовые наборы библиотек (модулей), которые включают все необходимые зависимости для работы с конкретными технологиями
 
 **Плюсы**:
 - упрощение конфигурации
@@ -702,9 +716,9 @@ public class MyApplication {
 
 ---
 
-<span class="priority-badge priority-medium">⭐ Средний приоритет</span>
+<span class="priority-badge priority-medium">• Средний приоритет</span>
 
-## 20. Как обеспечить, чтобы при внедрении бина со скоупом prototype в singleton-бин каждый вызов получал новый экземпляр?
+## 20. Каким образом обеспечить, чтобы при внедрении бина со скоупом prototype в singleton-бин каждый вызов получал новый экземпляр?
 
 <div class="answer-block">
 
@@ -782,7 +796,7 @@ public class MySingletonService {
 Плюсы:
 - автоматический проксинг, код остаётся простым  
 Минусы:
-- прокси-обёртка, возможны проблемы с навигацией методов, `instanceof`, необходимость проксирования класса
+- прокси-обёртка, возможны проблемы с навигацией методов, `instanceof`, нужность проксирования класса
 
 4. **Получение из `ApplicationContext`**
 ```java
@@ -818,13 +832,13 @@ public MySingletonService(
 
 ---
 
-<span class="priority-badge priority-medium">⭐ Средний приоритет</span>
+<span class="priority-badge priority-medium">• Средний приоритет</span>
 
-## 21. Виды proxy в Spring
+## 21. Поясните: Виды proxy в Spring
 
 <div class="answer-block">
 
-Spring использует динамическое проксирование для создания AOP-обёрток над бинами
+Кратко: Spring использует динамическое проксирование для создания AOP-обёрток над бинами
 
 |**Тип Proxy**|**Описание**|**Как создается?**|
 |---|---|---|
@@ -860,7 +874,6 @@ Service proxy = (Service) Proxy.newProxyInstance(
 proxy.doWork();
 ```
 
-
 **CGLIB Proxy (`net.sf.cglib.proxy`)**
 - Используется **для классов** (даже если нет интерфейса).
 - Создает **подкласс** оригинального класса
@@ -887,7 +900,6 @@ proxy.doWork();
 - `final` методы
 - `private` методы
 
-
 **CGLIB vs Dynamic Proxy**
 
 | **Функция**            | **JDK Dynamic Proxy**            | **CGLIB Proxy**               |
@@ -912,9 +924,9 @@ Hibernate (а значит и Spring Data JPA), Mockito и сам Spring (в н�
 
 ---
 
-<span class="priority-badge priority-medium">⭐ Средний приоритет</span>
+<span class="priority-badge priority-medium">• Средний приоритет</span>
 
-## 22. Что такое ApplicationContext? Как работает под капотом
+## 22. Поясните, что такое ApplicationContext? Как работает под капотом
 
 <div class="answer-block">
 
@@ -927,12 +939,11 @@ Hibernate (а значит и Spring Data JPA), Mockito и сам Spring (в н�
 2. **Инжекция зависимостей:**
     - Поддерживает механизмы Dependency Injection (DI).
 3. **Обработка событий:**
-    - Поддерживает публикацию и прослушивание событий (например, ContextRefreshedEvent).
+    - Поддерживает публикацию и прослушивание событий (к примеру, ContextRefreshedEvent).
 4. **Интернационализация:**
     - Предоставляет механизмы для работы с сообщениями и локалями.
 5. **Интеграция с AOP:**
     - Позволяет внедрять аспекты в приложение.
-
 
 ```java
 import org.springframework.context.ApplicationContext;
@@ -997,7 +1008,6 @@ public class MyApp {
 | **Поддержка аннотаций**             | Полная поддержка аннотаций (например, `@Component`, `@Autowired`).                  | Ограниченная поддержка.                                   |
 | **Расширенные возможности**         | Поддержка профилей, автоконфигурации, REST и других функций.                        | Только базовая работа с бинами.                           |
 
-
  **Когда использовать**
 
 | Ситуация                                     | ApplicationContext     | BeanFactory |
@@ -1055,9 +1065,9 @@ ApplicationContext context2 = new AnnotationConfigApplicationContext(AppConfig2.
 
 ---
 
-<span class="priority-badge priority-medium">⭐ Средний приоритет</span>
+<span class="priority-badge priority-medium">• Средний приоритет</span>
 
-## 23. Какие есть атрибуты у @Transactional?
+## 23. Какие именно есть атрибуты у @Transactional?
 
 <div class="answer-block">
 
@@ -1074,13 +1084,13 @@ ApplicationContext context2 = new AnnotationConfigApplicationContext(AppConfig2.
 
 ---
 
-<span class="priority-badge priority-medium">⭐ Средний приоритет</span>
+<span class="priority-badge priority-medium">• Средний приоритет</span>
 
-## 24. @Autowired
+## 24. Поясните: @Autowired
 
 <div class="answer-block">
 
-Аннотация `@Autowired` используется для автоматического внедрения зависимостей, может стоять на
+Аннотация `@Autowired` применяется для автоматического внедрения зависимостей, может стоять на
 - конструкторе
 - методе
 - поле
@@ -1089,13 +1099,13 @@ ApplicationContext context2 = new AnnotationConfigApplicationContext(AppConfig2.
 
 ---
 
-<span class="priority-badge priority-medium">⭐ Средний приоритет</span>
+<span class="priority-badge priority-medium">• Средний приоритет</span>
 
-## 25. @ControllerAdvice
+## 25. Поясните: @ControllerAdvice
 
 <div class="answer-block">
 
-Аннотация для вынесения общей логики аспектов, применяемой ко всем контроллерам.
+Кратко: Аннотация для вынесения общей логики аспектов, применяемой ко всем контроллерам.
 
 **Основные задачи**
 - глобальная обработка ошибок (`@ExceptionHandler`)
@@ -1110,25 +1120,25 @@ ApplicationContext context2 = new AnnotationConfigApplicationContext(AppConfig2.
 
 ---
 
-<span class="priority-badge priority-medium">⭐ Средний приоритет</span>
+<span class="priority-badge priority-medium">• Средний приоритет</span>
 
-## 26. Spring Data JPA
+## 26. Поясните: Spring Data JPA
 
 <div class="answer-block">
 
-Spring Data JPA - это модуль Spring, который упрощает работу с JPA (Java Persistence API) и предоставляет удобные способы доступа к данным. Благодаря автоконфигурациям позволяет разработчикам сосредоточиться на бизнес-логике, не заботясь о низкоуровневых деталях доступа к данным
+Spring Data JPA - это модуль Spring, который упрощает работу с JPA (Java Persistence API) и предоставляет удобные способы доступа к данным. Благодаря автоконфигурациям даёт возможность разработчикам сосредоточиться на бизнес-логике, не заботясь о низкоуровневых деталях доступа к данным
 
 </div>
 
 ---
 
-<span class="priority-badge priority-medium">⭐ Средний приоритет</span>
+<span class="priority-badge priority-medium">• Средний приоритет</span>
 
-## 27. @Lazy
+## 27. Поясните: @Lazy
 
 <div class="answer-block">
 
-`@Lazy` - аннотация Spring, которая позволяет
+`@Lazy` - аннотация Spring, которая даёт возможность
 - откладывать создание бина до момента его первого использования вместо загрузки при старте контекста
 - откладывать внедрение зависимости (см. [[#19. Циклическая зависимость]])
 
@@ -1151,26 +1161,26 @@ spring.main.lazy-initialization=true
 
 ---
 
-<span class="priority-badge priority-medium">⭐ Средний приоритет</span>
+<span class="priority-badge priority-medium">• Средний приоритет</span>
 
-## 28. @ComponentScan
+## 28. Поясните: @ComponentScan
 
 <div class="answer-block">
 
-Аннотация `@ComponentScan` указывает Spring где искать классы, помеченные аннотацией `@Component` или его производными:
+Кратко: Аннотация `@ComponentScan` указывает Spring где искать классы, помеченные аннотацией `@Component` или его производными:
 `@RestController`, `@Controller`, `@Repository`, `@Service` и т.д.
 
 </div>
 
 ---
 
-<span class="priority-badge priority-medium">⭐ Средний приоритет</span>
+<span class="priority-badge priority-medium">• Средний приоритет</span>
 
-## 29. @Scheduled
+## 29. Поясните: @Scheduled
 
 <div class="answer-block">
 
-Аннотация `@Scheduled` используется для выполнения методов по расписанию. Она позволяет запускать задачи с фиксированным интервалом времени, фиксированной задержкой или на основе cron-выражений
+Аннотация `@Scheduled` применяется для выполнения методов по расписанию. Она позволяет запускать задачи с фиксированным интервалом времени, фиксированной задержкой или на основе cron-выражений
 
 </div>
 
@@ -1178,12 +1188,11 @@ spring.main.lazy-initialization=true
 
 <span class="priority-badge priority-low">• Низкий приоритет</span>
 
-## 30. @Conditional в Spring
+## 30. Поясните: @Conditional в Spring
 
 <div class="answer-block">
 
-Аннотация `@Conditional` в Spring используется для того, чтобы подключать бины или выполнять конфигурации только при соблюдении определённых условий. Она позволяет гибко управлять поведением приложения, включая или исключая определенные компоненты
-
+Аннотация `@Conditional` в Spring применяется для того, чтобы подключать бины или выполнять конфигурации только при соблюдении определённых условий. Она позволяет гибко управлять поведением приложения, включая или исключая определенные компоненты
 
 **@ConditionalOnBean**
 Аннотация `@ConditionalOnBean` указывает, что бин или конфигурация должны быть зарегистрированы в контексте только если определённый бин уже существует
@@ -1227,7 +1236,7 @@ public class MyConfig {
 
 <span class="priority-badge priority-low">• Низкий приоритет</span>
 
-## 31. @Transactional и Исключения
+## 31. Поясните: @Transactional и Исключения
 
 <div class="answer-block">
 
@@ -1250,11 +1259,11 @@ public class MyConfig {
 
 <span class="priority-badge priority-low">• Низкий приоритет</span>
 
-## 32. Spring Criteria API
+## 32. Поясните: Spring Criteria API
 
 <div class="answer-block">
 
-Spring Criteria API (часть Hibernate) предоставляет гибкий способ построения запросов к БД. Позволяет составлять запросы с использованием Java-классов
+Кратко: Spring Criteria API (часть Hibernate) предоставляет гибкий способ построения запросов к БД. Позволяет составлять запросы с использованием Java-классов
 
 **Ключевые особенности Criteria API**
 1. **Динамическое построение запросов** - удобно для ситуаций, когда структура запроса может меняться в рантайме в зависимости от условий
@@ -1307,11 +1316,11 @@ public class EmployeeRepository {
 
 <span class="priority-badge priority-low">• Низкий приоритет</span>
 
-## 33. @Lookup
+## 33. Поясните: @Lookup
 
 <div class="answer-block">
 
-`@Lookup` - это аннотация в Spring, позволяющая в `singleton`-бине получать новый экземпляр `prototype`-бина при каждом вызове метода. Без `@Lookup` при внедрении `prototype`-бина в `singleton` он создаётся только один раз.
+Кратко: `@Lookup` - это аннотация в Spring, позволяющая в `singleton`-бине получать новый экземпляр `prototype`-бина при каждом вызове метода. Без `@Lookup` при внедрении `prototype`-бина в `singleton` он создаётся только один раз.
 
 **Как это работает**
 1. Помечаешь метод в singleton-классе аннотацией `@Lookup`
@@ -1352,11 +1361,11 @@ public abstract class SingletonBean {
 
 <span class="priority-badge priority-low">• Низкий приоритет</span>
 
-## 34. @PostConstruct
+## 34. Поясните: @PostConstruct
 
 <div class="answer-block">
 
-Метод, помеченный аннотацией `@PostConstruct` определяется спрингом как `init`-метод для бина, который должен быть выполнен после того, как бин был полностью создан и его зависимости внедрены. Этот метод вызывается один раз для каждого экземпляра бина
+Кратко: Метод, помеченный аннотацией `@PostConstruct` определяется спрингом как `init`-метод для бина, который должен быть выполнен после того, как бин был полностью создан и его зависимости внедрены. Этот метод вызывается один раз для каждого экземпляра бина
 
 **Сколько `@PostConstruct` можно задекларировать в бине?**
 Можно задекларировать только один метод с @PostConstruct в одном бине. Если попытаться добавить несколько методов с этой аннотацией, Spring выбросит ошибку
@@ -1367,11 +1376,11 @@ public abstract class SingletonBean {
 
 <span class="priority-badge priority-low">• Низкий приоритет</span>
 
-## 35. Как работает BeanPostProcessor. Почему есть before и after initialization
+## 35. Каким образом работает BeanPostProcessor. Почему есть before и after initialization
 
 <div class="answer-block">
 
-В Spring `BeanPostProcessor` - это специальный интерфейс, который позволяет «перехватывать» создаваемые спрингом бины и модифицировать их до и после его инициализации.
+В Spring `BeanPostProcessor` - это специальный интерфейс, который даёт возможность «перехватывать» создаваемые спрингом бины и модифицировать их до и после его инициализации.
 
 ```java
 public interface BeanPostProcessor {
@@ -1419,7 +1428,7 @@ public class LoggingBeanPostProcessor implements BeanPostProcessor {
 
 <span class="priority-badge priority-low">• Низкий приоритет</span>
 
-## 36. Как устроен Spring Security
+## 36. Каким образом устроен Spring Security
 
 <div class="answer-block">
 
@@ -1434,12 +1443,11 @@ public class LoggingBeanPostProcessor implements BeanPostProcessor {
         - `credentials` (пароль или токен)
         - `authorities` (роли/права)
 3. **AuthenticationManager** - точка входа для проверки логина/пароля или токена, делегирует проверку в **AuthenticationProvider**
-4. **AuthenticationProvider** - конкретная логика проверки (например, сверка пароля с БД)
+4. **AuthenticationProvider** - конкретная логика проверки (к примеру, сверка пароля с БД)
 5. **UserDetailsService** - загружает данные пользователя (по имени/почте), возвращает объект `UserDetails` с логином, паролем и ролями
 6. **Authorization** - после входа система проверяет роли/права. Используются аннотации:
         - `@PreAuthorize("hasRole('ADMIN')")`
         - `@Secured("ROLE_USER")`
-
 
 **Поток обработки запроса**
 1. Запрос приходит в приложение
@@ -1486,11 +1494,11 @@ public class SecurityConfig {
 
 <span class="priority-badge priority-low">• Низкий приоритет</span>
 
-## 37. @Async
+## 37. Поясните: @Async
 
 <div class="answer-block">
 
-Аннотация `@Async` используется в Spring для выполнения методов **асинхронно**, то есть в отдельном потоке, чтобы не блокировать основной поток выполнения
+Кратко: Аннотация `@Async` используется в Spring для выполнения методов **асинхронно**, то есть в отдельном потоке, чтобы не блокировать основной поток выполнения
 
 **Особенности:**
 - метод, помеченный аннотацией `@Async`, выполняется в отдельном потоке
@@ -1504,7 +1512,7 @@ public class SecurityConfig {
 
 <span class="priority-badge priority-low">• Низкий приоритет</span>
 
-## 38. Как работает DispatcherServlet?
+## 38. Каким образом работает DispatcherServlet?
 
 <div class="answer-block">
 
@@ -1516,7 +1524,7 @@ public class SecurityConfig {
   
 **Этапы 2-3**. **Определение подходящего контроллера** - с помощью `HandlerMapping` находит контроллер, который должен обработать запрос, основываясь на URL и HTTP-методе. С помощью аннотаций контроллера (`@RequestMapping`, `@GetMapping`, `@PostMapping` и др.) определяется, какой метод должен быть вызван  
 
-**Этапы 4-5**. **Обработка запроса** - `DispatcherServlet` вызывает контроллер через `HandlerAdapter`, контроллер выполняет бизнес-логику и возвращает `ModelAndView` или объект в формате JSON/XML (например, с `@ResponseBody`)  
+**Этапы 4-5**. **Обработка запроса** - `DispatcherServlet` вызывает контроллер через `HandlerAdapter`, контроллер выполняет бизнес-логику и возвращает `ModelAndView` или объект в формате JSON/XML (к примеру, с `@ResponseBody`)  
 
 **Этапы 6-7**. **Обработка ответа** - результат передается в компонент `ViewResolver`, который определяет, какое представление (HTML, JSP, JSON и др.) нужно отрендерить  
 
@@ -1532,7 +1540,7 @@ public class SecurityConfig {
 
 <span class="priority-badge priority-low">• Низкий приоритет</span>
 
-## 39. Spring Profiles как с ними работать?
+## 39. Поясните: Spring Profiles как с ними работать?
 
 <div class="answer-block">
 
@@ -1577,7 +1585,7 @@ public class ProdDataSource implements DataSourceConfig {
     }
 }
 ```
-Если активен профиль `dev`, то создастся `DevDataSource`, иначе - `ProdDataSource`. Можно комбинировать профили через операторы `&, |, !,`, например 
+Если активен профиль `dev`, то создастся `DevDataSource`, иначе - `ProdDataSource`. Можно комбинировать профили через операторы `&, |, !,`, к примеру 
 ```java
 @Component
 @Profile("prod & some-other-profile")
@@ -1600,11 +1608,11 @@ public class ProdDataSource implements DataSourceConfig {
 
 <span class="priority-badge priority-low">• Низкий приоритет</span>
 
-## 40. @Configuration. Является Configuration компонентом? Какую доп логику Configuration реализует?
+## 40. Поясните: @Configuration. Является Configuration компонентом? Какую доп логику Configuration реализует?
 
 <div class="answer-block">
 
-Аннотация `@Configuration` является специализированным компонентом Spring. Она указывает, что класс используется для конфигурации приложения, включая создание бинов. Обрабатывается аналогично аннотации `@Component`
+Аннотация `@Configuration` является специализированным компонентом Spring. Она указывает, что класс применяется для конфигурации приложения, включая создание бинов. Обрабатывается аналогично аннотации `@Component`
 
 **Дополнительная логика, реализуемая @Configuration**
 **1. Определение бинов (@Bean)** - классы с `@Configuration` позволяют определять методы, помеченные как `@Bean`, которые возвращают бины
@@ -1665,13 +1673,13 @@ public class AppConfig {}
 
 <span class="priority-badge priority-low">• Низкий приоритет</span>
 
-## 41. Как гарантировать корректное обновление и сохранение изменений в сущностях, полученных в методе с @Transactional
+## 41. Каким образом гарантировать корректное обновление и сохранение изменений в сущностях, полученных в методе с @Transactional
 
 <div class="answer-block">
 
 - `@Transactional` на сервисе гарантирует, что все изменения managed-сущностей будут автоматически сохранены при коммите (dirty checking)
 - Не нужно вызывать `save()` для уже загруженных entity - только для новых или detached (`merge()` под капотом)
-- `flush()` позволяет досрочно слить изменения в БД, если требуется промежуточный результат (generated value, ранняя проверка constraints)
+- `flush()` даёт возможность досрочно слить изменения в БД, если требуется промежуточный результат (generated value, ранняя проверка constraints)
 - Для чтения использовать `readOnly=true` - это ускоряет выполнение
 - Следить за корректностью атрибутов `propagation` и `isolation`, чтобы избежать неожиданных rollback’ов и блокировок
 
@@ -1681,11 +1689,11 @@ public class AppConfig {}
 
 <span class="priority-badge priority-low">• Низкий приоритет</span>
 
-## 42. @ConfigurationProperties? ConfigurationProperties vs Value
+## 42. Поясните: @ConfigurationProperties? ConfigurationProperties vs Value
 
 <div class="answer-block">
 
-`@ConfigurationProperties` позволяет извлекать свойства из конфигураций типа `application.properties`, `application.yaml` в поля класса. Особенно удобен для маппинга многоуровневых свойств
+`@ConfigurationProperties` даёт возможность извлекать свойства из конфигураций типа `application.properties`, `application.yaml` в поля класса. Особенно удобен для маппинга многоуровневых свойств
 - Привязывает свойства по префиксу к полям класса
 - Удобна для работы с группами связанных настроек
 - Требует аннотации `@EnableConfigurationProperties` или компонентов типа `@Component`
@@ -1748,11 +1756,11 @@ public class MyService {
 
 <span class="priority-badge priority-low">• Низкий приоритет</span>
 
-## 43. @Value. Что это?
+## 43. Поясните: @Value. Что это?
 
 <div class="answer-block">
 
-`@Value` - это аннотация Spring, которая позволяет внедрять значения из конфигурационных файлов (`application.properties`, `application.yaml`), системных переменных или других внешних источников в поля, методы или конструкторы класса. Под капотом создаёт скалярный бин (т.е. бин, содержащий константу), значение которого и внедряется
+`@Value` - это аннотация Spring, которая даёт возможность внедрять значения из конфигурационных файлов (`application.properties`, `application.yaml`), системных переменных или других внешних источников в поля, методы или конструкторы класса. Под капотом создаёт скалярный бин (т.е. бин, содержащий константу), значение которого и внедряется
 
 ```yaml
 app:
@@ -1787,11 +1795,11 @@ public class AppConfig {
 
 <span class="priority-badge priority-low">• Низкий приоритет</span>
 
-## 44. Spring MVC. Что это? Какие проблемы решает?
+## 44. Поясните: Spring MVC. Что это? Какие проблемы решает?
 
 <div class="answer-block">
 
-Spring Web MVC - один фреймворков внутри экосистемы Spring. Предназначен для написания веб-приложений с применением архитектурного паттерна Model-View-Controller. Решает следующие проблемы
+Кратко: Spring Web MVC - один фреймворков внутри экосистемы Spring. Предназначен для написания веб-приложений с применением архитектурного паттерна Model-View-Controller. Решает следующие проблемы
 - Чёткое разделение логики. Разбиваем логику в соответствии с MVC
 - Поддержка различных шаблонизаторов: JSP, Thymeleaf и др.
 - Упрощает обработку HTTP-запросов через контроллеры
@@ -1802,12 +1810,12 @@ Spring Web MVC - один фреймворков внутри экосистем
 
 <span class="priority-badge priority-low">• Низкий приоритет</span>
 
-## 45. Варианты обработки Exceptions в Spring
+## 45. Поясните: Варианты обработки Exceptions в Spring
 
 <div class="answer-block">
 
 **1. Методы с аннотацией `@ExceptionHandler` в контроллере**
-- используются для обработки исключений на уровне контроллера
+- применяются для обработки исключений на уровне контроллера
 - позволяют привязать обработку конкретных исключений к определённому методу в контроллере
 ```java
 @RestController
@@ -1890,7 +1898,6 @@ restTemplate.setErrorHandler(new DefaultResponseErrorHandler() {
 ---
 ***Как транзакционная логика обрабатывает исключения?***
 
-
 Spring использует транзакционный менеджер для обработки транзакций. Исключения в транзакционной логике влияют на коммит или откат (rollback) транзакции.
 
  **Основные принципы обработки исключений в транзакциях:**
@@ -1952,11 +1959,11 @@ private void performAction() {
 
 <span class="priority-badge priority-low">• Низкий приоритет</span>
 
-## 46. Понятие Controller и Servlet в Java. Это одно и то же? Если разное, в чем отличия?
+## 46. Поясните: Понятие Controller и Servlet в Java. Это одно и то же? Если разное, в чем отличия?
 
 <div class="answer-block">
 
-Понятия сервлета и контроллера принадлежат разным концепциям, хотя оба используются для обработки HTTP-запросов в Java веб-приложениях.
+Понятия сервлета и контроллера принадлежат разным концепциям, хотя оба применяются для обработки HTTP-запросов в Java веб-приложениях.
 
 **Servlet** - это Java-класс, который обрабатывает HTTP-запросы (HTTP GET, POST и т.д.) и возвращает HTTP-ответы. Он является основой для создания серверных приложений в Java
 
@@ -1981,11 +1988,11 @@ private void performAction() {
 
 <span class="priority-badge priority-low">• Низкий приоритет</span>
 
-## 47. Spring JDBC
+## 47. Поясните: Spring JDBC
 
 <div class="answer-block">
 
-Spring JDBC - это модуль Spring, который упрощает взаимодействие с базами данных, используя JDBC (Java Database Connectivity). Он предлагает упрощённый подход к выполнению SQL-запросов, обработке результатов и управлению ресурсами
+Кратко: Spring JDBC - это модуль Spring, который упрощает взаимодействие с базами данных, используя JDBC (Java Database Connectivity). Он предлагает упрощённый подход к выполнению SQL-запросов, обработке результатов и управлению ресурсами
 
 </div>
 
@@ -1993,11 +2000,11 @@ Spring JDBC - это модуль Spring, который упрощает вз�
 
 <span class="priority-badge priority-low">• Низкий приоритет</span>
 
-## 48. Spring Security, как хранить пароль пользователя?
+## 48. Поясните: Spring Security, как хранить пароль пользователя?
 
 <div class="answer-block">
 
-Для хранения паролей используют хэширование - исходную строку преобразуют в хэш по криптостойким алгоритмам (восстановить оригинальный текст крайне сложно или невозможно), после чего сохраняют в базу данных.
+Кратко: Для хранения паролей используют хэширование - исходную строку преобразуют в хэш по криптостойким алгоритмам (восстановить оригинальный текст крайне сложно или невозможно), после чего сохраняют в базу данных.
 
 **Как хранить пароль в Spring Security?**
 1. Хэширование с помощью BCrypt - Spring Security предоставляет поддержку алгоритма BCrypt, который подходит для хэширования паролей
@@ -2041,13 +2048,13 @@ Spring JDBC - это модуль Spring, который упрощает вз�
 
 <span class="priority-badge priority-low">• Низкий приоритет</span>
 
-## 49. Зачем нужны аннотации @RequestParam и @PathVariable?
+## 49. Для чего нужны аннотации @RequestParam и @PathVariable?
 
 <div class="answer-block">
 
 Эти аннотации используются в Spring MVC для извлечения параметров из HTTP-запросов. Они применяются в методах контроллера
 
-`@RequestParam(name)` позволяет извлечь из запроса параметр с именем `name`
+`@RequestParam(name)` даёт возможность извлечь из запроса параметр с именем `name`
 ```java
 @GetMapping("/api/users")
 public String getUser(@RequestParam String name, @RequestParam(defaultValue = "0") int page) {
@@ -2069,11 +2076,11 @@ public String getUserById(@PathVariable int id) {
 
 <span class="priority-badge priority-low">• Низкий приоритет</span>
 
-## 50. Что такое объект Filter? В какой момент вызывается?
+## 50. Поясните, что такое объект Filter? В какой момент вызывается?
 
 <div class="answer-block">
 
-`Filter` - это интерфейс из Java Servlet API, который позволяет перехватывать и изменять HTTP-запросы и ответы. Фильтры часто используются для задач, которые необходимо выполнить до или после обработки запроса в сервлете (или контроллере в случае Spring), например:
+`Filter` - это интерфейс из Java Servlet API, который позволяет перехватывать и изменять HTTP-запросы и ответы. Фильтры часто применяются для задач, которые необходимо выполнить до или после обработки запроса в сервлете (или контроллере в случае Spring), например:
 - Аутентификация и авторизация
 - Логирование запросов
 - Сжатие ответов
@@ -2095,11 +2102,11 @@ HTTP Request -&gt; Filter chain -&gt; DispatcherServlet -&gt; Controller -&gt; .
 
 <span class="priority-badge priority-low">• Низкий приоритет</span>
 
-## 51. @ResponseBody vs ResponseEntity
+## 51. Поясните: @ResponseBody vs ResponseEntity
 
 <div class="answer-block">
 
-`ResponseEntity` - это класс, экземпляр которого содержит в себе и тело ответа, и HTTP-статус
+Кратко: `ResponseEntity` - это класс, экземпляр которого содержит в себе и тело ответа, и HTTP-статус
 `@ResponseBody` - аннотация указывает, что результат метода должен быть возвращён как тело HTTP-ответа (JSON, XML)
 
 </div>
@@ -2108,12 +2115,12 @@ HTTP Request -&gt; Filter chain -&gt; DispatcherServlet -&gt; Controller -&gt; .
 
 <span class="priority-badge priority-low">• Низкий приоритет</span>
 
-## 52. Dependency management в Spring boot
+## 52. Поясните: Dependency management в Spring boot
 
 <div class="answer-block">
 
 В Spring Boot используется механизм Maven или Gradle для автоматического добавления, обновления и совместимости библиотек
-1. **Spring Boot Starter Dependencies** - группы зависимостей, которые включают всё необходимое для работы с определённым функционалом
+1. **Spring Boot Starter Dependencies** - группы зависимостей, которые включают всё нужное для работы с определённым функционалом
 2. **Spring Boot Dependency Management:**
     - использует BOM (Bill of Materials) для управления версиями зависимостей
     - версии зависимостей определяются в родительском POM (`spring-boot-dependencies`), что гарантирует их совместимость
@@ -2134,11 +2141,11 @@ HTTP Request -&gt; Filter chain -&gt; DispatcherServlet -&gt; Controller -&gt; .
 
 <span class="priority-badge priority-low">• Низкий приоритет</span>
 
-## 53. Блокировка по умолчанию в Spring
+## 53. Поясните: Блокировка по умолчанию в Spring
 
 <div class="answer-block">
 
-В Spring, по умолчанию, используется оптимистичная блокировка для управления конкурентным доступом к данным. Это означает, что при обновлении сущностей предполагается, что конфликты не произойдут, и изменения вносятся в базу данных без блокировок
+Кратко: В Spring, по умолчанию, используется оптимистичная блокировка для управления конкурентным доступом к данным. Это означает, что при обновлении сущностей предполагается, что конфликты не произойдут, и изменения вносятся в базу данных без блокировок
 
 </div>
 
@@ -2146,7 +2153,7 @@ HTTP Request -&gt; Filter chain -&gt; DispatcherServlet -&gt; Controller -&gt; .
 
 <span class="priority-badge priority-low">• Низкий приоритет</span>
 
-## 54. В чем разница между Filters, Listeners and Interceptors?
+## 54. Поясните, в чём разница между Filters, Listeners and Interceptors?
 
 <div class="answer-block">
 
@@ -2161,7 +2168,7 @@ Interceptor являются аналогом Filter в Spring. Перехват
 Чтобы добавить наши перехватчики в конфигурацию Spring, нам нужно переопределить метод addInterceptors () внутри класса, который реализует WebMvcConfigurer.
 Interceptor основан на механизме Reflection, а фильтр основан на обратном вызове функции.
 
-preHandle — метод используется для обработки запросов, которые еще не были переданы в метод контроллера. Должен вернуть true для передачи следующему перехватчику или в handler method. False укажет на обработку запроса самим обработчиком и отсутствию необходимости передавать его дальше. Метод имеет возможность выкидывать исключения и пересылать ошибки к представлению.
+preHandle — метод применяется для обработки запросов, которые еще не были переданы в метод контроллера. Должен вернуть true для передачи следующему перехватчику или в handler method. False укажет на обработку запроса самим обработчиком и отсутствию необходимости передавать его дальше. Метод имеет возможность выкидывать исключения и пересылать ошибки к представлению.
 postHandle — вызывается после handler method, но до обработки DispatcherServlet для передачи представлению. Может использоваться для добавления параметров в объект ModelAndView.
 afterCompletion — вызывается после отрисовки представления.
 
@@ -2173,11 +2180,11 @@ Listener - это класс, имплементирующий интерфей�
 
 <span class="priority-badge priority-low">• Низкий приоритет</span>
 
-## 55. Как заинжектить коллекцию?
+## 55. Каким образом заинжектить коллекцию?
 
 <div class="answer-block">
 
-Если внедряемый объект массив, коллекция, или map с дженериком, то используя аннотацию @Autowired, Spring внедрит все бины подходящие по типу в этот массив(или другую структуру данных). В случае с map ключом будет имя бина.
+Кратко: Если внедряемый объект массив, коллекция, или map с дженериком, то используя аннотацию @Autowired, Spring внедрит все бины подходящие по типу в этот массив(или другую структуру данных). В случае с map ключом будет имя бина.
 Используя аннотацию @Qualifier можно настроить тип искомого бина.
 Бины могут быть упорядочены, когда они вставляются в списки (не Set или Map) или массивы. Поддерживаются как аннотация @Order, так и интерфейс Ordered.
 
@@ -2187,7 +2194,7 @@ Listener - это класс, имплементирующий интерфей�
 
 <span class="priority-badge priority-low">• Низкий приоритет</span>
 
-## 56. Как заинжектить примитив?
+## 56. Каким образом заинжектить примитив?
 
 <div class="answer-block">
 
@@ -2197,7 +2204,7 @@ Listener - это класс, имплементирующий интерфей�
 @Value("${some.key}")
 public String stringWithDefaultValue;
 
-В эту переменную будет внедрена строка, например из property или из view.
+В эту переменную будет внедрена строка, к примеру из property или из view.
 Кроме того, для внедрения значений мы можем использовать язык SpEL (Spring Expression Language)
 
 </div>
@@ -2206,14 +2213,14 @@ public String stringWithDefaultValue;
 
 <span class="priority-badge priority-low">• Низкий приоритет</span>
 
-## 57. Как работает Spring Security? Как сконфигурировать? Какие интерфейсы используются?
+## 57. Каким образом работает Spring Security? Как сконфигурировать? Какие интерфейсы используются?
 
 <div class="answer-block">
 
 В кратце, основными блоками Spring Security являются:
 
 SecurityContextHolder, чтобы обеспечить доступ к SecurityContext.
-SecurityContext, содержит объект Authentication и в случае необходимости информацию системы безопасности, связанную с запросом.
+SecurityContext, содержит объект Authentication и в случае нужности информацию системы безопасности, связанную с запросом.
 Authentication представляет принципала с точки зрения Spring Security.
 GrantedAuthority отражает разрешения выданные доверителю в масштабе всего приложения.
 UserDetails предоставляет необходимую информацию для построения объекта Authentication из DAO объектов приложения или других источника данных системы безопасности.
@@ -2247,13 +2254,13 @@ Credentials - под ними понимаются пароль пользова
 
 <span class="priority-badge priority-low">• Низкий приоритет</span>
 
-## 58. Как спринг работает с транзакциями? Расскажите про аннотацию @Transactional.
+## 58. Каким образом спринг работает с транзакциями? Расскажите про аннотацию @Transactional.
 
 <div class="answer-block">
 
 Хорошая статья - marcobehler.com/guides/spring-transaction-management-transactional-in-depth
 
-Коротко: Spring создает прокси для всех классов, помеченных @Transactional (либо если любой из методов класса помечен этой аннотацией), что позволяет вводить транзакционную логику до и после вызываемого метода. При вызове такого метода происходит следующее:
+Коротко: Spring создает прокси для всех классов, помеченных @Transactional (либо если любой из методов класса помечен этой аннотацией), что даёт возможность вводить транзакционную логику до и после вызываемого метода. При вызове такого метода происходит следующее:
 - proxy, который создал Spring, создаёт persistence context (или соединение с базой),
 - открывает в нём транзакцию и сохраняет всё это в контексте нити исполнения (натурально, в ThreadLocal).
 - По мере надобности всё сохранённое достаётся и внедряется в бины.
@@ -2343,11 +2350,11 @@ isolation - уровень изолированности транзакций
 
 <span class="priority-badge priority-low">• Низкий приоритет</span>
 
-## 59. Можно ли вставить бин в статическое поле? Почему?
+## 59. Допустимо ли вставить бин в статическое поле? Почему?
 
 <div class="answer-block">
 
-Spring не позволяет внедрять бины напрямую в статические поля. Это связано с тем, что когда загрузчик классов загружает статические значения, контекст Spring ещё не загружен. Чтобы исправить это, создайте нестатический сеттер-метод с @Autowired:
+Spring не даёт возможность внедрять бины напрямую в статические поля. Это связано с тем, что когда загрузчик классов загружает статические значения, контекст Spring ещё не загружен. Чтобы исправить это, создайте нестатический сеттер-метод с @Autowired:
 
    private static OrderItemService orderItemService;
 
@@ -2362,11 +2369,11 @@ Spring не позволяет внедрять бины напрямую в с�
 
 <span class="priority-badge priority-low">• Низкий приоритет</span>
 
-## 60. Можно ли передать в запросе один и тот же параметр несколько раз? Как?
+## 60. Допустимо ли передать в запросе один и тот же параметр несколько раз? Как?
 
 <div class="answer-block">
 
-Да, можно принять все значения, используя массив в методе контроллера:
+Кратко: Да, можно принять все значения, используя массив в методе контроллера:
 
 http://localhost:8080/login?name=Ranga&amp;name=Ravi&amp;name=Sathish
 public String method(@RequestParam(value="name") String[] names){...}
@@ -2380,11 +2387,11 @@ public String getFoos(@RequestParam List&lt;String&gt; id){...}
 
 <span class="priority-badge priority-low">• Низкий приоритет</span>
 
-## 61. Расскажите про ApplicationContext и BeanFactory, чем отличаются? В каких случаях что стоит использовать?
+## 61. Расскажите подробнее про ApplicationContext и BeanFactory, чем отличаются? В каких случаях что стоит использовать?
 
 <div class="answer-block">
 
-ApplicationContext является наследником BeanFactory и полностью реализует его функционал, добавляя больше специфических enterprise-функций. Может работать с бинами всех скоупов.
+Кратко: ApplicationContext является наследником BeanFactory и полностью реализует его функционал, добавляя больше специфических enterprise-функций. Может работать с бинами всех скоупов.
 BeanFactory - это фактический контейнер, который создает, настраивает и управляет рядом bean-компонентов. Эти бины обычно взаимодействуют друг с другом и, таким образом, имеют зависимости между собой. Эти зависимости отражены в данных конфигурации, используемых BeanFactory. Может работать с бинами singleton и prototype.
 BeanFactory обычно используется тогда, когда ресурсы ограничены (мобильные устройства), так как он легче по сравнению с ApplicationContext. Поэтому, если ресурсы не сильно ограничены, то лучше использовать ApplicationContext.
 ApplicationContext загружает все бины при запуске, а BeanFactory по требованию.
@@ -2395,12 +2402,12 @@ ApplicationContext загружает все бины при запуске, а 
 
 <span class="priority-badge priority-low">• Низкий приоритет</span>
 
-## 62. Расскажите про аннотации @Controller и @RestController. Чем они отличаются? Как вернуть ответ со своим статусом (например 213)?
+## 62. Расскажите подробнее про аннотации @Controller и @RestController. Чем они отличаются? Как вернуть ответ со своим статусом (например 213)?
 
 <div class="answer-block">
 
 @Controller - специальный тип класса, обрабатывает HTTP-запросы и часто используется с аннотацией @RequestMapping.
-@RestController ставится на класс-контроллер вместо @Controller. Она указывает, что этот класс оперирует не моделями, а данными. Она состоит из аннотаций @Controller и @ResponseBody. Была введена в Spring 4.0 для упрощения создания RESTful веб-сервисов.
+@RestController ставится на класс-контроллер вместо @Controller. Она указывает, что этот класс оперирует не моделями, а данными. Она включает в себя аннотаций @Controller и @ResponseBody. Была введена в Spring 4.0 для упрощения создания RESTful веб-сервисов.
 
 @ResponseBody сообщает контроллеру, что возвращаемый объект автоматически сериализуется (используя Jackson message converter) в json или xml и передается обратно в объект HttpResponse.
 
@@ -2414,11 +2421,11 @@ return ResponseEntity.status(213);
 
 <span class="priority-badge priority-low">• Низкий приоритет</span>
 
-## 63. Расскажите про аннотации @Primary и @Qualifier
+## 63. Расскажите подробнее про аннотации @Primary и @Qualifier
 
 <div class="answer-block">
 
-@Qualifier применяется если кандидатов для автоматического связывания несколько, она позволяет указать в качестве аргумента имя конкретного бина, который следует внедрить. Она может быть применена к отдельному полю класса, к отдельному аргументу метода или конструктора:
+@Qualifier применяется если кандидатов для автоматического связывания несколько, она даёт возможность указать в качестве аргумента имя конкретного бина, который следует внедрить. Она может быть применена к отдельному полю класса, к отдельному аргументу метода или конструктора:
 
 public class AutowiredClass {
 
@@ -2447,11 +2454,11 @@ public class GreetingServiceImpl implements GreetingService {
 
 <span class="priority-badge priority-low">• Низкий приоритет</span>
 
-## 64. Расскажите про аннотации @Service и @Repository. Чем они отличаются?
+## 64. Расскажите подробнее про аннотации @Service и @Repository. Чем они отличаются?
 
 <div class="answer-block">
 
-@Repository - указывает, что класс используется для работы с поиском, получением и хранением данных. Аннотация может использоваться для реализации шаблона DАО.
+@Repository - указывает, что класс применяется для работы с поиском, получением и хранением данных. Аннотация может использоваться для реализации шаблона DАО.
  @Service - указывает, что класс является сервисом для реализации бизнес-логики.
  @Repository, @Service, @Controller и @Configuration являются алиасами @Component, их также называют стереотипными аннотациями.
 
@@ -2463,11 +2470,11 @@ public class GreetingServiceImpl implements GreetingService {
 
 <span class="priority-badge priority-low">• Низкий приоритет</span>
 
-## 65. Расскажите про аннотацию @Autowired
+## 65. Расскажите подробнее про аннотацию @Autowired
 
 <div class="answer-block">
 
-@Autowired – автоматическое внедрение подходящего бина:
+Кратко: @Autowired – автоматическое внедрение подходящего бина:
 1) Контейнер определяет тип объекта для внедрения
 2) Контейнер ищет соответствующий тип бина в контексте(он же контейнер)
 3) Если есть несколько кандидатов, и один из них помечен как @Primary, то внедряется он
@@ -2489,11 +2496,11 @@ public class GreetingServiceImpl implements GreetingService {
 
 <span class="priority-badge priority-low">• Низкий приоритет</span>
 
-## 66. Расскажите про аннотацию @Bean?
+## 66. Расскажите подробнее про аннотацию @Bean?
 
 <div class="answer-block">
 
-Аннотация @Bean используется для указания того, что метод создает, настраивает и инициализирует новый объект, управляемый IoC-контейнером. Такие методы можно использовать как в классах с аннотацией @Configuration, так и в классах с аннотацией @Component(или её наследниках).
+Аннотация @Bean применяется для указания того, что метод создает, настраивает и инициализирует новый объект, управляемый IoC-контейнером. Такие методы можно использовать как в классах с аннотацией @Configuration, так и в классах с аннотацией @Component(или её наследниках).
 Имеет следующие свойства:
 destroyMethod, initMethod — варианты переопределения методов инициализации и удаления бина, указав их имена в аннотации.
 name — имя бина. По умолчанию именем бина является имя метода.
@@ -2505,11 +2512,11 @@ value — алиас для name()
 
 <span class="priority-badge priority-low">• Низкий приоритет</span>
 
-## 67. Расскажите про аннотацию @Component?
+## 67. Расскажите подробнее про аннотацию @Component?
 
 <div class="answer-block">
 
-@Component - используется для указания класса в качестве компонента spring. Такой класс будет сконфигурирован как spring Bean.
+@Component - применяется для указания класса в качестве компонента spring. Такой класс будет сконфигурирован как spring Bean.
 
 </div>
 
@@ -2517,7 +2524,7 @@ value — алиас для name()
 
 <span class="priority-badge priority-low">• Низкий приоритет</span>
 
-## 68. Расскажите про аннотацию @ComponentScan
+## 68. Расскажите подробнее про аннотацию @ComponentScan
 
 <div class="answer-block">
 
@@ -2531,7 +2538,7 @@ ASSIGNABLE_TYPE
 ASPECTJ
 REGEX
 CUSTOM
-Нужно для того, что например, имея какой-то ненужный класс в не нашей библиотеке, мы можем создать для него фильтр, чтобы его бин не инициализировался.
+Нужно для того, что к примеру, имея какой-то ненужный класс в не нашей библиотеке, мы можем создать для него фильтр, чтобы его бин не инициализировался.
 
 </div>
 
@@ -2539,11 +2546,11 @@ CUSTOM
 
 <span class="priority-badge priority-low">• Низкий приоритет</span>
 
-## 69. Расскажите про аннотацию @Conditional
+## 69. Расскажите подробнее про аннотацию @Conditional
 
 <div class="answer-block">
 
-Spring предоставляет возможность на основе вашего алгоритма включить или выключить определение бина или всей конфигурации через @Conditional, в качестве параметра которой указывается класс, реализующий интерфейс Condition, с единственным методом matches(ConditionContext var1, AnnotatedTypeMetadata var2), возвращающий boolean.
+Кратко: Spring предоставляет возможность на основе вашего алгоритма включить или выключить определение бина или всей конфигурации через @Conditional, в качестве параметра которой указывается класс, реализующий интерфейс Condition, с единственным методом matches(ConditionContext var1, AnnotatedTypeMetadata var2), возвращающий boolean.
 Для создания более сложных условий можно использовать классы AnyNestedCondition, AllNestedConditions и NoneNestedConditions.
 Аннотация @Conditional указывает, что компонент имеет право на регистрацию в контексте только тогда, когда все условия соответствуют.
 Условия проверяются непосредственно перед тем, как должен быть зарегистрирован BeanDefinition компонента, и они могут помешать регистрации данного BeanDefinition. Поэтому нельзя допускать, чтобы при проверке условий мы взаимодействовали с бинами, которых еще не существует, с их BeanDefinition-ами можно.
@@ -2557,11 +2564,11 @@ Spring предоставляет возможность на основе ва�
 
 <span class="priority-badge priority-low">• Низкий приоритет</span>
 
-## 70. Расскажите про аннотацию @Inject
+## 70. Расскажите подробнее про аннотацию @Inject
 
 <div class="answer-block">
 
-@Inject входит в пакет javax.inject и, чтобы её использовать, нужно добавить зависимость:
+Кратко: @Inject входит в пакет javax.inject и, чтобы её использовать, нужно добавить зависимость:
 &lt;dependency&gt;
    &lt;groupId&gt;javax.inject&lt;/groupId&gt;
    &lt;artifactId&gt;javax.inject&lt;/artifactId&gt;
@@ -2580,11 +2587,11 @@ private ArbitraryDependency yetAnotherFieldInjectDependency;
 
 <span class="priority-badge priority-low">• Низкий приоритет</span>
 
-## 71. Расскажите про аннотацию @Lookup
+## 71. Расскажите подробнее про аннотацию @Lookup
 
 <div class="answer-block">
 
-Обычно бины в приложении Spring являтся синглтонами, и для внедрения зависимостей мы используем конструктор или сеттер.
+Кратко: Обычно бины в приложении Spring являтся синглтонами, и для внедрения зависимостей мы используем конструктор или сеттер.
 Но бывает и другая ситуация: имеется бин Car – синглтон (singleton bean), и ему требуется каждый раз новый экземпляр бина Passenger. То есть Car – синглтон, а Passenger – так называемый прототипный бин (prototype bean). Жизненные циклы бинов разные. Бин Car создается контейнером только раз, а бин Passenger создается каждый раз новый – допустим, это происходит каждый раз при вызове какого-то метода бина Car. Вот здесь то и пригодится внедрение бина с помощью Lookup метода. Оно происходит не при инициализации контейнера, а позднее: каждый раз, когда вызывается метод. Суть в том, что вы создаете метод-заглушку в бине Car и помечаете его специальным образом – аннотацией @Lookup. Этот метод должен возвращать бин Passenger, каждый раз новый. Контейнер Spring под капотом создаст подкласс и переопределит этот метод и будет вам выдавать новый экземпляр бина Passenger при каждом вызове аннотированного метода. Даже если в вашей заглушке он возвращает null (а так и надо делать, все равно этот метод будет переопределен).
 
 </div>
@@ -2593,11 +2600,11 @@ private ArbitraryDependency yetAnotherFieldInjectDependency;
 
 <span class="priority-badge priority-low">• Низкий приоритет</span>
 
-## 72. Расскажите про аннотацию @Profile
+## 72. Расскажите подробнее про аннотацию @Profile
 
 <div class="answer-block">
 
-Профили - это ключевая особенность Spring Framework, позволяющая нам относить наши бины к разным профилям (логическим группам), например, dev, test, prod.
+Профили - это ключевая особенность Spring Framework, позволяющая нам относить наши бины к разным профилям (логическим группам), к примеру, dev, test, prod.
 Мы можем активировать разные профили в разных средах, чтобы загрузить только те бины, которые нам нужны.
 Используя аннотацию @Profile, мы относим бин к конкретному профилю. Её можно применять на уровне класса или метода. Аннотация @Profile принимает в качестве аргумента имя одного или нескольких профилей. Она фактически реализована с помощью гораздо более гибкой аннотации @Conditional.
 Ее можно ставить на @Configuration и Component классы.
@@ -2608,7 +2615,7 @@ private ArbitraryDependency yetAnotherFieldInjectDependency;
 
 <span class="priority-badge priority-low">• Низкий приоритет</span>
 
-## 73. Расскажите про аннотацию @Resource
+## 73. Расскажите подробнее про аннотацию @Resource
 
 <div class="answer-block">
 
@@ -2625,7 +2632,7 @@ private ArbitraryDependency yetAnotherFieldInjectDependency;
 Разница с @Autowired:
 ❖        ищет бин сначала по имени, а потом по типу;
 ❖        не нужна дополнительная аннотация для указания имени конкретного бина;
-❖        @Autowired позволяет отметить место вставки бина как
+❖        @Autowired даёт возможность отметить место вставки бина как
 необязательное @Autowired(required = false);
 ❖        при замене Spring Framework на другой фреймворк, менять аннотацию @Resource не нужно.
 
@@ -2635,7 +2642,7 @@ private ArbitraryDependency yetAnotherFieldInjectDependency;
 
 <span class="priority-badge priority-low">• Низкий приоритет</span>
 
-## 74. Расскажите про жизненный цикл бина, аннотации @PostConstruct и @PreDestroy()
+## 74. Расскажите подробнее про жизненный цикл бина, аннотации @PostConstruct и @PreDestroy()
 
 <div class="answer-block">
 
@@ -2694,7 +2701,7 @@ public class ColorFactory implements FactoryBean&lt;Color&gt; {
 5) Настройка созданных бинов
 
 На данном этапе бины уже созданы, мы можем лишь их донастроить.
-Интерфейс BeanPostProcessor позволяет вклиниться в процесс настройки наших бинов до того, как они попадут в контейнер. ApplicationContext автоматически обнаруживает любые бины с реализацией BeanPostProcessor и помечает их как “post-processors” для того, чтобы создать их определенным способом. Например, в Spring есть реализации BeanPostProcessor-ов, которые обрабатывают аннотации @Autowired, @Inject, @Value и @Resource.
+Интерфейс BeanPostProcessor даёт возможность вклиниться в процесс настройки наших бинов до того, как они попадут в контейнер. ApplicationContext автоматически обнаруживает любые бины с реализацией BeanPostProcessor и помечает их как “post-processors” для того, чтобы создать их определенным способом. Например, в Spring есть реализации BeanPostProcessor-ов, которые обрабатывают аннотации @Autowired, @Inject, @Value и @Resource.
 Интерфейс несет в себе два метода: postProcessBeforeInitialization(Object bean, String beanName) и postProcessAfterInitialization(Object bean, String beanName). У обоих методов параметры абсолютно одинаковые. Разница только в порядке их вызова. Первый вызывается до init-метода, второй - после.
 Как правило, BeanPostProcessor-ы, которые заполняют бины через маркерные интерфейсы или тому подобное, реализовывают метод postProcessBeforeInitialization (Object bean, String beanName), тогда как BeanPostProcessor-ы, которые оборачивают бины в прокси, обычно реализуют postProcessAfterInitialization (Object bean, String beanName).
 Прокси — это класс-декорация над бином. Например, мы хотим добавить логику нашему бину, но джава-код уже скомпилирован, поэтому нам нужно на лету сгенерировать новый класс. Этим классом мы должны заменить оригинальный класс так, чтобы никто не заметил подмены.
@@ -2742,11 +2749,11 @@ SCOPE_SINGLETON — инициализация произойдет один р�
 
 <span class="priority-badge priority-low">• Низкий приоритет</span>
 
-## 75. Расскажите про нововведения Spring 5.
+## 75. Расскажите подробнее про нововведения Spring 5.
 
 <div class="answer-block">
 
-●        Используется JDK 8+ (Optional, CompletableFuture, Time API, java.util.function, default methods)
+Кратко: ●        Используется JDK 8+ (Optional, CompletableFuture, Time API, java.util.function, default methods)
 ●        Поддержка Java 9 (Automatic-Module-Name in 5.0, module-info in 6.0+, ASM 6)
 ●        Поддержка HTTP/2 (TLS, Push), NIO/NIO.2
 ●        Поддержка Kotlin
@@ -2762,11 +2769,11 @@ SCOPE_SINGLETON — инициализация произойдет один р�
 
 <span class="priority-badge priority-low">• Низкий приоритет</span>
 
-## 76. Расскажите про паттерн Front Controller, как он реализован в Spring?
+## 76. Расскажите подробнее про паттерн Front Controller, как он реализован в Spring?
 
 <div class="answer-block">
 
-Front controller - обеспечивает единую точку входа для всех входящих запросов. Все запросы обрабатываются одним обработчиком – DispatcherServlet с маппингом “/”. Этот обработчик может выполнить аутентификацию, авторизацию, регистрацию или отслеживание запроса, а затем распределяет их между контроллерами, обрабатывающими разные URL. Это и есть реализация паттерна Front Controller.
+Кратко: Front controller - обеспечивает единую точку входа для всех входящих запросов. Все запросы обрабатываются одним обработчиком – DispatcherServlet с маппингом “/”. Этот обработчик может выполнить аутентификацию, авторизацию, регистрацию или отслеживание запроса, а затем распределяет их между контроллерами, обрабатывающими разные URL. Это и есть реализация паттерна Front Controller.
 Веб-приложение может определять любое количество DispatcherServlet-ов. Каждый из них будет работать в своем собственном пространстве имен, загружая свой собственный дочерний WebApplicationContext с вьюшками, контроллерами и т.д.
 ❖        Один из контекстов будет корневым, а все остальные контексты будут дочерними.
 ❖        Все дочерние контексты могут получить доступ к бинам, определенным в корневом контексте, но не наоборот. 
@@ -2780,7 +2787,7 @@ ContextLoaderListener создает корневой контекст прил�
 
 <span class="priority-badge priority-low">• Низкий приоритет</span>
 
-## 77. Расскажите про паттерн MVC, как он реализован в Spring?
+## 77. Расскажите подробнее про паттерн MVC, как он реализован в Spring?
 
 <div class="answer-block">
 
@@ -2790,7 +2797,7 @@ View — отвечает за вывод данных на фронтенде.
 Controller — оперирует моделями и отвечает за обмен данными model с view.
 Основная цель следования принципам MVC — отделить реализацию бизнес-логики приложения (модели) от ее визуализации (view).
 Spring MVC - это веб-фреймворк, основанный на Servlet API, с использованием двух шаблонов проектирования - Front controller и MVC.
-Spring MVC реализует четкое разделение задач, что позволяет нам легко разрабатывать и тестировать наши приложения. Данные задачи разбиты между разными компонентами: Dispatcher Servlet, Controllers, View Resolvers, Views, Models, ModelAndView, Model and Session Attributes, которые полностью независимы друг от друга, и отвечают только за одно направление. Поэтому MVC дает нам довольно большую гибкость. Он основан на интерфейсах (с предоставленными классами реализации), и мы можем настраивать каждую часть фреймворка с помощью пользовательских интерфейсов.
+Spring MVC реализует четкое разделение задач, что даёт возможность нам легко разрабатывать и тестировать наши приложения. Данные задачи разбиты между разными компонентами: Dispatcher Servlet, Controllers, View Resolvers, Views, Models, ModelAndView, Model and Session Attributes, которые полностью независимы друг от друга, и отвечают только за одно направление. Поэтому MVC дает нам довольно большую гибкость. Он основан на интерфейсах (с предоставленными классами реализации), и мы можем настраивать каждую часть фреймворка с помощью пользовательских интерфейсов.
 
 Основные интерфейсы для обработки запросов:
 
@@ -2820,11 +2827,11 @@ DispatcherServlet сам его отправляет, минуя ViewResolver;
 
 <span class="priority-badge priority-low">• Низкий приоритет</span>
 
-## 78. Расскажите про скоупы бинов? Какой скоуп используется по умолчанию? Что изменилось в Spring 5?
+## 78. Расскажите подробнее про скоупы бинов? Какой скоуп используется по умолчанию? Что изменилось в Spring 5?
 
 <div class="answer-block">
 
-Существует 2 области видимости по умолчанию.
+Кратко: Существует 2 области видимости по умолчанию.
 Singleton - область видимости по умолчанию. В контейнере будет создан только один бин, и все запросы на него будут возвращать один и тот же бин.
 Prototype - приводит к созданию нового бина каждый раз, когда он запрашивается.
 Для бинов со scope “prototype” Spring не вызывает метод destroy(), так как не берет на себя контроль полного жизненного цикла этого бина. Spring не хранит такие бины в своём контексте ( контейнере), а отдаёт их клиенту и больше о них не заботится (в отличие от синглтон-бинов).
@@ -2844,12 +2851,12 @@ WebSocket - Область видимости — жизненный цикл We
 
 <span class="priority-badge priority-low">• Низкий приоритет</span>
 
-## 79. Чем отличаются Model, ModelMap и ModelAndView?
+## 79. Поясните, чем отличаются Model, ModelMap и ModelAndView?
 
 <div class="answer-block">
 
 Model - интерфейс, представляет коллекцию пар ключ-значение Map&lt;String, Object&gt;.
-Содержимое модели используется для отображения данных во View.
+Содержимое модели применяется для отображения данных во View.
 Например, если View выводит информацию об объекте Customer, то она может ссылаться к ключам модели, например customerName, customerPhone, и получать значения для этих ключей.
 Объекты-значения из модели также могут содержать бизнес-логику.
 ModelMap - класс, наследуется от LinkedHashMap, тоже используется для передачи значений для визуализации представления.
@@ -2865,11 +2872,11 @@ Spring MVC поддерживает несколько поставщиков Vi
 
 <span class="priority-badge priority-low">• Низкий приоритет</span>
 
-## 80. Чем отличаются аннотации @Bean и @Component?
+## 80. Поясните, чем отличаются аннотации @Bean и @Component?
 
 <div class="answer-block">
 
-@Bean - ставится над методом и позволяет добавить bean, уже реализованного сторонней библиотекой класса, в контейнер, а @Component используется для указания класса, написанного программистом.
+@Bean - ставится над методом и позволяет добавить bean, уже реализованного сторонней библиотекой класса, в контейнер, а @Component применяется для указания класса, написанного программистом.
 
 </div>
 
@@ -2877,11 +2884,11 @@ Spring MVC поддерживает несколько поставщиков Vi
 
 <span class="priority-badge priority-low">• Низкий приоритет</span>
 
-## 81. Что такое IoC контейнер?
+## 81. Поясните, что такое IoC контейнер?
 
 <div class="answer-block">
 
-В среде Spring IoC-контейнер представлен интерфейсом ApplicationContext, который является оберткой над BeanFactory, предоставляющей дополнительные возможности, например AOP и транзакции. Интерфейс BeanFactory предоставляет фабрику для бинов, которая в то же время и является IoC-контейнером приложения. Управление бинами основано на конфигурации(аннотации или xml). Контейнер создает бъекты на основе конфигураций и управляет их жизненным циклом от создания объекта до уничтожения." на "В среде Spring IoC-контейнер представлен интерфейсом ApplicationContext, который является оберткой над BeanFactory, предоставляющей дополнительные возможности, например AOP и транзакции. Интерфейс BeanFactory предоставляет фабрику для бинов, которая в то же время и является IoC-контейнером приложения. Управление бинами основано на конфигурации(аннотации или xml). Контейнер создает объекты на основе конфигураций и управляет их жизненным циклом от создания объекта до уничтожения.
+В среде Spring IoC-контейнер представлен интерфейсом ApplicationContext, который является оберткой над BeanFactory, предоставляющей дополнительные возможности, к примеру AOP и транзакции. Интерфейс BeanFactory предоставляет фабрику для бинов, которая в то же время и является IoC-контейнером приложения. Управление бинами основано на конфигурации(аннотации или xml). Контейнер создает бъекты на основе конфигураций и управляет их жизненным циклом от создания объекта до уничтожения." на "В среде Spring IoC-контейнер представлен интерфейсом ApplicationContext, который является оберткой над BeanFactory, предоставляющей дополнительные возможности, например AOP и транзакции. Интерфейс BeanFactory предоставляет фабрику для бинов, которая в то же время и является IoC-контейнером приложения. Управление бинами основано на конфигурации(аннотации или xml). Контейнер создает объекты на основе конфигураций и управляет их жизненным циклом от создания объекта до уничтожения.
 
 </div>
 
@@ -2889,7 +2896,7 @@ Spring MVC поддерживает несколько поставщиков Vi
 
 <span class="priority-badge priority-low">• Низкий приоритет</span>
 
-## 82. Что такое SpringBoot? Какие у него преимущества? Как конфигурируется? Подробно.
+## 82. Поясните, что такое SpringBoot? Какие у него преимущества? Как конфигурируется? Подробно.
 
 <div class="answer-block">
 
@@ -2900,7 +2907,7 @@ Spring Boot - это модуль Spring-а, который предоставл
 1. Простота управления зависимостями (spring-boot-starter-* в pom.xml).
 
 Чтобы ускорить процесс управления зависимостями Spring Boot неявно упаковывает необходимые сторонние зависимости для каждого типа приложения на основе Spring и предоставляет их разработчику в виде так называемых starter-пакетов.
-Starter-пакеты представляют собой набор удобных дескрипторов зависимостей, которые можно включить в свое приложение. Это позволяет получить универсальное решение для всех технологий, связанных со Spring, избавляя программиста от лишнего поиска необходимых зависимостей, библиотек и решения вопросов, связанных с конфликтом версий различных библиотек.
+Starter-пакеты представляют собой набор удобных дескрипторов зависимостей, которые можно включить в свое приложение. Это даёт возможность получить универсальное решение для всех технологий, связанных со Spring, избавляя программиста от лишнего поиска необходимых зависимостей, библиотек и решения вопросов, связанных с конфликтом версий различных библиотек.
 Например, если вы хотите начать использовать Spring Data JPA для доступа к базе данных, просто включите в свой проект зависимость spring-boot-starter-data-jpa.
 Starter-пакеты можно создавать и свои.
 
@@ -2941,12 +2948,12 @@ Starter-пакеты можно создавать и свои.
 
 <span class="priority-badge priority-low">• Низкий приоритет</span>
 
-## 83. Что такое ViewResolver?
+## 83. Поясните, что такое ViewResolver?
 
 <div class="answer-block">
 
 ViewResolver  - распознаватель представлений - это способ работы с представлениями(html-файлы), который поддерживает их распознавание на основе имени, возвращаемого контроллером.
-Spring Framework поставляется с большим количеством реализаций ViewResolver. Например, класс UrlBasedViewResolver поддерживает прямое преобразование логических имен в URL.
+Spring Framework поставляется с большим количеством реализаций ViewResolver. К примеру, класс UrlBasedViewResolver поддерживает прямое преобразование логических имен в URL.
 InternalResourceViewResolver — реализация ViewResolver по умолчанию, которая позволяет находить представления, которые возвращает контроллер для последующего перехода к ним. Ищет по заданному пути, префиксу, суффиксу и имени.
 Любым реализациям ViewResolver желательно поддерживать интернационализацию, то есть множество языков.
 Существует также несколько реализаций для интеграции с различными технологиями представлений, такими как FreeMarker (FreeMarkerViewResolver), Velocity (VelocityViewResolver) и JasperReports (JasperReportsViewResolver).
@@ -2957,11 +2964,11 @@ InternalResourceViewResolver — реализация ViewResolver по умол
 
 <span class="priority-badge priority-low">• Низкий приоритет</span>
 
-## 84. Что такое АОП? Как реализовано в спринге?
+## 84. Поясните, что такое АОП? Как реализовано в спринге?
 
 <div class="answer-block">
 
-Аспектно-ориентированное программирование (АОП) — это парадигма программирования, целью которой является повышение модульности за счет разделения междисциплинарных задач. Это достигается путем добавления дополнительного поведения к существующему коду без изменения самого кода.
+Кратко: Аспектно-ориентированное программирование (АОП) — это парадигма программирования, целью которой является повышение модульности за счет разделения междисциплинарных задач. Это достигается путем добавления дополнительного поведения к существующему коду без изменения самого кода.
 АОП предоставляет возможность реализации сквозной логики в одном месте - т.е. логики, которая применяется к множеству частей приложения - и обеспечения автоматического применения этой логики по всему приложению.
 Аспект в АОП - это модуль или класс, реализующий сквозную функциональность. Аспект изменяет поведение остального кода, применяя совет в точках соединения, определённых некоторым срезом.
 Совет (advice) – дополнительная логика — код, который должен быть вызван из точки соединения.
@@ -2978,14 +2985,15 @@ InternalResourceViewResolver — реализация ViewResolver по умол
 
 <span class="priority-badge priority-low">• Низкий приоритет</span>
 
-## 85. Что такое инверсия контроля (IoC) и внедрение зависимостей (DI)? Как эти принципы реализованы в Spring?
+## 85. Поясните, что такое инверсия контроля (IoC) и внедрение зависимостей (DI)? Как эти принципы реализованы в Spring?
 
 <div class="answer-block">
 
-Inversion of Control - подход, который позволяет конфигурировать и управлять объектами Java с помощью рефлексии. Вместо ручного внедрения зависимостей, фреймворк забирает ответственность за это посредством IoC-контейнера. Контейнер отвечает за управление жизненным циклом объекта: создание объектов, вызов методов инициализации и конфигурирование объектов путём связывания их между собой.
+Inversion of Control - подход, который даёт возможность конфигурировать и управлять объектами Java с помощью рефлексии. Вместо ручного внедрения зависимостей, фреймворк забирает ответственность за это посредством IoC-контейнера. Контейнер отвечает за управление жизненным циклом объекта: создание объектов, вызов методов инициализации и конфигурирование объектов путём связывания их между собой.
 Объекты, создаваемые контейнером, называются beans. Конфигурирование контейнера осуществляется путём внедрения аннотаций, но также, есть возможность, по старинке, загрузить XML-файлы, содержащие определение bean’ов и предоставляющие информацию, необходимую для создания bean’ов.
 Dependency Injection — является одним из способов реализации принципа IoC в Spring. Это шаблон проектирования, в котором контейнер передает экземпляры объектов по их типу другим объектам с помощью конструктора или метода класса(setter), что позволяет писать слабосвязный код.
 
 </div>
 
 ---
+
