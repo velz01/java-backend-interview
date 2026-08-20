@@ -221,7 +221,7 @@ public enum Singleton {
     
 2. **Proxy** используется для аспектов (AOP), например, для логирования, транзакций или кэширования
 3. **Observer** - события, такие как `ContextRefreshedEvent`, используются для уведомления бинов о состоянии контекста
-    ```java
+```java
     @Component
     public class MyEventListener implements ApplicationListener<ContextRefreshedEvent> {
         @Override
@@ -229,7 +229,7 @@ public enum Singleton {
             System.out.println("Context Refreshed!");
         }
     }
-    ```
+```
 4. **Strategy** - разные реализации интерфейсов используются в зависимости от ситуации. Например, `PlatformTransactionManager` имеет реализации для JPA, JDBC и Hibernate
 	```java
 	@Bean
@@ -333,7 +333,7 @@ Abstract Factory - это порождающий паттерн проекти�
     public interface Checkbox {
         void render();
     }
-    ```
+```
     
 2. **Реализации компонентов для Windows**
 	```java
@@ -350,10 +350,10 @@ Abstract Factory - это порождающий паттерн проекти�
             System.out.println("Rendering Windows Checkbox");
         }
     }
-    ```
+```
     
 3. **Реализации компонентов для MacOS**
-    ```java
+```java
     public class MacOSButton implements Button {
         @Override
         public void render() {
@@ -367,18 +367,18 @@ Abstract Factory - это порождающий паттерн проекти�
             System.out.println("Rendering MacOS Checkbox");
         }
     }
-    ```
+```
     
 4. **Интерфейс Abstract Factory**
-    ```java
+```java
     public interface GUIFactory {
         Button createButton();
         Checkbox createCheckbox();
     }
-    ```
+```
     
 5. **Реализации фабрик для Windows и MacOS**
-    ```java
+```java
     public class WindowsFactory implements GUIFactory {
         @Override
         public Button createButton() {
@@ -402,11 +402,11 @@ Abstract Factory - это порождающий паттерн проекти�
             return new MacOSCheckbox();
         }
     }
-    ```
+```
     
 6. **Клиентский код**
     Клиент работает с фабрикой через интерфейс, что позволяет легко переключаться между семействами
-    ```java
+```java
     public class Application {
         private Button button;
         private Checkbox checkbox;
@@ -437,7 +437,7 @@ Abstract Factory - это порождающий паттерн проекти�
             app.render();
         }
     }
-    ```
+```
 
 </div>
 

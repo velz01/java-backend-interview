@@ -57,23 +57,23 @@ List<User> findAll();
 ```
 
 - Использовать **`FetchMode.SUBSELECT`** - загружает все коллекции одним подзапросом при первом обращении
-    ```java
+```java
         @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
         @Fetch(FetchMode.SUBSELECT)
         private List<Order> orders;
-    ```
+```
         Транслируется в
 ```sql
 SELECT * FROM order WHERE user_id IN (SELECT id FROM user) 
 ```
 
 - Использовать пакетную загрузку - `@BatchSize` позволяет загружать связанные сущности пачками
-        ```java
+```java
     private List<Book> books;
     @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
     @BatchSize(size = 50)
     private List<Order> orders;
-    ```
+```
     Для 100 заказов Hibernate выполнит 2 запроса:
 ```
     SELECT * FROM order WHERE user_id IN (?, ?, ..., ?) // 50 ID

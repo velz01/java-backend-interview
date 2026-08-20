@@ -69,7 +69,7 @@ outline: [2, 3]
 
 4. **Линейный поиск** (O(n)): В худшем случае мы проходим через все элементы списка.
     
-    ```java
+```java
     public int linearSearch(int[] arr, int target) {
         for (int i = 0; i < arr.length; i++) {
             if (arr[i] == target) {
@@ -78,11 +78,11 @@ outline: [2, 3]
         }
         return -1; // элемент не найден
     }
-    ```
+```
     
 5. **Бинарный поиск** (O(log n)): Для отсортированного массива бинарный поиск сокращает количество элементов, которые нужно проверять, в два раза за каждую итерацию.
     
-    ```java
+```java
     public int binarySearch(int[] arr, int target) {
         int left = 0, right = arr.length - 1;
         while (left <= right) {
@@ -93,7 +93,7 @@ outline: [2, 3]
         }
         return -1; // элемент не найден
     }
-    ```
+```
     
 
 **Почему бинарный поиск быстрее**?  
@@ -451,16 +451,16 @@ client.get()
 
    * Методы-запросы (Query) **не изменяют** состояние и обычно возвращают данные:
 
-     ```java
+```java
      List<User> findActiveUsersSortedByLastLogin();
      UserDto getUserProfile(int userId);
-     ```
+```
    * Методы-команды (Command) **изменяют** состояние и могут возвращать статус:
 
-     ```java
+```java
      boolean clearUserCache(int userId);
      SaveResult calculateAndPersistMetrics(MetricsRequest request);
-     ```
+```
 
 
 

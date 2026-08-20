@@ -2019,9 +2019,9 @@ Spring JDBC - это модуль Spring, который упрощает вз�
 ```
     
 2. **Проверка пароля** - при аутентификации введённый пароль сравнивается с хэшированным значением в базе данных
-    ```java
+```java
     boolean matches = passwordEncoder.matches(rawPassword, hashedPassword);
-    ```
+```
 
 **Почему BCrypt?**
 - **Защита от атак с помощью “радужных таблиц”** - BCrypt автоматически добавляет случайную “соль” к каждому паролю, чтобы одинаковые пароли имели разные хэши
@@ -2117,13 +2117,13 @@ HTTP Request -&gt; Filter chain -&gt; DispatcherServlet -&gt; Controller -&gt; .
 2. **Spring Boot Dependency Management:**
     - использует BOM (Bill of Materials) для управления версиями зависимостей
     - версии зависимостей определяются в родительском POM (`spring-boot-dependencies`), что гарантирует их совместимость
-    ```xml
+```xml
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>3.0.0</version>
     </parent>
-    ```
+```
 	- в Gradle для этого используется плагин `io.spring.dependency-management`
 3. **Профили зависимостей** - можно включать зависимости в зависимости от среды выполнения (например, dev, test, prod) с помощью профилей Maven
 4. **Явное указание зависимости** - Spring Boot позволяет переопределить версию зависимости, если требуется особая
