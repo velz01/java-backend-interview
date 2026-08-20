@@ -2,23 +2,17 @@
 layout: home
 hero:
   name: "Java Backend Interview"
-  text: "Вопросы и ответы из трёх предоставленных источников"
-  tagline: "Жуков · enhorse/java-interview · Improved table Java"
+  text: "Подготовка к Java Backend собеседованиям"
+  tagline: "Единая база вопросов по Java, Spring, SQL, Kafka и другим темам"
   actions:
     - theme: brand
-      text: Жуков
-      link: /zhukov/
-    - theme: alt
-      text: enhorse
-      link: /enhorse/
-    - theme: alt
-      text: Таблица
-      link: /table/
+      text: Начать обучение
+      link: /learn/
 features:
-  - title: "Жуков"
-    details: "383 пар из исходного TOML"
-  - title: "enhorse/java-interview"
-    details: "681 пар из исходных Markdown"
-  - title: "Таблица"
-    details: "453 пар/пунктов из исходного XLSX"
+  - title: "Единая программа"
+    details: "Все вопросы собраны по темам в одном месте."
+  - title: "Приоритеты"
+    details: "Сначала показываются вопросы с более высоким приоритетом."
+  - title: "Удобный код"
+    details: "Кодовые примеры оформлены как IDE-подобные блоки с подсветкой и горизонтальной прокруткой."
 ---

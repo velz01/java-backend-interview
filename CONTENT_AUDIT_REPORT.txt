@@ -1,27 +1,49 @@
-STRICT CONTENT AUDIT
-====================
+FINAL UNIFIED CONTENT AUDIT
+===========================
+Original source question/answer records: 1517
+Displayed unified questions: 1431
+Exact normalized duplicates consolidated: 86
+Selected displayed question+answer pairs confirmed in the three supplied sources: 1431/1431
+Unconfirmed displayed pairs: 0
+Visible source labels on learning pages: 0
 
-Sources used:
-1. java-backend-interview-prep-master(1).zip (Zhukov)
-2. java-interview-master (1)(1).zip (enhorse/java-interview)
-3. Improved table Java(1).xlsx
+Priority badges:
+  high: 54
+  medium: 174
+  low: 1203
 
-Generated source records:
-- Zhukov: 383
-- enhorse/java-interview: 681
-- Excel table: 453
-- Total: 1517
+Categories:
+  java-core: 204
+  oop: 29
+  collections: 160
+  generics: 11
+  exceptions: 28
+  jvm: 29
+  functional: 82
+  multithreading: 117
+  io: 12
+  algorithms: 21
+  testing: 19
+  sql: 102
+  databases: 47
+  orm: 69
+  spring: 85
+  web: 140
+  patterns: 43
+  microservices: 46
+  kafka: 69
+  nosql: 3
+  deploy: 13
+  logging: 7
+  reactive: 9
+  uml: 47
+  other: 39
 
-Verification performed:
-- Original XLSX -> lossless extraction: 1572 populated exported cells checked, 0 mismatches.
-- Source records reconstructed independently from the three sources: 1517.
-- SOURCE_AUDIT.csv records: 1517.
-- Source-vs-audit multiset differences: 0 in both directions.
-- Generated question/point sections checked against source-derived rendered SHA-256 hashes: 1517.
-- Generated content hash mismatches: 0.
-- Missing local images: 0.
-- Missing generated local links/routes: 0.
-- Unclosed Markdown fences: 0.
-- Localhost example URLs: 2; intentionally ignored by VitePress dead-link checker because they are code/API examples from the source, not site navigation.
-
-Result: STRICT_CONTENT_AUDIT=PASS
+Build-safety static checks:
+  missing local images: 0
+  missing local links: 0
+  unclosed code fences: 0
+  missing priority badges: 0
+  legacy source directories in final docs: 0
+  workflow YAML parse: PASS
+  strict content provenance audit: PASS
