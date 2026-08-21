@@ -1,8 +1,3 @@
-.github/workflows/deploy.yml
-BUILD_VALIDATION.md
-CONTENT_AUDIT_REPORT.txt
-README.md
-SOURCE_AUDIT.csv
 docs/.vitepress/config.mjs
 docs/.vitepress/theme/custom.css
 docs/.vitepress/theme/index.ts
@@ -47,7 +42,6 @@ docs/learn/spring.md
 docs/learn/sql.md
 docs/learn/stream-api.md
 docs/learn/testing.md
-docs/learn/uml.md
 docs/learn/web.md
 docs/public/analityc_grouping.png
 docs/public/b_tree_structure.png
@@ -72,6 +66,3 @@ docs/public/spring_bean_life_cycle_flow.png
 docs/public/spring_bean_lifecycle.png
 docs/public/thread_life_cycle.png
 docs/public/window_functions_sql.png
-package.json
-scripts/clean_legacy.py
-scripts/validate_site.py

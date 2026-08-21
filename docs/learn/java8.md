@@ -7,25 +7,19 @@ outline: [2, 3]
 
 Всего вопросов: **29**
 
-<span class="priority-badge priority-medium">• Средний приоритет</span>
+**• Средний приоритет**
 
 ## 1. Зачем нужна аннотация @FunctionalInterface
 
-<div class="answer-block">
-
-Кратко: Для гарантии того, что интерфейс является функциональным. Она не даст создать еще один абстрактный метод
-
-</div>
+Для гарантии того, что интерфейс является функциональным. Она не даст создать еще один абстрактный метод
 
 ---
 
-<span class="priority-badge priority-low">• Низкий приоритет</span>
+**• Низкий приоритет**
 
 ## 2. Зачем нужны операции Consumer, Function, Supplier?
 
-<div class="answer-block">
-
-Кратко: В Java 8 появились **функциональные интерфейсы** из пакета `java.util.function`, которые используются в **лямбда-выражениях** и **Stream API**. Среди них важны:
+В Java 8 появились **функциональные интерфейсы** из пакета `java.util.function`, которые используются в **лямбда-выражениях** и **Stream API**. Среди них важны:
 
 |Функциональный интерфейс|Входные данные|Возвращаемое значение|Применение|
 |---|---|---|---|
@@ -119,15 +113,11 @@ public class SupplierExample {
 - Генерация случайных данных
 - Фабричные методы
 
-</div>
-
 ---
 
-<span class="priority-badge priority-low">• Низкий приоритет</span>
+**• Низкий приоритет**
 
 ## 3. Поясните: Что делает Интерфейс Function?
-
-<div class="answer-block">
 
 `java.util.function.Function`  - это встроенный функциональный интерфейс, добавленный в Java SE 8.
 
@@ -140,35 +130,27 @@ public interface Function<T, R> {
 }
 ```
 
-</div>
-
 ---
 
-<span class="priority-badge priority-low">• Низкий приоритет</span>
+**• Низкий приоритет**
 
 ## 4. Каким образом вывести на экран 10 случайных чисел в порядке возрастания?
 
-<div class="answer-block">
-
 ```java
-Кратко: (new Random())
+(new Random())
     .ints()
     .limit(10)
     .sorted()
     .forEach(System.out::println);
 ```
 
-</div>
-
 ---
 
-<span class="priority-badge priority-low">• Низкий приоритет</span>
+**• Низкий приоритет**
 
 ## 5. Каким образом вызывать `default` метод интерфейса в реализующем этот интерфейс классе?
 
-<div class="answer-block">
-
-Кратко: Используя ключевое слово `super` вместе с именем интерфейса:
+Используя ключевое слово `super` вместе с именем интерфейса:
 
 ```java
 interface Paper {
@@ -184,17 +166,13 @@ class Licence implements Paper {
 }
 ```
 
-</div>
-
 ---
 
-<span class="priority-badge priority-low">• Низкий приоритет</span>
+**• Низкий приоритет**
 
 ## 6. Каким образом вызывать `static` метод интерфейса?
 
-<div class="answer-block">
-
-Кратко: Используя имя интерфейса:
+Используя имя интерфейса:
 
 ```java
 interface Paper {
@@ -210,68 +188,52 @@ class Licence {
 }
 ```
 
-</div>
-
 ---
 
-<span class="priority-badge priority-low">• Низкий приоритет</span>
+**• Низкий приоритет**
 
 ## 7. Каким образом добавить 1 неделю, 1 месяц, 1 год, 10 лет к текущей дате с использованием Date Time API?
 
-<div class="answer-block">
-
 ```java
-Кратко: LocalDate.now().plusWeeks(1);
+LocalDate.now().plusWeeks(1);
 LocalDate.now().plusMonths(1);
 LocalDate.now().plusYears(1);
 LocalDate.now().plus(1, ChronoUnit.DECADES);
 ```
 
-</div>
-
 ---
 
-<span class="priority-badge priority-low">• Низкий приоритет</span>
+**• Низкий приоритет**
 
 ## 8. Каким образом найти максимальное число в наборе?
 
-<div class="answer-block">
-
 ```java
-Кратко: Stream
+Stream
     .of(5, 3, 4, 55, 2)
     .mapToInt(a -> a)
     .max()
     .getAsInt(); //55
 ```
 
-</div>
-
 ---
 
-<span class="priority-badge priority-low">• Низкий приоритет</span>
+**• Низкий приоритет**
 
 ## 9. Каким образом найти минимальное число в наборе?
 
-<div class="answer-block">
-
 ```java
-Кратко: Stream
+Stream
     .of(5, 3, 4, 55, 2)
     .mapToInt(a -> a)
     .min()
     .getAsInt(); //2
 ```
 
-</div>
-
 ---
 
-<span class="priority-badge priority-low">• Низкий приоритет</span>
+**• Низкий приоритет**
 
 ## 10. Каким образом определить повторяемую аннотацию?
-
-<div class="answer-block">
 
 Чтобы определить повторяемую аннотацию, нужно создать аннотацию-контейнер для списка повторяемых аннотаций и обозначить повторяемую мета-аннотацией `@Repeatable`:
 
@@ -288,142 +250,105 @@ LocalDate.now().plus(1, ChronoUnit.DECADES);
 }
 ```
 
-</div>
-
 ---
 
-<span class="priority-badge priority-low">• Низкий приоритет</span>
+**• Низкий приоритет**
 
 ## 11. Каким образом получить вторую субботу текущего месяца используя Date Time API?
 
-<div class="answer-block">
-
 ```java
-Кратко: LocalDate
+LocalDate
     .of(LocalDate.now().getYear(), LocalDate.now().getMonth(), 1)
     .with(TemporalAdjusters.nextOrSame(DayOfWeek.SATURDAY))
     .with(TemporalAdjusters.next(DayOfWeek.SATURDAY));
 ```
 
-</div>
-
 ---
 
-<span class="priority-badge priority-low">• Низкий приоритет</span>
+**• Низкий приоритет**
 
 ## 12. Каким образом получить следующий вторник используя Date Time API?
 
-<div class="answer-block">
-
 ```java
-Кратко: LocalDate.now().with(TemporalAdjusters.next(DayOfWeek.TUESDAY));
+LocalDate.now().with(TemporalAdjusters.next(DayOfWeek.TUESDAY));
 ```
-
-</div>
 
 ---
 
-<span class="priority-badge priority-low">• Низкий приоритет</span>
+**• Низкий приоритет**
 
 ## 13. Каким образом получить среднее значение всех чисел?
 
-<div class="answer-block">
-
 ```java
-Кратко: Stream
+Stream
     .of(5, 3, 4, 55, 2)
     .mapToInt(a -> a)
     .average()
     .getAsDouble(); //13.8
 ```
 
-</div>
-
 ---
 
-<span class="priority-badge priority-low">• Низкий приоритет</span>
+**• Низкий приоритет**
 
 ## 14. Каким образом получить сумму всех чисел в наборе?
 
-<div class="answer-block">
-
 ```java
-Кратко: Stream
+Stream
     .of(5, 3, 4, 55, 2)
     .mapToInt()
     .sum(); //69
 ```
 
-</div>
-
 ---
 
-<span class="priority-badge priority-low">• Низкий приоритет</span>
+**• Низкий приоритет**
 
 ## 15. Каким образом получить текущее время по местному времени с точностью до миллисекунд используя Date Time API?
 
-<div class="answer-block">
-
 ```java
-Кратко: LocalDateTime.ofInstant(new Date().toInstant(), ZoneId.systemDefault());
+LocalDateTime.ofInstant(new Date().toInstant(), ZoneId.systemDefault());
 ```
-
-</div>
 
 ---
 
-<span class="priority-badge priority-low">• Низкий приоритет</span>
+**• Низкий приоритет**
 
 ## 16. Каким образом получить текущее время с точностью до миллисекунд используя Date Time API?
 
-<div class="answer-block">
-
 ```java
-Кратко: new Date().toInstant();
+new Date().toInstant();
 ```
-
-</div>
 
 ---
 
-<span class="priority-badge priority-low">• Низкий приоритет</span>
+**• Низкий приоритет**
 
 ## 17. Каким образом получить текущую дату с использованием Date Time API из Java 8?
 
-<div class="answer-block">
-
 ```java
-Кратко: LocalDate.now();
+LocalDate.now();
 ```
-
-</div>
 
 ---
 
-<span class="priority-badge priority-low">• Низкий приоритет</span>
+**• Низкий приоритет**
 
 ## 18. Каким образом создать Base64 кодировщик и декодировщик?
 
-<div class="answer-block">
-
 ```java
-Кратко: // Encode
+// Encode
 String b64 = Base64.getEncoder().encodeToString("input".getBytes("utf-8")); //aW5wdXQ==
 // Decode
 new String(Base64.getDecoder().decode("aW5wdXQ=="), "utf-8"); //input
 ```
 
-</div>
-
 ---
 
-<span class="priority-badge priority-low">• Низкий приоритет</span>
+**• Низкий приоритет**
 
 ## 19. Какие именно дополнительные методы для работы с ассоциативными массивами (maps) появились в Java 8?
 
-<div class="answer-block">
-
-Кратко по сути:
 + `putIfAbsent()` добавляет пару «ключ-значение», только если ключ отсутствовал:
 
 `map.putIfAbsent("a", "Aa");`
@@ -452,15 +377,11 @@ new String(Base64.getDecoder().decode("aW5wdXQ=="), "utf-8"); //input
 
 `map.merge("a", "z", (value, newValue) -> value.concat(newValue)); //["a","Aaz"]`
 
-</div>
-
 ---
 
-<span class="priority-badge priority-low">• Низкий приоритет</span>
+**• Низкий приоритет**
 
 ## 20. Какие именно нововведения, появились в Java 8 и JDK 8?
-
-<div class="answer-block">
 
 + Методы интерфейсов по умолчанию;
 + Лямбда-выражения;
@@ -492,17 +413,13 @@ new String(Base64.getDecoder().decode("aW5wdXQ=="), "utf-8"); //input
     + Команда `java` может запускать _JavaFX_ приложения;
     + Добавлена утилита `jdeps` для анализа _.class_-файлов.
 
-</div>
-
 ---
 
-<span class="priority-badge priority-low">• Низкий приоритет</span>
+**• Низкий приоритет**
 
 ## 21. Поясните: Какой класс появился в Java 8 для кодирования/декодирования данных?
 
-<div class="answer-block">
-
-Кратко: `Base64` - потокобезопасный класс, который реализует кодировщик и декодировщик данных, используя схему кодирования base64 согласно _RFC 4648_ и _RFC 2045_.
+`Base64` - потокобезопасный класс, который реализует кодировщик и декодировщик данных, используя схему кодирования base64 согласно _RFC 4648_ и _RFC 2045_.
 
 Base64 содержит 6 основных методов:
 
@@ -510,15 +427,11 @@ Base64 содержит 6 основных методов:
 `getUrlEncoder()`/`getUrlDecoder()` - возвращает URL-safe кодировщик/декодировщик base64, соответствующий стандарту _RFC 4648_;
 `getMimeEncoder()`/`getMimeDecoder()` - возвращает MIME кодировщик/декодировщик, соответствующий стандарту _RFC 2045_.
 
-</div>
-
 ---
 
-<span class="priority-badge priority-low">• Низкий приоритет</span>
+**• Низкий приоритет**
 
 ## 22. Поясните, что такое `default` методы интрефейса?
-
-<div class="answer-block">
 
 Java 8 даёт возможность добавлять неабстрактные реализации методов в интерфейс, используя ключевое слово `default`:
 
@@ -539,53 +452,37 @@ interface Example {
 + Дают свободу классам выбрать метод, который нужно переопределить.
 + Одной из основных причин внедрения методов по умолчанию является возможность коллекций в Java 8 использовать лямбда-выражения.
 
-</div>
-
 ---
 
-<span class="priority-badge priority-low">• Низкий приоритет</span>
+**• Низкий приоритет**
 
 ## 23. Поясните, что такое `jjs`?
 
-<div class="answer-block">
-
 `jjs` это утилита командной строки, которая даёт возможность исполнять программы на языке JavaScript прямо в консоли.
-
-</div>
 
 ---
 
-<span class="priority-badge priority-low">• Низкий приоритет</span>
+**• Низкий приоритет**
 
 ## 24. Поясните, что такое `LocalDateTime`?
 
-<div class="answer-block">
-
-Кратко: `LocalDateTime` объединяет вместе `LocaleDate` и `LocalTime`, содержит дату и время в календарной системе ISO-8601 без привязки к часовому поясу. Время хранится с точностью до наносекунды. Содержит множество удобных методов, таких как plusMinutes, plusHours, isAfter, toSecondOfDay и т.д.
-
-</div>
+`LocalDateTime` объединяет вместе `LocaleDate` и `LocalTime`, содержит дату и время в календарной системе ISO-8601 без привязки к часовому поясу. Время хранится с точностью до наносекунды. Содержит множество удобных методов, таких как plusMinutes, plusHours, isAfter, toSecondOfDay и т.д.
 
 ---
 
-<span class="priority-badge priority-low">• Низкий приоритет</span>
+**• Низкий приоритет**
 
 ## 25. Поясните, что такое `Nashorn`?
 
-<div class="answer-block">
-
-Кратко: __Nashorn__ - это движок JavaScript, разрабатываемый на Java компанией Oracle. Призван дать возможность встраивать код JavaScript в приложения Java. В сравнении с _Rhino_, который поддерживается Mozilla Foundation, Nashorn обеспечивает от 2 до 10 раз более высокую производительность, так как он компилирует код и передает байт-код виртуальной машине Java непосредственно в памяти. Nashorn умеет компилировать код JavaScript и генерировать классы Java, которые загружаются специальным загрузчиком. Так же возможен вызов кода Java прямо из JavaScript.
-
-</div>
+__Nashorn__ - это движок JavaScript, разрабатываемый на Java компанией Oracle. Призван дать возможность встраивать код JavaScript в приложения Java. В сравнении с _Rhino_, который поддерживается Mozilla Foundation, Nashorn обеспечивает от 2 до 10 раз более высокую производительность, так как он компилирует код и передает байт-код виртуальной машине Java непосредственно в памяти. Nashorn умеет компилировать код JavaScript и генерировать классы Java, которые загружаются специальным загрузчиком. Так же возможен вызов кода Java прямо из JavaScript.
 
 ---
 
-<span class="priority-badge priority-low">• Низкий приоритет</span>
+**• Низкий приоритет**
 
 ## 26. Поясните, что такое `Optional`?
 
-<div class="answer-block">
-
-Кратко: Опциональное значение `Optional` — это контейнер для объекта, который может содержать или не содержать значение `null`. Такая обёртка является удобным средством предотвращения `NullPointerException`, т.к.
+Опциональное значение `Optional` — это контейнер для объекта, который может содержать или не содержать значение `null`. Такая обёртка является удобным средством предотвращения `NullPointerException`, т.к.
 имеет некоторые функции высшего порядка, избавляющие от добавления повторяющихся `if null/notNull` проверок:
 
 ```java
@@ -597,15 +494,11 @@ optional.get(); // "hello"
 optional.orElse("ops..."); // "hello"
 ```
 
-</div>
-
 ---
 
-<span class="priority-badge priority-low">• Низкий приоритет</span>
+**• Низкий приоритет**
 
 ## 27. Поясните, что такое `static` метод интерфейса?
-
-<div class="answer-block">
 
 Статические методы интерфейса похожи на методы по умолчанию, за исключением того, что для них отсутствует возможность переопределения в классах, реализующих интерфейс.
 
@@ -613,17 +506,13 @@ optional.orElse("ops..."); // "hello"
 + Методы класса `java.lang.Object` нельзя переопределить как статические;
 + Статические методы в интерфейсе применяются для обеспечения вспомогательных методов, например, проверки на null, сортировки коллекций и т.д.
 
-</div>
-
 ---
 
-<span class="priority-badge priority-low">• Низкий приоритет</span>
+**• Низкий приоритет**
 
 ## 28. Поясните, что такое `StringJoiner`?
 
-<div class="answer-block">
-
-Кратко: Класс `StringJoiner` используется, чтобы создать последовательность строк, разделенных разделителем с возможностью присоединить к полученной строке префикс и суффикс:
+Класс `StringJoiner` используется, чтобы создать последовательность строк, разделенных разделителем с возможностью присоединить к полученной строке префикс и суффикс:
 
 ```java
 StringJoiner joiner = new StringJoiner(".", "prefix-", "-suffix");
@@ -633,19 +522,13 @@ for (String s : "Hello the brave world".split(" ")) {
 System.out.println(joiner); //prefix-Hello.the.brave.world-suffix
 ```
 
-</div>
-
 ---
 
-<span class="priority-badge priority-low">• Низкий приоритет</span>
+**• Низкий приоритет**
 
 ## 29. Поясните, что такое `ZonedDateTime`?
 
-<div class="answer-block">
-
-Кратко: `java.time.ZonedDateTime` — аналог `java.util.Calendar`, класс с самым полным объемом информации о временном контексте в календарной системе ISO-8601. Включает временную зону, поэтому все операции с временными сдвигами этот класс проводит с её учётом.
-
-</div>
+`java.time.ZonedDateTime` — аналог `java.util.Calendar`, класс с самым полным объемом информации о временном контексте в календарной системе ISO-8601. Включает временную зону, поэтому все операции с временными сдвигами этот класс проводит с её учётом.
 
 ---
 

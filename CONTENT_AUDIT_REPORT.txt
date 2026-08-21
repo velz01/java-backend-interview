@@ -1,14 +1,17 @@
 CONTENT POLICY
 - Learning questions/answers originate only from the three user-provided sources.
 - Each displayed pair is based on one selected source pair; no cross-source answer synthesis.
-- Display text is minimally paraphrased without adding technical facts.
+- Display text uses the previously agreed minimal paraphrasing policy without adding technical facts.
 - Source labels are not shown in the learning UI.
 
 STRUCTURE
-- HTML questions removed.
-- Java 8+, Functional and Stream API split into separate sections.
+- HTML, UML, XML and CSS sections removed.
+- Java 8+, Functional and Stream API are separate sections.
 - "К оглавлению" links removed.
-- Weak agreed questions replaced with fuller source-backed pairs when available.
-- Obvious duplicates consolidated.
+- Agreed weak questions use fuller source-backed pairs where available.
+- Repeated low-value questions and direct duplicates were consolidated.
+- Functional signature-only questions were removed.
+- Algorithms code is rendered with fenced Java code blocks.
 
-DISPLAYED QUESTIONS: 1353
+DISPLAYED QUESTIONS: 1238
+SOURCE COUNTS: zhukov=371, enhorse=550, table=317
