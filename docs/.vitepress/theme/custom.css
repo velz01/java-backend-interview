@@ -1,0 +1,160 @@
+
+/* Priority badges */
+.priority-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 5px 12px;
+  margin: 18px 0 6px;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 999px;
+  background: var(--vp-c-bg-soft);
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.4;
+}
+.priority-high { color: #ff6b6b; }
+.priority-medium { color: #e8b84a; }
+.priority-low { color: #63d69a; }
+
+/* Home authors card */
+.author-card {
+  width: min(100%, 560px);
+  padding: 28px 30px;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 18px;
+  background: var(--vp-c-bg-soft);
+  box-shadow: var(--vp-shadow-2);
+  text-align: left;
+  font-size: 16px;
+  line-height: 1.65;
+}
+.author-card p { margin: 0 0 16px; }
+.author-card p:last-child { margin-bottom: 0; }
+.author-card-title { font-size: 20px; font-weight: 700; }
+.author-card a, .global-authors a { color: var(--vp-c-brand-1); font-weight: 700; text-decoration: none; }
+.author-card a:hover, .global-authors a:hover { text-decoration: underline; }
+.mentor-link { white-space: nowrap; }
+
+/* Persistent author contacts in top navigation */
+.global-authors {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-right: 18px;
+  white-space: nowrap;
+  color: var(--vp-c-text-2);
+  font-size: 14px;
+}
+
+@media (max-width: 959px) {
+  .global-authors { display: none; }
+  .author-card { margin-top: 20px; padding: 22px; }
+}
+
+.mobile-authors {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  padding: 12px 0 18px;
+  color: var(--vp-c-text-2);
+}
+.mobile-authors a {
+  color: var(--vp-c-brand-1);
+  font-weight: 700;
+}
+
+
+/* Home hero layout tweaks */
+.author-card {
+  width: min(100%, 500px);
+  margin-left: auto;
+}
+
+@media (min-width: 960px) {
+  .VPHero.has-image .image {
+    transform: translateX(72px);
+  }
+}
+
+/* Persistent author contacts in top navigation */
+.global-authors {
+  margin-left: 18px;
+  margin-right: 12px;
+}
+
+@media (max-width: 1279px) {
+  .global-authors {
+    font-size: 13px;
+    gap: 4px;
+  }
+}
+
+
+/* Make the whole mentorship link reliably clickable */
+.author-card {
+  position: relative;
+  z-index: 10;
+  pointer-events: auto;
+}
+
+.author-card .mentor-link {
+  display: inline-block;
+  width: max-content;
+  max-width: 100%;
+  position: relative;
+  z-index: 20;
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+/* Mobile home hero: keep the mentorship card below the hero text */
+@media (max-width: 959px) {
+  .VPHero.has-image .container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .VPHero.has-image .main {
+    order: 1;
+    width: 100%;
+    max-width: none;
+  }
+
+  .VPHero.has-image .image {
+    order: 2;
+    position: static;
+    width: 100%;
+    height: auto;
+    margin: 32px 0 0;
+    transform: none !important;
+  }
+
+  .VPHero.has-image .image-container {
+    position: static;
+    width: 100%;
+    height: auto;
+    transform: none !important;
+  }
+
+  .VPHero.has-image .author-card {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+  }
+}
+
+@media (max-width: 639px) {
+  .VPHero.has-image .image {
+    margin-top: 28px;
+  }
+
+  .VPHero.has-image .author-card {
+    padding: 20px;
+    font-size: 15px;
+    line-height: 1.55;
+  }
+
+  .VPHero.has-image .author-card-title {
+    font-size: 18px;
+  }
+}
