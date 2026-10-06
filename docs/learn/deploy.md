@@ -32,7 +32,7 @@ Continuous Delivery and Deplyment - это DevOps модель, в которо�
 
 ---
 
-<span class="priority-badge priority-low">🟢 Низкий приоритет</span>
+<span class="priority-badge priority-medium">🟡 Средний приоритет</span>
 
 ## 3. Каким образом работает Docker. Из чего состоит докер образ?
 
@@ -43,7 +43,7 @@ Docker-образ включает в себя:
 
 ---
 
-<span class="priority-badge priority-low">🟢 Низкий приоритет</span>
+<span class="priority-badge priority-medium">🟡 Средний приоритет</span>
 
 ## 4. Поясните: Docker compose
 

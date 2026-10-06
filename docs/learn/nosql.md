@@ -68,7 +68,7 @@ redis.del("user:123");
 
 ---
 
-<span class="priority-badge priority-low">🟢 Низкий приоритет</span>
+<span class="priority-badge priority-medium">🟡 Средний приоритет</span>
 
 ## 2. Зачем используется Redis?
 

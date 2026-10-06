@@ -284,7 +284,7 @@ System.out.println(uniqueNumbers); // [1, 2, 3]
 
 ---
 
-<span class="priority-badge priority-low">🟢 Низкий приоритет</span>
+<span class="priority-badge priority-medium">🟡 Средний приоритет</span>
 
 ## 7. Поясните, в чём разница между `Collection` и `Stream`?
 

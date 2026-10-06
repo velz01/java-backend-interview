@@ -372,4 +372,3 @@ public static boolean checkNumberIsPrime(int number) {
 ---
 
 ---
-

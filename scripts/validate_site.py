@@ -19,7 +19,7 @@ for p in md:
         if inside: continue
         clean=re.sub(r'`[^`]*`','',line)
         # Priority badge is the only intentional HTML tag in learning Markdown.
-        clean=re.sub(r'<span class="priority-badge priority-(?:high|medium|low)">[^<]*</span>','',clean)
+        clean=re.sub(r'<span class="priority-badge priority-(?:high|medium|low|very-low)">[^<]*</span>','',clean)
         if re.search(r'<\?[^>]*>',clean): errors.append(f'{p}:{i}: XML/Vue processing instruction outside code')
         # Flag generic-looking angle tags outside inline/fenced code.
         if re.search(r'<[A-Za-z][A-Za-z0-9_.]*(?:\s+[^>]*)?>',clean): errors.append(f'{p}:{i}: HTML/generic-like token outside code')

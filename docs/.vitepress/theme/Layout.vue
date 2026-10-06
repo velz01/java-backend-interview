@@ -2,13 +2,18 @@
 import { computed } from 'vue'
 import { useData } from 'vitepress'
 import DefaultTheme from 'vitepress/theme'
+import PriorityFilter from './PriorityFilter.vue'
 const { Layout } = DefaultTheme
 const { page } = useData()
 const isHome = computed(() => page.value.relativePath === 'index.md')
+const isLearnSection = computed(() => page.value.relativePath.startsWith('learn/') && page.value.relativePath !== 'learn/index.md')
 </script>
 
 <template>
   <Layout>
+    <template v-if="isLearnSection" #doc-before>
+      <PriorityFilter />
+    </template>
     <template #home-hero-image>
       <div class="author-card">
         <p class="author-card-title">

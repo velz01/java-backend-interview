@@ -5,6 +5,8 @@ outline: [2, 3]
 
 # I/O и Serialization
 
+> **Советую просто ознакомиться с разделом и идти дальше.**
+
 Всего вопросов: **12**
 
 
@@ -71,7 +73,7 @@ private static final long serialVersionUID = 20161013L;
 
 ---
 
-<span class="priority-badge priority-low">🟢 Низкий приоритет</span>
+<span class="priority-badge priority-very-low">⚪ Очень низкий приоритет</span>
 
 ## 5. В каких случаях стоит изменять значение поля `serialVersionUID`?
 
@@ -89,7 +91,7 @@ private static final long serialVersionUID = 20161013L;
 
 ---
 
-<span class="priority-badge priority-low">🟢 Низкий приоритет</span>
+<span class="priority-badge priority-very-low">⚪ Очень низкий приоритет</span>
 
 ## 7. Поясните, в чём проблема сериализации Singleton?
 
@@ -100,7 +102,7 @@ private static final long serialVersionUID = 20161013L;
 
 ---
 
-<span class="priority-badge priority-low">🟢 Низкий приоритет</span>
+<span class="priority-badge priority-very-low">⚪ Очень низкий приоритет</span>
 
 ## 8. Каким образом изменить стандартное поведение сериализации/десериализации?
 
@@ -121,7 +123,7 @@ private static final long serialVersionUID = 20161013L;
 
 ---
 
-<span class="priority-badge priority-low">🟢 Низкий приоритет</span>
+<span class="priority-badge priority-very-low">⚪ Очень низкий приоритет</span>
 
 ## 10. Каким образом не допустить сериализацию?
 
@@ -141,7 +143,7 @@ private void readObject(ObjectInputStream in) throws IOException {
 
 ---
 
-<span class="priority-badge priority-low">🟢 Низкий приоритет</span>
+<span class="priority-badge priority-very-low">⚪ Очень низкий приоритет</span>
 
 ## 11. Каким образом создать собственный протокол сериализации?
 
@@ -154,7 +156,7 @@ public void readExternal(ObjectInput in) throws IOException, ClassNotFoundExcept
 
 ---
 
-<span class="priority-badge priority-low">🟢 Низкий приоритет</span>
+<span class="priority-badge priority-very-low">⚪ Очень низкий приоритет</span>
 
 ## 12. Какие именно существуют способы контроля за значениями десериализованного объекта
 
