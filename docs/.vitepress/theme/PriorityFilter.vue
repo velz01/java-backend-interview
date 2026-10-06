@@ -28,8 +28,36 @@ function findPriorityBadge(element) {
   return element.querySelector?.('.priority-badge') || null
 }
 
+function getContentRoot() {
+  const vpDoc = document.querySelector('.vp-doc')
+  if (!vpDoc) return null
+
+  // VitePress normally renders Markdown inside an extra direct <div>:
+  // .vp-doc > div > h1/h2/p/...
+  // Find the direct child that actually contains numbered question headings.
+  const candidates = [vpDoc, ...vpDoc.querySelectorAll(':scope > div')]
+  for (const candidate of candidates) {
+    const hasQuestionHeading = [...candidate.children].some((node) =>
+      node.matches?.('h2') && /^\d+\.\s/.test(node.textContent?.trim() || '')
+    )
+    const hasPriorityBadge = [...candidate.children].some((node) => findPriorityBadge(node))
+    if (hasQuestionHeading && hasPriorityBadge) return candidate
+  }
+
+  // Fallback for a future VitePress wrapper change: use the direct parent of
+  // the first numbered H2 if that parent also contains priority badges.
+  const heading = [...vpDoc.querySelectorAll('h2')].find((node) =>
+    /^\d+\.\s/.test(node.textContent?.trim() || '')
+  )
+  if (heading?.parentElement && heading.parentElement.querySelector('.priority-badge')) {
+    return heading.parentElement
+  }
+
+  return null
+}
+
 function captureQuestionBlocks() {
-  const doc = document.querySelector('.vp-doc')
+  const doc = getContentRoot()
   if (!doc) return false
 
   const children = [...doc.children]
