@@ -23,15 +23,26 @@ function getPriority(badge) {
   return 4
 }
 
+function findPriorityBadge(element) {
+  if (element.matches?.('.priority-badge')) return element
+  return element.querySelector?.('.priority-badge') || null
+}
+
 function captureQuestionBlocks() {
   const doc = document.querySelector('.vp-doc')
   if (!doc) return false
 
   const children = [...doc.children]
-  const starts = children.filter((element) => element.matches?.('.priority-badge'))
+
+  // Markdown/VitePress may render a standalone <span> badge either directly
+  // or wrap it in a <p>. Treat the whole direct child as the block start.
+  const starts = children
+    .map((element) => ({ element, badge: findPriorityBadge(element) }))
+    .filter(({ badge }) => badge)
+
   if (!starts.length) return false
 
-  const startIndexes = starts.map((start) => children.indexOf(start))
+  const startIndexes = starts.map(({ element }) => children.indexOf(element))
   const captured = []
 
   for (let i = 0; i < starts.length; i++) {
@@ -45,7 +56,7 @@ function captureQuestionBlocks() {
 
     captured.push({
       nodes,
-      priority: getPriority(starts[i]),
+      priority: getPriority(starts[i].badge),
       originalIndex: captured.length
     })
   }
@@ -90,9 +101,23 @@ async function refreshPage() {
 
   await nextTick()
   window.clearTimeout(refreshTimer)
-  refreshTimer = window.setTimeout(() => {
-    if (captureQuestionBlocks()) renderOrder()
-  }, 0)
+
+  // The doc content can appear a little later than the layout slot on client
+  // navigation. Retry briefly instead of silently leaving the buttons inert.
+  let attempts = 0
+  const tryCapture = () => {
+    if (captureQuestionBlocks()) {
+      renderOrder()
+      return
+    }
+
+    attempts += 1
+    if (attempts < 10) {
+      refreshTimer = window.setTimeout(tryCapture, 50)
+    }
+  }
+
+  refreshTimer = window.setTimeout(tryCapture, 0)
 }
 
 onMounted(refreshPage)
