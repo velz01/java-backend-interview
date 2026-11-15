@@ -476,7 +476,7 @@ Command (команда) - это поведенческий паттерн п�
 
 ---
 
-<span class="priority-badge priority-medium">� Средний приоритет</span>
+<span class="priority-badge priority-medium">&#x1F7E1; Средний приоритет</span>
 
 ## 14. Какие именно паттерны в какую группу входят?
 
@@ -527,7 +527,7 @@ Command (команда) - это поведенческий паттерн п�
 
 ---
 
-<span class="priority-badge priority-medium">� Средний приоритет</span>
+<span class="priority-badge priority-medium">&#x1F7E1; Средний приоритет</span>
 
 ## 16. Поясните: SOLID
 
