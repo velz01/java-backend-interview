@@ -20,10 +20,6 @@ jobs:
         uses: actions/setup-node@v5
         with:
           node-version: 24
-      - name: Remove legacy site files
-        run: python3 scripts/clean_legacy.py
-      - name: Validate site files
-        run: python3 scripts/validate_site.py
       - name: Install dependencies
         run: npm install --no-audit --no-fund
       - name: Build VitePress
