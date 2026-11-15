@@ -1,0 +1,67 @@
+import { defineConfig } from 'vitepress'
+
+export default defineConfig({
+  lang: 'ru-RU',
+  base: process.env.BASE_PATH || '/',
+  title: 'Java Backend Interview',
+  description: 'Подготовка к Java Backend собеседованиям',
+  cleanUrls: true,
+  ignoreDeadLinks: [/^https?:\/\/(?:localhost|127\.0\.0\.1|0\.0\.0\.0)(?::\d+)?(?:\/|$)/],
+  markdown: { lineNumbers: true },
+  themeConfig: {
+    search: { provider: 'local' },
+    nav: [{ text: 'Обучение', link: '/learn/' }],
+    sidebar: { '/learn/': [
+      { text: 'План изучения теории и практики', link: '/learn/' },
+      { text: 'Первый модуль — Основы Java', collapsed: false, items: [
+        { text: 'Java Core', link: '/learn/java-core' },
+        { text: 'ООП', link: '/learn/oop' },
+        { text: 'Collections', link: '/learn/collections' },
+        { text: 'Generics', link: '/learn/generics' },
+        { text: 'Exceptions', link: '/learn/exceptions' },
+        { text: 'JVM и память', link: '/learn/jvm' },
+        { text: 'Multithreading', link: '/learn/multithreading' },
+        { text: 'Java 8+', link: '/learn/java8' },
+        { text: 'Functional', link: '/learn/functional' },
+        { text: 'Stream API', link: '/learn/stream-api' },
+        { text: 'Live Coding — Java / Алгоритмы', link: '/learn/live-java' },
+        { text: 'Code Review — Java', link: '/learn/review-java' },
+        { text: 'Live Coding — Многопоточность', link: '/learn/live-multithreading' },
+        { text: 'Code Review — Многопоточность', link: '/learn/review-multithreading' },
+        { text: 'Live Coding — Stream API', link: '/learn/live-stream-api' },
+        { text: 'Code Review — Stream API', link: '/learn/review-stream-api' },
+      ]},
+      { text: 'Второй модуль — Databases', collapsed: false, items: [
+        { text: 'SQL', link: '/learn/sql' },
+        { text: 'Databases / JDBC / Migrations', link: '/learn/databases' },
+        { text: 'Hibernate / ORM / JPA', link: '/learn/orm' },
+        { text: 'Web / HTTP / REST', link: '/learn/web' },
+        { text: 'Testing', link: '/learn/testing' },
+        { text: 'Live Coding — SQL', link: '/learn/live-sql' },
+        { text: 'Code Review — SQL', link: '/learn/review-sql' },
+      ]},
+      { text: 'Третий модуль — Spring, Kafka и Deploy', collapsed: false, items: [
+        { text: 'Spring', link: '/learn/spring' },
+        { text: 'Patterns / SOLID', link: '/learn/patterns' },
+        { text: 'Kafka / Message Brokers', link: '/learn/kafka' },
+        { text: 'Deploy / Git / Linux', link: '/learn/deploy' },
+        { text: 'Microservices', link: '/learn/microservices' },
+        { text: 'Разбор ситуаций — Kafka', link: '/learn/review-kafka' },
+        { text: 'Live Coding — Spring', link: '/learn/live-spring' },
+        { text: 'Code Review — Spring', link: '/learn/review-spring' },
+      ]},
+      { text: 'Дополнительно', collapsed: false, items: [
+        { text: 'Spring Cloud', link: '/learn/spring-cloud' },
+        { text: 'Алгоритмы — теория', link: '/learn/algorithms' },
+        { text: 'I/O и Serialization', link: '/learn/io' },
+        { text: 'Logging', link: '/learn/logging' },
+        { text: 'Reactive', link: '/learn/reactive' },
+        { text: 'Дополнительные вопросы', link: '/learn/other' },
+      ]},
+    ] },
+    outline: { level: [2,3], label: 'На странице' },
+    docFooter: { prev: 'Предыдущая тема', next: 'Следующая тема' },
+    returnToTopLabel: 'Наверх',
+    sidebarMenuLabel: 'Темы'
+  }
+})
