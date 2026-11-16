@@ -244,3 +244,28 @@
     margin-left: 0;
   }
 }
+
+/* Keep the home shortcut close to the learning sections. */
+.VPSidebar .group:first-child > .VPSidebarItem.level-0 {
+  padding-bottom: 8px;
+}
+
+.VPSidebar .group:first-child > .VPSidebarItem > .item > .link {
+  padding: 4px 12px;
+  border-radius: 8px;
+  background: var(--vp-c-bg-soft);
+  transition: background-color .18s ease;
+}
+
+.VPSidebar .group:first-child > .VPSidebarItem > .item > .link:hover {
+  background: var(--vp-c-default-soft);
+}
+
+.VPSidebar .group:first-child + .group {
+  padding-top: 0;
+  border-top: 0;
+}
+
+.VPSidebar .group:not(:first-child) > .VPSidebarItem.level-0 {
+  padding-bottom: 12px;
+}
