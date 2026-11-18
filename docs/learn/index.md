@@ -15,12 +15,12 @@ outline: false
 ## Первый модуль — Основы Java
 Основы языка, многопоточность, стримы и практические задания.
 
-- [Java Core](/learn/java-core) — 96 вопросов
-- [ООП](/learn/oop) — 16 вопросов
+- [Java Core](/learn/java-core) — 62 вопросов
+- [ООП](/learn/oop) — 7 вопросов
 - [Collections](/learn/collections) — 83 вопросов
 - [Generics](/learn/generics) — 5 вопросов
-- [Exceptions](/learn/exceptions) — 19 вопросов
-- [JVM и память](/learn/jvm) — 14 вопросов
+- [Exceptions](/learn/exceptions) — 20 вопросов
+- [JVM и память](/learn/jvm) — 20 вопросов
 - [Multithreading](/learn/multithreading) — 78 вопросов
 - [Java 8+](/learn/java8) — 22 вопросов
 - [Functional](/learn/functional) — 7 вопросов
